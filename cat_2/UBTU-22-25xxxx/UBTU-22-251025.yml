@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_251025 }}
+command:
+  ufw_int_limited:
+    title: UBTU-22-251025 | Ubuntu 22.04 LTS must configure the Uncomplicated Firewall (ufw) to rate-limit impacted network interfaces. | Manual
+    exec: echo "Manual - Please ensure service or interfaces are rate limits on UFW"
+    exit-status: 0
+    stdout:
+    - '!Manual'
+    meta:
+      Cat: 2
+      CCI: CCI-002385
+      Group_Title: SRG-OS-000420-GPOS-00186
+      NIST800-53R4: SC-5
+      Rule_ID: SV-260517r958902_rule
+      STIG_ID: UBTU-22-251025
+      Vul_ID: V-260517
+  {{ end }}
+{{ end }}

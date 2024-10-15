@@ -1,0 +1,25 @@
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_431010 }}
+package:
+  apparmor:
+    title: UBTU-22-431010 | Ubuntu 22.04 LTS must have the "apparmor" package installed.
+    name: apparmor
+    installed: true
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-001764
+      - CCI-001774
+      - CCI-002165
+      Group_Title:
+      - SRG-OS-000312-GPOS-00124
+      - SRG-OS-000368-GPOS-00154
+      - SRG-OS-000370-GPOS-00155
+      NIST800-53R4:
+      - CM-7
+      - AC-3
+      Rule_ID: SV-260556r958702_rule
+      STIG_ID: UBTU-22-431010
+      Vul_ID: V-260556
+  {{ end }}
+{{ end }}

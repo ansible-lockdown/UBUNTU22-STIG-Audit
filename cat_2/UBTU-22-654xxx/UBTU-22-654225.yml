@@ -1,0 +1,41 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_654225 }}
+command:
+  sudoers.d_module_cnf:
+    title: UBTU-22-654225 | Ubuntu 22.04 LTS must generate audit records when successful/unsuccessful attempts to modify the /etc/sudoers.d.d directory occur. | Config
+    exec: grep sudoers.d /etc/audit/rules.d/*.rules
+    exit-status: 0
+    stdout:
+    - '/(.*:|)-w /etc/sudoers.d -p wa -k privilege_modification/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000466-GPOS-00210
+      NIST800-53R4:
+      - AU-12
+      Rule_ID: SV-260647r991575_rule
+      STIG_ID: UBTU-22-654225
+      Vul_ID: V-260647
+  sudoers.d_module_live:
+    title: UBTU-22-654225 | Ubuntu 22.04 LTS must generate audit records when successful/unsuccessful attempts to modify the /etc/sudoers.d.d directory occur. | Live
+    exec: auditctl -l | grep sudoers.d
+    exit-status: 0
+    stdout:
+    - '-w /etc/sudoers.d -p wa -k privilege_modification'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000466-GPOS-00210
+      NIST800-53R4:
+      - AU-12
+      Rule_ID: SV-260647r991575_rule
+      STIG_ID: UBTU-22-654225
+      Vul_ID: V-260647
+  {{ end }}
+{{ end }}

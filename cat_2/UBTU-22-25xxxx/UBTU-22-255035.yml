@@ -1,0 +1,24 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_255035 }}
+file:
+  sshd_aliveinterval:
+    title: UBTU-22-255035 | Ubuntu 22.04 LTS must be configured so that all network connections associated with SSH traffic are terminated after 10 minutes of becoming unresponsive.
+    path: /etc/ssh/sshd_config
+    exists: true
+    contents:
+    - '/^ClientAliveInterval (600|[1-5][0-9]{2,}|[3-9][0-9])$/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-001133
+      Group_Title:
+      - SRG-OS-000163-GPOS-00072
+      NIST800-53R4:
+      - SC-10
+      Rule_ID: SV-260528r970703_rule
+      STIG_ID: UBTU-22-255035
+      Vul_ID: V-260528
+  {{ end }}
+{{ end }}

@@ -1,0 +1,26 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_612010 }}
+package:
+  libpam-pkcs11:
+    title: UBTU-22-612010 | Ubuntu 22.04 LTS must implement multifactor authentication for remote access to privileged accounts in such a way that one of the factors is provided by a device separate from the system gaining access.
+    name: libpam-pkcs11
+    installed: true
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000765
+      - CCI-000766
+      Group_Title:
+      - SRG-OS-000375-GPOS-00160
+      - SRG-OS-000105-GPOS-00052
+      - SRG-OS-000106-GPOS-00053
+      - SRG-OS-000107-GPOS-00054
+      - SRG-OS-000108-GPOS-00055
+      NIST800-53R4: IA-2
+      Rule_ID: SV-260573r986292_rule
+      STIG_ID: UBTU-22-612010
+      Vul_ID: V-260573
+  {{ end }}
+{{ end }}

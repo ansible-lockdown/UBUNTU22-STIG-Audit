@@ -1,0 +1,27 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_651020 }}
+file:
+  aide_silentreports:
+    title: UBTU-22-651020 | Ubuntu 22.04 LTS must notify designated personnel if baseline configurations are changed in an unauthorized manner. The file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered.
+    path: /etc/default/aide
+    exists: true
+    contents:
+    - '/(?i)^SILENTREPORTS\s*=\s*no/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-001744
+      - CCI-002702
+      Group_Title:
+      - SRG-OS-000363-GPOS-00150
+      - SRG-OS-000447-GPOS-00201
+      NIST800-53R4:
+      - CM-3
+      - SI-6
+      Rule_ID: SV-260584r958794_rule
+      STIG_ID: UBTU-22-651020
+      Vul_ID: V-260584
+  {{ end }}
+{{ end }}

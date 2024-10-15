@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_611040 }}
+file:
+  passwd_difok:
+    title: UBTU-22-611040 | Ubuntu 22.04 LTS must require the change of at least eight characters when passwords are changed.
+    path: /etc/security/pwquality.conf
+    exists: true
+    contents:
+    - '/^difok\s*=\s*([8-9]|[1-5][0-9])/'
+    meta:
+      Cat: 2
+      CCI: NA
+      Group_Title:
+      - SRG-OS-000072-GPOS-00040
+      NIST800-53R4: NA
+      Rule_ID: SV-260566r986290_rule
+      STIG_ID: UBTU-22-611040
+      Vul_ID: V-260566
+  {{ end }}
+{{ end }}

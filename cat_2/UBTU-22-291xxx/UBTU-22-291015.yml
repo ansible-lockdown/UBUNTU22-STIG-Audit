@@ -1,0 +1,27 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_291015 }}
+command:
+  wireless_disabled:
+    title: UBTU-22-291015 | Ubuntu 22.04 LTS must disable all wireless network adapters.
+    exec: if [ `find /sys/class/net/*/ -type d -name wireless -printf '.' | wc -c` -eq 0 ]; then echo "PASS - No Wireless adapters"; else echo "Manual Test - Plese check wireless adapters are disabled"; fi
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - 'PASS'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-002418
+      Group_Title:
+      - SRG-OS-000481-GPOS-00481
+      NIST800-53R4:
+      - SC-8
+      Rule_ID: SV-260541r958358_rule
+      STIG_ID: UBTU-22-291015
+      Vul_ID: V-258041
+  {{ end }}
+{{ end }}

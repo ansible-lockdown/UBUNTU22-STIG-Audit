@@ -1,0 +1,39 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_654020 }}
+command:
+  chage_module_cnf:
+    title: UBTU-22-654020 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chage command. | Config
+    exec: grep chage /etc/audit/rules.d/*.rules
+    exit-status: 0
+    stdout:
+    - '/(.*:|)-a always,exit -F path=/usr/bin/chage -F perm=x -F auid>=1000 -F auid!=unset -k privileged-chage/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260606r958446_rule
+      STIG_ID: UBTU-22-654020
+      Vul_ID: V-260606
+  chage_module_live:
+    title: UBTU-22-654020 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chage command. | Live
+    exec: auditctl -l | grep chage
+    exit-status: 0
+    stdout:
+    - '-a always,exit -S all -F path=/usr/bin/chage -F perm=x -F auid>=1000 -F auid!=-1 -F key=privileged-chage'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260606r958446_rule
+      STIG_ID: UBTU-22-654055
+      Vul_ID: V-260606
+  {{ end }}
+{{ end }}

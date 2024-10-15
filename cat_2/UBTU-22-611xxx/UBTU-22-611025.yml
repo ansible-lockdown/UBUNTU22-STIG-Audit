@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_611025 }}
+file:
+  passwd_special:
+    title: UBTU-22-611025 | Ubuntu 22.04 LTS must enforce password complexity by requiring that at least one special character be used.
+    path: /etc/security/pwquality.conf
+    exists: true
+    contents:
+    - '/^ocredit\s*=\s*-1$/'
+    meta:
+      Cat: 2
+      CCI: NA
+      Group_Title:
+      - SRG-OS-000266-GPOS-00101
+      NIST800-53R4: NA
+      Rule_ID: SV-260563r991561_rule
+      STIG_ID: UBTU-22-611025
+      Vul_ID: V-260563
+  {{ end }}
+{{ end }}

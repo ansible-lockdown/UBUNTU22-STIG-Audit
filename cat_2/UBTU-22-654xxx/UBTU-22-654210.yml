@@ -1,0 +1,45 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_654210 }}
+command:
+  faillog_module_cnf:
+    title: UBTU-22-654210 | Ubuntu 22.04 LTS must generate audit records for the use and modification of faillog file. | Config
+    exec: grep faillog /etc/audit/rules.d/*.rules
+    exit-status: 0
+    stdout:
+    - '/(.*:|)-w /var/log/faillog -p wa -k logins/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      - SRG-OS-000470-GPOS-00214
+      - SRG-OS-000473-GPOS-00218
+      NIST800-53R4:
+      - AU-12
+      Rule_ID: SV-260644r958446_rule
+      STIG_ID: UBTU-22-654210
+      Vul_ID: V-260644
+  faillog_module_live:
+    title: UBTU-22-654210 | Ubuntu 22.04 LTS must generate audit records for the use and modification of faillog file. | Live
+    exec: auditctl -l | grep faillog
+    exit-status: 0
+    stdout:
+    - '-w /var/log/faillog -p wa -k logins'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      - SRG-OS-000470-GPOS-00214
+      - SRG-OS-000473-GPOS-00218
+      NIST800-53R4:
+      - AU-12
+      Rule_ID: SV-260644r958446_rule
+      STIG_ID: UBTU-22-654210
+      Vul_ID: V-260644
+  {{ end }}
+{{ end }}

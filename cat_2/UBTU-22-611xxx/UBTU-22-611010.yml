@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu_22_611010 }}
+file:
+  passwd_uppercase:
+    title: UBTU-22-611010 | Ubuntu 22.04 LTS must enforce password complexity by requiring at least one uppercase character be used.
+    path: /etc/security/pwquality.conf
+    exists: true
+    contents:
+    - '/^ucredit\s*=\s*-1$/'
+    meta:
+      Cat: 2
+      CCI: NA
+      Group_Title:
+      - SRG-OS-000069-GPOS-00037
+      NIST800-53R4: NA
+      Rule_ID: SV-260560r986285_rule
+      STIG_ID: UBTU-22-611010
+      Vul_ID: V-260560
+  {{ end }}
+{{ end }}
