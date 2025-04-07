@@ -8,7 +8,7 @@ file:
     path: /etc/login.defs
     exists: true
     contents:
-    - '/^PASS_MAX_DAYS (60|[1-5][0-9])$/'
+    - '/^PASS_MAX_DAYS\s+(60|[1-5][0-9])$/'
     meta:
       Cat: 2
       CCI: NA
