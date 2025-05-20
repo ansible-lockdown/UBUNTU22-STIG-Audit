@@ -1,0 +1,24 @@
+---
+
+{{ if .Vars.ubtu22stig_cat1 }}
+  {{ if .Vars.ubtu22stig_255025 }}
+file:
+  ssh_permit:
+    title: UBTU-22-255025 | Ubuntu 22.04 LTS must not allow unattended or automatic login via SSH.
+    path: /etc/ssh/sshd_config
+    exists: true
+    contents:
+    - '/PermitEmptyPasswords no/'
+    - '/PermitUserEnvironment no/'
+    - '!/PermitEmptyPasswords yes/'
+    - '!/PermitUserEnvironment yes/'
+    meta:
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00229
+      NIST800-53R4: CM-6
+      Rule_ID: SV-260526r991591_rule
+      STIG_ID: UBTU-22-255025
+      Vul_ID: V-260526
+  {{ end }}
+{{ end }}

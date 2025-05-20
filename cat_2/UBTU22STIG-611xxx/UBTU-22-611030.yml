@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_611030 }}
+file:
+  passwd_dictcheck:
+    title: UBTU-22-611030 | Ubuntu 22.04 LTS must prevent the use of dictionary words for passwords.
+    path: /etc/security/pwquality.conf
+    exists: true
+    contents:
+    - '/^dictcheck\s*=\s*1$/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title:
+      - SRG-OS-000480-GPOS-00225
+      NIST800-53R4: CM-6
+      Rule_ID: SV-260564r991587_rule
+      STIG_ID: UBTU-22-611030
+      Vul_ID: V-260564
+  {{ end }}
+{{ end }}

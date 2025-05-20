@@ -1,0 +1,45 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_654175 }}
+command:
+  init_module_cnf:
+    title: UBTU-22-654175 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the init_module system call. | Config
+    exec: grep init /etc/audit/rules.d/*.rules
+    exit-status: 0
+    stdout:
+    - '/(.*:|)-a always,exit -F arch=b32 -S init_module,finit_module -F auid>=1000 -F auid!=unset -k module_chng/'
+    - '/(.*:|)-a always,exit -F arch=b64 -S init_module,finit_module -F auid>=1000 -F auid!=unset -k module_chng/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      - SRG-OS-000471-GPOS-00216
+      NIST800-53R4:
+      - AU-12
+      Rule_ID: SV-260637r958446_rule
+      STIG_ID: UBTU-22-654175
+      Vul_ID: V-260637
+  init_module_live:
+    title: UBTU-22-654175 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the init_module system call. | Live
+    exec: auditctl -l | grep init
+    exit-status: 0
+    stdout:
+    - '-a always,exit -F arch=b32 -S init_module,finit_module -F auid>=1000 -F auid!=-1 -F key=module_chng'
+    - '-a always,exit -F arch=b64 -S init_module,finit_module -F auid>=1000 -F auid!=-1 -F key=module_chng'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      - SRG-OS-000477-GPOS-00222
+      NIST800-53R4:
+      - AU-12
+      Rule_ID: SV-260637r958446_rule
+      STIG_ID: UBTU-22-654175
+      Vul_ID: V-260637
+  {{ end }}
+{{ end }}

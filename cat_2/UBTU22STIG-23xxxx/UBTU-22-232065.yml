@@ -1,0 +1,26 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_232065 }}
+command:
+  library_dirs_owner:
+    title: UBTU-22-232065 | Ubuntu 22.04 LTS library directories must be group-owned by "root".
+    exec: |
+      LIB_DIR_GROUP=$(find /lib /usr/lib /lib64 ! -group root -type d -printf '.' | wc -c); \
+      if [ "$LIB_DIR_GROUP" -eq 0 ]; \
+      then echo "OK - No files or Directories found"; \
+      else echo "FAIL - Files found"; \
+      fi
+    exit-status: 0
+    stdout:
+      - '/OK - No files or Directories found/'
+    meta:
+      Cat: 2
+      CCI: CCI-001499
+      Group_Title: SRG-OS-000259-GPOS-00100
+      NIST800-53R4: CM-5
+      Rule_ID: SV-260498r991560_rule
+      STIG_ID: UBTU-22-232065
+      Vul_ID: V-260498
+  {{ end }}
+{{ end }}

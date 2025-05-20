@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.ubtu22stig_cat3 }}
+  {{ if .Vars.ubtu22stig_215015 }}
+package:
+  chrony_installed:
+    title: UBTU-22-215015 | Ubuntu 22.04 LTS must have the "chrony" package installed.
+    name: chrony
+    installed: true
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      NIST800-53R4: CM-6
+      Rule_ID: SV-260479r991589_rule
+      STIG_ID: UBTU-22-215015
+      Vul_ID: V-260479
+  {{ end }}
+{{ end }}

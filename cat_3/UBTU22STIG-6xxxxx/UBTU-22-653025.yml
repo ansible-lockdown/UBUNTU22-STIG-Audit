@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.ubtu22stig_cat3 }}
+  {{ if .Vars.ubtu22stig_653020 }}
+file:
+  audit_mail_acct:
+    title: UBTU-22-653020 | Ubuntu 22.04 LTS must alert the information system security officer (ISSO) and system administrator (SA) in the event of an audit processing failure.
+    path: /etc/audit/auditd.conf
+    exists: true
+    contents:
+    - '/^action_mail_acct\s*=\s*{{ .Vars.ubtu22stig_auditd_email_acct }}/'
+    meta:
+      Cat: 3
+      CCI: CCI-000139
+      Group_Title: SRG-OS-000046-GPOS-00022
+      NIST800-53R4: AU-5
+      Rule_ID: SV-260593r958424_rule
+      STIG_ID: UBTU-22-653020
+      Vul_ID: V-260593
+  {{ end }}
+{{ end }}

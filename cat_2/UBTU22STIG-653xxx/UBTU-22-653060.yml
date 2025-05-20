@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_653060 }}
+file:
+  auditd_log_dir_perms:
+    title: UBTU-22-653060 | Ubuntu 22.04 LTS must be configured so that audit configuration files are not write-accessible by unauthorized users.
+    path: /var/log/audit
+    exists: true
+    mode:
+      le: 750
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000164
+      Group_Title:
+      - SRG-OS-000059-GPOS-00029
+      NIST800-53R4: AU-9
+      Rule_ID: SV-260600r958438_rule
+      STIG_ID: UBTU-22-653060
+      Vul_ID: V-260600
+  {{ end }}
+{{ end }}

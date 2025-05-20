@@ -1,0 +1,55 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_255020 }}
+file:
+  check_login_banner:
+    title: UBTU-22-255020 | Ubuntu 22.04 LTS must display the Standard Mandatory DOD Notice and Consent Banner before granting any local or remote connection to the system.
+    path: /etc/issue.net
+    exists: true
+    contents:
+    {{ range .Vars.ubtu22stig_logon_banner }}
+    - {{ . }}
+    {{ end }}
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000048
+      - CCI-001384
+      - CCI-001385
+      - CCI-001386
+      - CCI-001387
+      - CCI-001388
+      Group_Title:
+      - SRG-OS-000023-GPOS-00006
+      - SRG-OS-000228-GPOS-00088
+      NIST800-53R4:
+      - AC-8
+      Rule_ID: SV-260525r958390_rule
+      STIG_ID: UBTU-22-255020
+      Vul_ID: V-260525
+  sshd_banner:
+    title: UBTU-22-255020 | Ubuntu 22.04 LTS must display the Standard Mandatory DOD Notice and Consent Banner before granting any local or remote connection to the system.
+    path: /etc/ssh/sshd_config
+    exists: true
+    contents:
+    - 'Banner /etc/issue.net'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000048
+      - CCI-001384
+      - CCI-001385
+      - CCI-001386
+      - CCI-001387
+      - CCI-001388
+      Group_Title:
+      - SRG-OS-000023-GPOS-00006
+      - SRG-OS-000228-GPOS-00088
+      NIST800-53R4:
+      - AC-8
+      Rule_ID: SV-260525r958390_rule
+      STIG_ID: UBTU-22-255020
+      Vul_ID: V-260525
+  {{ end }}
+{{ end }}

@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_411010 }}
+command:
+  root_acct_locked:
+    title: UBTU-22-411010 | Ubuntu 22.04 LTS must prevent direct login into the root account.
+    exec: passwd -S root
+    exit-status: 0
+    stdout:
+    - '/^root L/'
+    meta:
+      Cat: 2
+      CCI: NA
+      Group_Title:
+      - SRG-OS-000109-GPOS-00056
+      NIST800-53R4: NA
+      Rule_ID: SV-260542r986277_rule
+      STIG_ID: UBTU-22-411010
+      Vul_ID: V-260542
+  {{ end }}
+{{ end }}

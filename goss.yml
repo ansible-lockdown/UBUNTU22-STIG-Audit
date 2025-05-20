@@ -4,31 +4,31 @@ gossfile:
   {{ end }}
 
   {{ if .Vars.ubtu22stig_cat2 }}
-  cat_2/UBTU-22-21xxxx/*.yml: {}
-  cat_2/UBTU-22-23xxxx/*.yml: {}
-  cat_2/UBTU-22-25xxxx/*.yml: {}
+  cat_2/UBTU22STIG-21xxxx/*.yml: {}
+  cat_2/UBTU22STIG-23xxxx/*.yml: {}
+  cat_2/UBTU22STIG-25xxxx/*.yml: {}
     {{ if .Vars.ubtu22stig_gui }}
-  cat_2/UBTU-22-27xxxx/*.yml: {}
+  cat_2/UBTU22STIG-27xxxx/*.yml: {}
     {{ end }}
-  cat_2/UBTU-22-291xxx/*.yml: {}
-  cat_2/UBTU-22-411xxx/*.yml: {}
-  cat_2/UBTU-22-412xxx/*.yml: {}
-  cat_2/UBTU-22-431xxx/*.yml: {}
-  cat_2/UBTU-22-432xxx/*.yml: {}
-  cat_2/UBTU-22-611xxx/*.yml: {}
-  cat_2/UBTU-22-612xxx/*.yml: {}
-  cat_2/UBTU-22-631xxx/*.yml: {}
-  cat_2/UBTU-22-651xxx/*.yml: {}
-  cat_2/UBTU-22-652xxx/*.yml: {}
-  cat_2/UBTU-22-653xxx/*.yml: {}
-  cat_2/UBTU-22-654xxx/*.yml: {}
+  cat_2/UBTU22STIG-291xxx/*.yml: {}
+  cat_2/UBTU22STIG-411xxx/*.yml: {}
+  cat_2/UBTU22STIG-412xxx/*.yml: {}
+  cat_2/UBTU22STIG-431xxx/*.yml: {}
+  cat_2/UBTU22STIG-432xxx/*.yml: {}
+  cat_2/UBTU22STIG-611xxx/*.yml: {}
+  cat_2/UBTU22STIG-612xxx/*.yml: {}
+  cat_2/UBTU22STIG-631xxx/*.yml: {}
+  cat_2/UBTU22STIG-651xxx/*.yml: {}
+  cat_2/UBTU22STIG-652xxx/*.yml: {}
+  cat_2/UBTU22STIG-653xxx/*.yml: {}
+  cat_2/UBTU22STIG-654xxx/*.yml: {}
   {{ end }}
 
   {{ if .Vars.ubtu22stig_cat3 }}
-  cat_3/UBTU-22-21xxxx/*.yml: {}
-  cat_3/UBTU-22-25xxxx/*.yml: {}
-  cat_3/UBTU-22-4xxxxx/*.yml: {}
-  cat_3/UBTU-22-6xxxxx/*.yml: {}
+  cat_3/UBTU22STIG-21xxxx/*.yml: {}
+  cat_3/UBTU22STIG-25xxxx/*.yml: {}
+  cat_3/UBTU22STIG-4xxxxx/*.yml: {}
+  cat_3/UBTU22STIG-6xxxxx/*.yml: {}
   {{ end }}
 
 command:

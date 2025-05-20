@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_251030 }}
+command:
+  ufw_proto_svcs:
+    title: UBTU-22-251030 | Ubuntu 22.04 LTS must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments. | Manual
+    exec: echo "Manual - Please ensure ports, protocols and services are conifgured on UFW"
+    exit-status: 0
+    stdout:
+    - '!Manual'
+    meta:
+      Cat: 2
+      CCI: CCI-000382
+      Group_Title: SRG-OS-000096-GPOS-00050
+      NIST800-53R4: CM-7
+      Rule_ID: SV-260518r958480_rule
+      STIG_ID: UBTU-22-251030
+      Vul_ID: V-260518
+  {{ end }}
+{{ end }}

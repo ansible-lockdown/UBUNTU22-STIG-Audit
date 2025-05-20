@@ -1,0 +1,39 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_654075 }}
+command:
+  pam_timestamp_check_module_cnf:
+    title: UBTU-22-654075 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the pam_timestamp_check command. | Config
+    exec: grep pam_timestamp_check /etc/audit/rules.d/*.rules
+    exit-status: 0
+    stdout:
+    - '/(.*:|)-a always,exit -F path=/usr/sbin/pam_timestamp_check -F perm=x -F auid>=1000 -F auid!=unset -k privileged-pam_timestamp_check/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260617r958446_rule
+      STIG_ID: UBTU-22-654075
+      Vul_ID: V-260617
+  pam_timestamp_check_module_live:
+    title: UBTU-22-654075 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the pam_timestamp_check command. | Live
+    exec: auditctl -l | grep pam_timestamp_check
+    exit-status: 0
+    stdout:
+    - '-a always,exit -S all -F path=/usr/sbin/pam_timestamp_check -F perm=x -F auid>=1000 -F auid!=-1 -F key=privileged-pam_timestamp_check'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260617r958446_rule
+      STIG_ID: UBTU-22-654075
+      Vul_ID: V-260617
+  {{ end }}
+{{ end }}

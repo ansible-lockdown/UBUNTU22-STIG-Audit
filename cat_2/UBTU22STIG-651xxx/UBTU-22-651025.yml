@@ -1,0 +1,26 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_651025 }}
+command:
+  aide_cron_sha:
+    title: UBTU-22-651025 | Ubuntu 22.04 LTS must use a file integrity tool to verify correct operation of all security functions.
+    exec: sha1sum /etc/cron.daily/aide /etc/cron.monthly/aide 2>/dev/null
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/b71bb2cafaedf15ec3ac2f566f209d3260a37af0\s*\/etc\/cron\.(daily|monthly)\/aide/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-002699
+      Group_Title:
+      - SRG-OS-000446-GPOS-00200
+      NIST800-53R4: SI-6
+      Rule_ID: SV-260585r958946_rule
+      STIG_ID: UBTU-22-651025
+      Vul_ID: V-260585
+  {{ end }}
+{{ end }}

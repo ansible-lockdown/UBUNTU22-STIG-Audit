@@ -1,0 +1,24 @@
+---
+
+{{ if .Vars.ubtu22stig_cat1 }}
+  {{ if .Vars.ubtu22stig_432015 }}
+command:
+  sudo_group_users:
+    title: UBTU-22-432015 | Ubuntu 22.04 LTS must ensure only users who need access to security functions are part of sudo group.
+    exec: "grep sudo /etc/group | awk -F: '{print $NF}'"
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - ''
+    meta:
+      Cat: 1
+      CCI: CCI-001084
+      Group_Title: SRG-OS-000134-GPOS-00068
+      NIST800-53R4: SC-3
+      Rule_ID: SV-260559r958518_rule
+      STIG_ID: UBTU-22-432015
+      Vul_ID: V-260559
+  {{ end }}
+{{ end }}

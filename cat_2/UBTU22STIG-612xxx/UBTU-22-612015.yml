@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_612015 }}
+package:
+  opensc-pkcs11:
+    title: UBTU-22-612015 | Ubuntu 22.04 LTS must accept personal identity verification (PIV) credentials.
+    name: opensc-pkcs11
+    installed: true
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-001953
+      Group_Title:
+      - SRG-OS-000376-GPOS-00161
+      NIST800-53R4: IA-2
+      Rule_ID: SV-260574r958816_rule
+      STIG_ID: UBTU-22-612015
+      Vul_ID: V-260574
+  {{ end }}
+{{ end }}

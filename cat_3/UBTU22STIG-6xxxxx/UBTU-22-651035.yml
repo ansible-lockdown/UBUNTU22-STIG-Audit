@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.ubtu22stig_cat3 }}
+  {{ if .Vars.ubtu22stig_651035 }}
+command:
+  crontab_offload_audit_logs:
+    title: UBTU-22-651035 | Ubuntu 22.04 LTS must have a crontab script running weekly to offload audit events of standalone systems.
+    exec: 'grep -i audit /etc/cron.weekly/*'
+    exit-status: 0
+    meta:
+      Cat: 3
+      CCI: CCI-001851
+      Group_Title: SRG-OS-000479-GPOS-00224
+      NIST800-53R4: AU-4
+      Rule_ID: SV-260587r959008_rule
+      STIG_ID: UBTU-22-651035
+      Vul_ID: V-260587
+  {{ end }}
+{{ end }}

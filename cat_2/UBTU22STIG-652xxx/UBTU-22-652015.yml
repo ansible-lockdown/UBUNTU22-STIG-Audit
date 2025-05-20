@@ -1,0 +1,27 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_652015 }}
+command:
+  rsyslog_remote_access_logged:
+    title: UBTU-22-652015 | Ubuntu 22.04 LTS must monitor remote access methods.
+    exec: "grep -Er '^(auth.*,authpriv.*|daemon.*)' /etc/rsyslog.*"
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/.*:auth\.\*,authpriv\.\*\s*\/var\/log\/secure/'
+    - '/.*:daemon\.\*\s*\/var\/log\/messages/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000067
+      Group_Title:
+      - SRG-OS-000032-GPOS-00013
+      NIST800-53R4: AC-17
+      Rule_ID: SV-260589r958406_rule
+      STIG_ID: UBTU-22-652015
+      Vul_ID: V-260589
+  {{ end }}
+{{ end }}

@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_232090 }}
+file:
+  journald_files_owned_conf:
+    title: UBTU-22-232090 | Ubuntu 22.04 LTS must configure the files used by the system journal to be owned by "root".
+    path: /usr/lib/tmpfiles.d/systemd.conf
+    exists: true
+    contents:
+      - '/Z \/run\/log\/journal\/%m ~2640 root (.*)\s- -/'
+      - '/z \/var\/log\/journal\/%m 2640 root (.*)\s- -/'
+      - '/z \/var\/log\/journal\/%m\/system.journal 0640 root (.*)\s- -/'
+    meta:
+      Cat: 2
+      CCI: CCI-001314
+      Group_Title: SRG-OS-000206-GPOS-00084
+      NIST800-53R4: SI-11
+      Rule_ID: SV-260503r958566_rule
+      STIG_ID: UBTU-22-232090
+      Vul_ID: V-260503
+  {{ end }}
+{{ end }}

@@ -1,0 +1,24 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_411040 }}
+command:
+  Temp_accts:
+    title: UBTU-22-411040 | Ubuntu 22.04 LTS must automatically expire temporary accounts within 72 hours. | Manual
+    exec: echo "Manual! Test - Please check temporary accounts"
+    exit-status: 0
+    stdout:
+    - '!Manual'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000016
+      - CCI-001682
+      Group_Title:
+      - SRG-OS-000002-GPOS-00002
+      NIST800-53R4: AC-2
+      Rule_ID: SV-260548r958364_rule
+      STIG_ID: UBTU-22-411040
+      Vul_ID: V-260548
+  {{ end }}
+{{ end }}

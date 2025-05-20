@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_232035 }}
+command:
+  audit_bin_perms:
+    title: UBTU-22-232035 | Ubuntu 22.04 LTS must configure audit tools with a mode of "755" or less permissive.
+    exec: AUDIT_BINS_PERM="OK - No files or Directories found"; for audit_bin in /sbin/audispd-zos-remote /sbin/auditctl /sbin/aureport /sbin/ausearch /sbin/autrace /sbin/auditd /sbin/augenrules; do find $audit_bin -perm /022 -exec export AUDIT_BINS_PERM="FAIL - Audit Binaries Permissions" {} \;; done; echo $AUDIT_BINS_PERM
+    exit-status: 0
+    stdout:
+      - '/OK - No files or Directories found/'
+    meta:
+      Cat: 2
+      CCI: CCI-001312
+      Group_Title: SRG-OS-000205-GPOS-00083
+      NIST800-53R4: SI-11
+      Rule_ID: SV-260489r958564_rule
+      STIG_ID: UBTU-22-232035
+  {{ end }}
+{{ end }}

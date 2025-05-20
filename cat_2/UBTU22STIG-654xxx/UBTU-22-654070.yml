@@ -1,0 +1,39 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_654070 }}
+command:
+  newgrp_module_cnf:
+    title: UBTU-22-654070 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the newgrp command. | Config
+    exec: grep newgrp /etc/audit/rules.d/*.rules
+    exit-status: 0
+    stdout:
+    - '/(.*:|)-a always,exit -F path=/usr/bin/newgrp -F perm=x -F auid>=1000 -F auid!=unset -k priv_cmd/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260616r958446_rule
+      STIG_ID: UBTU-22-654070
+      Vul_ID: V-260616
+  newgrp_module_live:
+    title: UBTU-22-654070 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the newgrp command. | Live
+    exec: auditctl -l | grep newgrp
+    exit-status: 0
+    stdout:
+    - '-a always,exit -S all -F path=/usr/bin/newgrp -F perm=x -F auid>=1000 -F auid!=-1 -F key=priv_cmd'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260616r958446_rule
+      STIG_ID: UBTU-22-654070
+      Vul_ID: V-260616
+  {{ end }}
+{{ end }}

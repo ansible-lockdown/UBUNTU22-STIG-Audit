@@ -1,0 +1,24 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_232030 }}
+file:
+  var_log_syslog_perms:
+    title: UBTU-22-232030 | Ubuntu 22.04 LTS must configure "/var/log/syslog" file with mode "640" or less permissive.
+    path: /var/log/syslog
+    exists:
+      or:
+      - true
+      - false
+    filetype: file
+    mode: {le: 640}
+    meta:
+      Cat: 2
+      CCI: CCI-001314
+      Group_Title: SRG-OS-000206-GPOS-00084
+      NIST800-53R4: SI-11
+      Rule_ID: SV-260491r958566_rule
+      STIG_ID: UBTU-22-232030
+      Vul_ID: V-260491
+  {{ end }}
+{{ end }}

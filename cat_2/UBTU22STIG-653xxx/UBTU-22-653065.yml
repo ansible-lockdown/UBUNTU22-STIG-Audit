@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_653065 }}
+command:
+  auditd_conf_files_perms:
+    title: UBTU-22-653065 | Ubuntu 22.04 LTS must be configured so that audit configuration files are not write-accessible by unauthorized users.
+    exec: find /etc/audit/ -type f -perm -640 ! -perm 640
+    exit-status: 0
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000171
+      Group_Title:
+      - SRG-OS-000063-GPOS-00032
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260601r958444_rule
+      STIG_ID: UBTU-22-653065
+      Vul_ID: V-260601
+  {{ end }}
+{{ end }}

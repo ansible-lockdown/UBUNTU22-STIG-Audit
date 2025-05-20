@@ -1,0 +1,39 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_654045 }}
+command:
+  fdisk_module_cnf:
+    title: UBTU-22-654045 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the fdisk command. | Config
+    exec: grep fdisk /etc/audit/rules.d/*.rules
+    exit-status: 0
+    stdout:
+    - '/(.*:|)-w /usr/sbin/fdisk -p x -k fdisk/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000477-GPOS-00222
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260611r991586_rule
+      STIG_ID: UBTU-22-654045
+      Vul_ID: V-260611
+  fdisk_module_live:
+    title: UBTU-22-654045 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the fdisk command. | Live
+    exec: auditctl -l | grep fdisk
+    exit-status: 0
+    stdout:
+    - '-w /usr/sbin/fdisk -p x -k fdisk'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000477-GPOS-00222
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260611r991586_rule
+      STIG_ID: UBTU-22-654055
+      Vul_ID: V-260611
+  {{ end }}
+{{ end }}

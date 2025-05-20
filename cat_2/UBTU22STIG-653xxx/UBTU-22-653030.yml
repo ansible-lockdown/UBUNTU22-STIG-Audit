@@ -1,0 +1,24 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_653030 }}
+file:
+  auditd_disk_full:
+    title: UBTU-22-653030 | Ubuntu 22.04 LTS must shut down by default upon audit failure.
+    path: /etc/audit/auditd.conf
+    exists: true
+    contents:
+    - '/(?i)^disk_full_action\s*=\s*(SYSLOG|SINGLE|HALT)/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000140
+      Group_Title:
+      - SRG-OS-000047-GPOS-00023
+      NIST800-53R4:
+      - AU-5
+      Rule_ID: SV-260594r958426_rule
+      STIG_ID: UBTU-22-653030
+      Vul_ID: V-260594
+  {{ end }}
+{{ end }}

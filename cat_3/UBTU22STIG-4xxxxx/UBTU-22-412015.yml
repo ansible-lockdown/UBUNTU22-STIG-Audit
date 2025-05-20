@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.ubtu22stig_cat3 }}
+  {{ if .Vars.ubtu22stig_412015 }}
+file:
+  pam_login_lastlog:
+    title: UBTU-22-412015 | Ubuntu 22.04 LTS must display the date and time of the last successful account logon upon logon.
+    path: /etc/pam.d/login
+    exists: true
+    contents:
+    - '/^session\s+required\s+pam_lastlog.so.*showfailed'
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      NIST800-53R4: CM-6
+      Rule_ID: SV-260551r991589_rule
+      STIG_ID: UBTU-22-412015
+      Vul_ID: V-260551
+  {{ end }}
+{{ end }}

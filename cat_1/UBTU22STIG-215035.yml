@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.ubtu22stig_215035 }}
+package:
+  telnet_absent:
+    title: UBTU-22-215035 | Ubuntu 22.04 LTS must not have the "telnet" package installed.
+    name: telnetd
+    installed: false
+    meta:
+      Cat: 1
+      CCI: CCI-000197
+      Group_Title: SRG-OS-000074-GPOS-00042
+      NIST800-53R4: IA-5
+      Rule_ID: SV-260483r987796_rule
+      STIG_ID: UBTU-22-215035
+      Vul_ID: V-260483
+{{ end }}

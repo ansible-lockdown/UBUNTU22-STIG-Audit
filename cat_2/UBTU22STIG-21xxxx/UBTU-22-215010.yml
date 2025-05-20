@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_215010 }}
+package:
+  pam_pwquality_pkg:
+    title: UBTU-22-215010 | Ubuntu 22.04 LTS must have the "libpam-pwquality" package installed.
+    name: libpam-pwquality
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00225
+      NIST800-53R4: CM-6
+      Rule_ID: SV-260478r991587_rule
+      STIG_ID: UBTU-22-215010
+      Vul_ID: V-260478
+  {{ end }}
+{{ end }}

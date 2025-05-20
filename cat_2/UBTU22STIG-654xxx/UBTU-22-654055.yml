@@ -1,0 +1,39 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_654055 }}
+command:
+  kmod_module_cnf:
+    title: UBTU-22-654055 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the kmod command. | Config
+    exec: grep kmod /etc/audit/rules.d/*.rules
+    exit-status: 0
+    stdout:
+    - '/(.*:|)-w /bin/kmod -p x -k modules/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000477-GPOS-00222
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260613r958446_rule
+      STIG_ID: UBTU-22-654055
+      Vul_ID: V-260613
+  kmod_module_live:
+    title: UBTU-22-654055 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the kmod command. | Live
+    exec: auditctl -l | grep kmod
+    exit-status: 0
+    stdout:
+    - '-w /bin/kmod -p x -k module'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000477-GPOS-00222
+      NIST800-53R4: AU-12
+      Rule_ID: SV-260613r958446_rule
+      STIG_ID: UBTU-22-654055
+      Vul_ID: V-260613
+  {{ end }}
+{{ end }}

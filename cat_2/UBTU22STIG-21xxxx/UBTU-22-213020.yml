@@ -1,0 +1,35 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_213020 }}
+kernel-param:
+  kernel.randomize_va_space:
+    title: UBTU-22-213020 | Ubuntu 22.04 LTS must implement address space layout randomization to protect its memory from unauthorized code execution.
+    name: kernel.randomize_va_space
+    value: 2
+    meta:
+      Cat: 2
+      CCI: CCI-002824
+      Group_Title: SRG-OS-000433-GPOS-00193
+      NIST800-53R4: SC-24
+      Rule_ID: SV-260474r958928_rule
+      STIG_ID: UBTU-22-213020
+      Vul_ID: V-260474
+command:
+  aslr_enabled_2:
+    title: UBTU-22-213020 | Ubuntu 22.04 LTS must implement address space layout randomization to protect its memory from unauthorized code execution. | conf
+    exit-status: 0
+    exec: 'grep "kernel\.randomize_va_space" /etc/sysctl.conf /etc/sysctl.d/*'
+    stdout:
+    - '/^*.conf:kernel.randomize_va_space\s*=\s*2/'
+    - '!/^*.conf:kernel.randomize_va_space\s*=\s*[0,1]/'
+    meta:
+      Cat: 2
+      CCI: CCI-002824
+      Group_Title: SRG-OS-000433-GPOS-00193
+      NIST800-53R4: SC-24
+      Rule_ID: SV-260474r958928_rule
+      STIG_ID: UBTU-22-213020
+      Vul_ID: V-260474
+  {{ end }}
+{{ end }}
