@@ -235,9 +235,9 @@ ubtu22stig_logon_banner:
 # 215xxx
 ## Chrony
 ubtu22stig_time_synchronization_servers:
-- 'tick.usno.navy.mil'
-- 'tock.usno.navy.mil'
-- 'ntp2.usno.navy.mil'
+  - 'tick.usno.navy.mil'
+  - 'tock.usno.navy.mil'
+  - 'ntp2.usno.navy.mil'
 ubtu22stig_chrony_server_options: "iburst maxpoll 16"  # Max Settings is maxpoll 16
 
 # Filesystem and mount options
@@ -301,4 +301,3 @@ ubtu22stig_auditd_space_left_action: EMAIL  # Can be set to exec if running scri
 
 # Adjust to match remote syslog server configuration
 ubtu22stig_remotelog_server_address: 10.10.10.10
-
