@@ -8,8 +8,8 @@ file:
     path:  /boot/grub/grub.cfg
     exists: true
     contents:
-    - '/^\s*linux\s*\/vmlinuz-.*root=/dev/mapper.*audit=1.*/'
-    - '!/^\s*linux\s*\/vmlinuz-.*root=/dev/mapper.*audit=0.*/'
+    - '/^\s*linux\s*.*\/vmlinuz-.*root=.*audit=1.*/'
+    - '!/^\s*linux\s*.*\/vmlinuz-.*root=.*audit=0.*/'
     meta:
       Cat: 2
       CCI: CCI-001464
