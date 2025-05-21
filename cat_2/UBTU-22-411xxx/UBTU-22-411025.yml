@@ -8,7 +8,7 @@ file:
     path: /etc/login.defs
     exists: true
     contents:
-    - '/^PASS_MIN_DAYS 1/'
+    - '/^PASS_MIN_DAYS\s+1/'
     meta:
       Cat: 2
       CCI: NA
