@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232105 }}
+  {{ if .Vars.ubtu22stig_232105 }}
 file:
   journaldctl_group:
     title: UBTU-22-232105 | Ubuntu 22.04 LTS must be configured so that the "journalctl" command is group-owned by "root".

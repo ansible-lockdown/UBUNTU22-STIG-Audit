@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232145 }}
+  {{ if .Vars.ubtu22stig_232145 }}
 command:
   sticky_bit_WW_dirs:
     title: UBTU-22-232145 | Ubuntu 22.04 LTS must set a sticky bit on all public directories to prevent unauthorized and unintended information transferred via shared system resources.

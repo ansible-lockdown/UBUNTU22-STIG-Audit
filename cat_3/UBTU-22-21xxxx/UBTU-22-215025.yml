@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_215025 }}
+  {{ if .Vars.ubtu22stig_215025 }}
 package:
   ntp_not_installed:
     title: UBTU-22-215025 | Ubuntu 22.04 LTS must not have the "ntp" package installed.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_213025 }}
+  {{ if .Vars.ubtu22stig_213025 }}
 command:
   NX_setting:
     title: UBTU-22-213025 | Ubuntu 22.04 LTS must implement nonexecutable data to protect its memory from unauthorized code execution. | check NX setting

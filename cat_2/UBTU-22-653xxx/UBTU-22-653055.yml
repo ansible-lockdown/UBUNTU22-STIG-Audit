@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_653055 }}
+  {{ if .Vars.ubtu22stig_653055 }}
 file:
   auditd_log_group:
     title: UBTU-22-653055 | Ubuntu 22.04 LTS must permit only authorized groups ownership of the audit log files.

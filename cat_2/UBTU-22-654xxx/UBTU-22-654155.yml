@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654155 }}
+  {{ if .Vars.ubtu22stig_654155 }}
 command:
   chmod_module_cnf:
     title: UBTU-22-654155 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chmod, fchmod, and fchmodat system calls. | Config

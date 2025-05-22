@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_653045 }}
+  {{ if .Vars.ubtu22stig_653045 }}
 command:
   audit_logs_perms:
     title: UBTU-22-653045 | Ubuntu 22.04 LTS must be configured so that audit log files are not read- or write-accessible by unauthorized users.

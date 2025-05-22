@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat1 }}
-  {{ if .Vars.ubtu_22_255025 }}
+  {{ if .Vars.ubtu22stig_255025 }}
 file:
   ssh_permit:
     title: UBTU-22-255025 | Ubuntu 22.04 LTS must not allow unattended or automatic login via SSH.

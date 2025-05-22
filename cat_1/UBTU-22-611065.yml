@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat1 }}
-  {{ if .Vars.ubtu_22_611065 }}
+  {{ if .Vars.ubtu22stig_611065 }}
 command:
   black_shadow_passwd:
     title: UBTU-22-611065 | Ubuntu 22.04 LTS must not have accounts configured with blank or null passwords.

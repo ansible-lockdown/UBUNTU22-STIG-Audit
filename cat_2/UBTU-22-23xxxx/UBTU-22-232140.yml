@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232140 }}
+  {{ if .Vars.ubtu22stig_232140 }}
 file:
   journaldctl_perms:
     title: UBTU-22-232140 | Ubuntu 22.04 LTS must be configured so that the "journalctl" command is not accessible by unauthorized users.

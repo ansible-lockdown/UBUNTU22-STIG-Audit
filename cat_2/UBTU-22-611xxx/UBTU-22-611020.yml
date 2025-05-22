@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_611020 }}
+  {{ if .Vars.ubtu22stig_611020 }}
 file:
   passwd_number:
     title: UBTU-22-611020 | Ubuntu 22.04 LTS must enforce password complexity by requiring that at least one numeric character be used.

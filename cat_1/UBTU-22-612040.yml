@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat1 }}
-  {{ if .Vars.ubtu_22_612040 }}
+  {{ if .Vars.ubtu22stig_612040 }}
 command:
   use_mappers:
     title: UBTU-22-612040 | Ubuntu 22.04 LTS must map the authenticated identity to the user or group account for PKI-based authentication.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_231010 }}
+  {{ if .Vars.ubtu22stig_231010 }}
 command:
   disks_encrypted:
     title: UBTU-22-231010 | Ubuntu 22.04 LTS must implement cryptographic mechanisms to prevent unauthorized disclosure and modification of all information that requires protection at rest.

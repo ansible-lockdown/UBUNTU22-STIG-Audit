@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654180 }}
+  {{ if .Vars.ubtu22stig_654180 }}
 command:
   setxattr_module_cnf:
     title: UBTU-22-654180 | Ubuntu 22.04 LTS must generate audit records for any use of the setxattr, fsetxattr, lsetxattr, removexattr, fremovexattr, and lremovexattr system calls. | Config

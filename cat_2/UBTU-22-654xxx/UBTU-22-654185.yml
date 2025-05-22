@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654185 }}
+  {{ if .Vars.ubtu22stig_654185 }}
 command:
   unlink_module_cnf:
     title: UBTU-22-654185 | Ubuntu 22.04 LTS must generate audit records for any successful/unsuccessful use of unlink, unlinkat, rename, renameat, and rmdir system calls. | Config

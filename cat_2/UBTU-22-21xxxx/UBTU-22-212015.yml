@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_212015 }}
+  {{ if .Vars.ubtu22stig_212015 }}
 file:
   grub_audit_enabled:
     title: UBTU-22-212015 | Ubuntu 22.04 LTS must initiate session audits at system startup.

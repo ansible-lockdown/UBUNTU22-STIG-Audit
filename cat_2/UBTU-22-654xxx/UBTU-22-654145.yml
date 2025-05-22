@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654145 }}
+  {{ if .Vars.ubtu22stig_654145 }}
 command:
   etc_passwd_module_cnf:
     title: UBTU-22-654145 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. | Config

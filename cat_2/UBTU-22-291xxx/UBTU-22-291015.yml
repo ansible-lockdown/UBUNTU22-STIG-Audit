@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_291015 }}
+  {{ if .Vars.ubtu22stig_291015 }}
 command:
   wireless_disabled:
     title: UBTU-22-291015 | Ubuntu 22.04 LTS must disable all wireless network adapters.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_215015 }}
+  {{ if .Vars.ubtu22stig_215015 }}
 package:
   chrony_installed:
     title: UBTU-22-215015 | Ubuntu 22.04 LTS must have the "chrony" package installed.

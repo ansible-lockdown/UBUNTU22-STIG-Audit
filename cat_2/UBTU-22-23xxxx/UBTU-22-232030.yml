@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232030 }}
+  {{ if .Vars.ubtu22stig_232030 }}
 file:
   var_log_syslog_perms:
     title: UBTU-22-232030 | Ubuntu 22.04 LTS must configure "/var/log/syslog" file with mode "640" or less permissive.

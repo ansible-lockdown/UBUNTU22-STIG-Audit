@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_214015 }}
+  {{ if .Vars.ubtu22stig_214015 }}
 command:
   apt_remove_settings:
     title: UBTU-22-214015 | Ubuntu 22.04 LTS must be configured so that the Advance Package Tool (APT) removes all software components after updated versions have been installed.

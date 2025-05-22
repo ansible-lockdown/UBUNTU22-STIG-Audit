@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.ubtu_22_215035 }}
+{{ if .Vars.ubtu22stig_215035 }}
 package:
   telnet_absent:
     title: UBTU-22-215035 | Ubuntu 22.04 LTS must not have the "telnet" package installed.

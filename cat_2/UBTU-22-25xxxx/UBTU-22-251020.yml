@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_251020 }}
+  {{ if .Vars.ubtu22stig_251020 }}
 service:
   ufw_enabled:
     title: UBTU-22-251020 | Ubuntu 22.04 LTS must have an application firewall enabled.

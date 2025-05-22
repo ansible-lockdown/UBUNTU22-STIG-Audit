@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_251010 }}
+  {{ if .Vars.ubtu22stig_251010 }}
 package:
   ufw_pkg:
     title: UBTU-22-251010 | Ubuntu 22.04 LTS must have an application firewall installed in order to control remote access methods.

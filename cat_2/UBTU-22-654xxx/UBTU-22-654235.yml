@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654235 }}
+  {{ if .Vars.ubtu22stig_654235 }}
 command:
   sudo.log_module_cnf:
     title: UBTU-22-654235 | Ubuntu 22.04 LTS must generate audit records for privileged activities, nonlocal maintenance, diagnostic sessions and other system-level access. | Config

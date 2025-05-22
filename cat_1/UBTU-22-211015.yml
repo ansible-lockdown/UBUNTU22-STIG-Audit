@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.ubtu_22_211015 }}
+{{ if .Vars.ubtu22stig_211015 }}
 service:
   ctrl-alt-del_disabled:
     title: UBTU-22-211015 | Ubuntu 22.04 LTS must disable the x86 Ctrl-Alt-Delete key sequence. | service

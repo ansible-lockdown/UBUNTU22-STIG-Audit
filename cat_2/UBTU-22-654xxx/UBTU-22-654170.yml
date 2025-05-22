@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654170 }}
+  {{ if .Vars.ubtu22stig_654170 }}
 command:
   delete_module_cnf:
     title: UBTU-22-654170 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the delete_module system call. | Config

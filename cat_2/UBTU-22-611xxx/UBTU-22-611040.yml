@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_611040 }}
+  {{ if .Vars.ubtu22stig_611040 }}
 file:
   passwd_difok:
     title: UBTU-22-611040 | Ubuntu 22.04 LTS must require the change of at least eight characters when passwords are changed.

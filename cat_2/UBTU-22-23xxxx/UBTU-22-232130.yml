@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232130 }}
+  {{ if .Vars.ubtu22stig_232130 }}
 file:
   var_log_syslog_owner:
     title: UBTU-22-232130 | Ubuntu 22.04 LTS must configure "/var/log/syslog" file to be owned by "syslog".

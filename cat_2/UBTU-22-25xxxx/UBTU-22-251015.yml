@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_251015 }}
+  {{ if .Vars.ubtu22stig_251015 }}
 service:
   ufw_service:
     title: UBTU-22-251015 | Ubuntu 22.04 LTS must enable and run the Uncomplicated Firewall (ufw).

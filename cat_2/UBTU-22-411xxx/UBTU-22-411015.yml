@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_411015 }}
+  {{ if .Vars.ubtu22stig_411015 }}
 command:
   unique_userID:
     title: UBTU-22-411015 | Ubuntu 22.04 LTS must uniquely identify interactive users.

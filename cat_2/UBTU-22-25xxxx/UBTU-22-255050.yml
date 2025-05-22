@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_255050 }}
+  {{ if .Vars.ubtu22stig_255050 }}
 file:
   sshd_ciphers_conf:
     title: UBTU-22-255050 | Ubuntu 22.04 LTS SSH daemon must prevent remote hosts from connecting to the proxy display. | conf

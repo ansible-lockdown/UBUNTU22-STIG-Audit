@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654040 }}
+  {{ if .Vars.ubtu22stig_654040 }}
 command:
   crontab_module_cnf:
     title: UBTU-22-654040 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the crontab command. | Config

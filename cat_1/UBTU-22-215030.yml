@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.ubtu_22_215030 }}
+{{ if .Vars.ubtu22stig_215030 }}
 package:
   rsh-server_absent:
     title: UBTU-22-215030 | Ubuntu 22.04 LTS must not have the "rsh-server" package installed.

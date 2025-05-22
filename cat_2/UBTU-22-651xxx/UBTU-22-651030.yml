@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_651030 }}
+  {{ if .Vars.ubtu22stig_651030 }}
 command:
   audit_bin_crypto:
     title: UBTU-22-651030 | Ubuntu 22.04 LTS must use cryptographic mechanisms to protect the integrity of audit tools.

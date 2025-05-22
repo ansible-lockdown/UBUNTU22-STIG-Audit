@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654035 }}
+  {{ if .Vars.ubtu22stig_654035 }}
 command:
   chsh_module_cnf:
     title: UBTU-22-654035 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chsh command. | Config

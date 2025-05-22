@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_411035 }}
+  {{ if .Vars.ubtu22stig_411035 }}
 file:
   user_inactive:
     title: UBTU-22-411035 | Ubuntu 22.04 LTS must disable account identifiers (individuals, groups, roles, and devices) after 35 days of inactivity.

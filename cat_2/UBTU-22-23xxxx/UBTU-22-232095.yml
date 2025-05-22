@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232095 }}
+  {{ if .Vars.ubtu22stig_232095 }}
 file:
   journald_files_group_owned_conf:
     title: UBTU-22-232095 | Ubuntu 22.04 LTS must configure the files used by the system journal to be group-owned by "systemd-journal".

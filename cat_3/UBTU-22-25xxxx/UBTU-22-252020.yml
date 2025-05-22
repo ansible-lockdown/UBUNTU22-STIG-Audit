@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_252020 }}
+  {{ if .Vars.ubtu22stig_252020 }}
 command:
   timezone:
     title: UBTU-22-252020 | Ubuntu 22.04 LTS must record time stamps for audit records that can be mapped to Coordinated Universal Time (UTC).

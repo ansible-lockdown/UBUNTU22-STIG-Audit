@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232110 }}
+  {{ if .Vars.ubtu22stig_232110 }}
 command:
   audit_bin_owner:
     title: UBTU-22-232100 | Ubuntu 22.04 LTS must configure audit tools to be owned by "root".

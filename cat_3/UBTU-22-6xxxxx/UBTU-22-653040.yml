@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_653040 }}
+  {{ if .Vars.ubtu22stig_653040 }}
 file:
   audit_space_left:
     title: UBTU-22-653040 | Ubuntu 22.04 LTS must immediately notify the system administrator (SA) and information system security officer (ISSO) when the audit record storage volume reaches 25 percent remaining of the allocated capacity.

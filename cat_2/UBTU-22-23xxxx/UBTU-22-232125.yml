@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232125 }}
+  {{ if .Vars.ubtu22stig_232125 }}
 file:
   var_log_dir_group:
     title: UBTU-22-232125 | Ubuntu 22.04 LTS must configure the "/var/log" directory to be group-owned by "syslog".

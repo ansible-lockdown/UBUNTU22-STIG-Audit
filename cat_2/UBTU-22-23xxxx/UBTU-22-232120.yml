@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232120 }}
+  {{ if .Vars.ubtu22stig_232120 }}
 file:
   var_log_dir_owner:
     title: UBTU-22-232120 | Ubuntu 22.04 LTS must configure the "/var/log" directory to be owned by "root".

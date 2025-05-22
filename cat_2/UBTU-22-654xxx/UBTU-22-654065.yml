@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654065 }}
+  {{ if .Vars.ubtu22stig_654065 }}
 command:
   mount_module_cnf:
     title: UBTU-22-654065 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the mount command. | Config

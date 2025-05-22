@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_411040 }}
+  {{ if .Vars.ubtu22stig_411040 }}
 command:
   Temp_accts:
     title: UBTU-22-411040 | Ubuntu 22.04 LTS must automatically expire temporary accounts within 72 hours. | Manual

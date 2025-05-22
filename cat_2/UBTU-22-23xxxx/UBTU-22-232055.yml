@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232055 }}
+  {{ if .Vars.ubtu22stig_232055 }}
 command:
   system_cmd_files_group:
     title: UBTU-22-232055 | Ubuntu 22.04 LTS must have system commands group-owned by "root" or a system account.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232070 }}
+  {{ if .Vars.ubtu22stig_232070 }}
 command:
   library_files_owner:
     title: UBTU-22-232070 | Ubuntu 22.04 LTS library files must be owned by "root".

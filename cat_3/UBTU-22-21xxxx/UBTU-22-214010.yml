@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_214010 }}
+  {{ if .Vars.ubtu22stig_214010 }}
 command:
   auth_apt:
     title: UBTU-22-214010 | Ubuntu 22.04 LTS must be configured so that the Advance Package Tool (APT) prevents the installation of patches, service packs, device drivers, or operating system components without verification they have been digitally signed using a certificate that is recognized and approved by the organization.

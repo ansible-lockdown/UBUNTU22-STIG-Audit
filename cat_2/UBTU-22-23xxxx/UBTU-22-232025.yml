@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232025 }}
+  {{ if .Vars.ubtu22stig_232025 }}
 file:
   var_log_dir_perms:
     title: UBTU-22-232025 | Ubuntu 22.04 LTS must configure the "/var/log" directory to have mode "755" or less permissive.

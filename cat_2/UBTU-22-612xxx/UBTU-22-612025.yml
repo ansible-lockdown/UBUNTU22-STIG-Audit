@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_612025 }}
+  {{ if .Vars.ubtu22stig_612025 }}
 command:
   ocsp_on_pki_required:
     title: UBTU-22-612025 | Ubuntu 22.04 LTS must electronically verify personal identity verification (PIV) credentials.

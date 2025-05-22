@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_651015 }}
+  {{ if .Vars.ubtu22stig_651015 }}
     {{ if .Vars.ubtu22stig_allow_aide_check }}
 command:
   aide_check:

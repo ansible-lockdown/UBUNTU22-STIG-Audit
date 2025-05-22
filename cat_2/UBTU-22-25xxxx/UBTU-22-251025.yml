@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_251025 }}
+  {{ if .Vars.ubtu22stig_251025 }}
 command:
   ufw_int_limited:
     title: UBTU-22-251025 | Ubuntu 22.04 LTS must configure the Uncomplicated Firewall (ufw) to rate-limit impacted network interfaces. | Manual

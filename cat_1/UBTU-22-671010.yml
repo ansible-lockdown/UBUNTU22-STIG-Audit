@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat1 }}
-  {{ if .Vars.ubtu_22_671010 }}
+  {{ if .Vars.ubtu22stig_671010 }}
 file:
   fips_enabled:
     title: UBTU-22-671010 | Ubuntu 22.04 LTS must implement NIST FIPS-validated cryptography to protect classified information

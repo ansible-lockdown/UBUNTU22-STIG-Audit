@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.ubtu_22_653035 }}
+{{ if .Vars.ubtu22stig_653035 }}
 command:
   audit_disk_space_adequate_manual:
     title: UBTU-22-653035 | Ubuntu 22.04 LTS must allocate audit record storage capacity to store at least one weeks' worth of audit records, when audit records are not immediately sent to a central audit record storage facility. | Manual

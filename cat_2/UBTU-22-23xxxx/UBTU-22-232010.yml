@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232010 }}
+  {{ if .Vars.ubtu22stig_232010 }}
 command:
   sys_cmd_dirs_perms:
     title: UBTU-22-232010 | Ubuntu 22.04 LTS must have directories that contain system commands set to a mode of "755" or less permissive.

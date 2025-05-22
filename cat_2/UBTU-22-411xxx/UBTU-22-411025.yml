@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_411025 }}
+  {{ if .Vars.ubtu22stig_411025 }}
 file:
   PASS_MIN_DAYS:
     title: UBTU-22-411025 | Ubuntu 22.04 LTS must enforce 24 hours/one day as the minimum password lifetime. Passwords for new users must have a 24 hours/one day minimum password lifetime restriction.

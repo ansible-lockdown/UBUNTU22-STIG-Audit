@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232080 }}
+  {{ if .Vars.ubtu22stig_232080 }}
 file:
   journald_dirs_owned_conf:
     title: UBTU-22-232080 | Ubuntu 22.04 LTS must configure the directories used by the system journal to be owned by "root".

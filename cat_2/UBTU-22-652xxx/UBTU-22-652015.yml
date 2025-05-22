@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_652015 }}
+  {{ if .Vars.ubtu22stig_652015 }}
 command:
   rsyslog_remote_access_logged:
     title: UBTU-22-652015 | Ubuntu 22.04 LTS must monitor remote access methods.

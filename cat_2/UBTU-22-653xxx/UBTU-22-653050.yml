@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_653050 }}
+  {{ if .Vars.ubtu22stig_653050 }}
 command:
   audit_logs_owner:
     title: UBTU-22-653050 | Ubuntu 22.04 LTS must be configured to permit only authorized users ownership of the audit log files.

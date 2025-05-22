@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232090 }}
+  {{ if .Vars.ubtu22stig_232090 }}
 file:
   journald_files_owned_conf:
     title: UBTU-22-232090 | Ubuntu 22.04 LTS must configure the files used by the system journal to be owned by "root".

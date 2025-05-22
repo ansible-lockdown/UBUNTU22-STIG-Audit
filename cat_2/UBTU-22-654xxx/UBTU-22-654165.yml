@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654165 }}
+  {{ if .Vars.ubtu22stig_654165 }}
 command:
   creat_module_cnf:
     title: UBTU-22-654165 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the creat, open, openat, open_by_handle_at, truncate, and ftruncate system calls. | Config

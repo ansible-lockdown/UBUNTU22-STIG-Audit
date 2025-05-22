@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232026 }}
+  {{ if .Vars.ubtu22stig_232026 }}
 command:
   var_log_file_perms:
     title: UBTU-22-232026 | Ubuntu 22.04 LTS must generate error messages that provide information necessary for corrective actions without revealing information that could be exploited by adversaries.

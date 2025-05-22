@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_631010 }}
+  {{ if .Vars.ubtu22stig_631010 }}
 command:
   dod_certs:
     title: UBTU-22-631010 | Ubuntu 22.04 LTS must use DOD PKI-established certificate authorities for verification of the establishment of protected sessions.

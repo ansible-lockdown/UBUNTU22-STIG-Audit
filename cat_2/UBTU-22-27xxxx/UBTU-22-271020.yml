@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_271020 }}
+  {{ if .Vars.ubtu22stig_271020 }}
 command:
   gsettings_lock_enabled:
     title: UBTU-22-271020 | Ubuntu 22.04 LTS must retain a user's session lock until that user reestablishes access using established identification and authentication procedures.

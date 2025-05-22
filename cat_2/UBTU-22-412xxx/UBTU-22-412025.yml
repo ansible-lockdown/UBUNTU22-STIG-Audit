@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_412025 }}
+  {{ if .Vars.ubtu22stig_412025 }}
 package:
   vlock:
     title: UBTU-22-412025 | Ubuntu 22.04 LTS must allow users to directly initiate a session lock for all connection types.

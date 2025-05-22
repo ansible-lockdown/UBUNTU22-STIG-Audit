@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_653030 }}
+  {{ if .Vars.ubtu22stig_653030 }}
 file:
   auditd_disk_full:
     title: UBTU-22-653030 | Ubuntu 22.04 LTS must shut down by default upon audit failure.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654045 }}
+  {{ if .Vars.ubtu22stig_654045 }}
 command:
   fdisk_module_cnf:
     title: UBTU-22-654045 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the fdisk command. | Config

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat1 }}
-  {{ if .Vars.ubtu_22_271030 }}
+  {{ if .Vars.ubtu22stig_271030 }}
 command:
   dconf_logout:
     title: UBTU-22-271030 | Ubuntu 22.04 LTS must disable the x86 Ctrl-Alt-Delete key sequence if a graphical user interface is installed.

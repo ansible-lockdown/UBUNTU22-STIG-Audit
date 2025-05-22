@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_611015 }}
+  {{ if .Vars.ubtu22stig_611015 }}
 file:
   passwd_lowercase:
     title: UBTU-22-611015 | Ubuntu 22.04 LTS must enforce password complexity by requiring at least one lowercase character be used.

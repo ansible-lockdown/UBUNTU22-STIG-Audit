@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_653070 }}
+  {{ if .Vars.ubtu22stig_653070 }}
 command:
   auditd_conf_files_owner:
     title: UBTU-22-653070 | Ubuntu 22.04 LTS must permit only authorized accounts to own the audit configuration files.

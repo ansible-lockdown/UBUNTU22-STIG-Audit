@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_213015 }}
+  {{ if .Vars.ubtu22stig_213015 }}
 service:
   kdump_disable:
     title: UBTU-22-213015 | Ubuntu 22.04 LTS must disable kernel core dumps so that it can fail to a secure state if system initialization fails, shutdown fails or aborts fail.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_612015 }}
+  {{ if .Vars.ubtu22stig_612015 }}
 package:
   opensc-pkcs11:
     title: UBTU-22-612015 | Ubuntu 22.04 LTS must accept personal identity verification (PIV) credentials.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_652010 }}
+  {{ if .Vars.ubtu22stig_652010 }}
 package:
   rsyslog_installed:
     title: UBTU-22-652010 | Ubuntu 22.04 LTS must be configured to preserve log records from failure events.

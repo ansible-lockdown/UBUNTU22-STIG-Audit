@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_611070}}
+  {{ if .Vars.ubtu22stig_611070}}
 file:
   login_defs_encryption:
     title: UBTU-22-611070 | Ubuntu 22.04 LTS must store only encrypted representations of passwords.

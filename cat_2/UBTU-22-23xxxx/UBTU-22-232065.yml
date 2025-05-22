@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232065 }}
+  {{ if .Vars.ubtu22stig_232065 }}
 command:
   library_dirs_owner:
     title: UBTU-22-232065 | Ubuntu 22.04 LTS library directories must be group-owned by "root".

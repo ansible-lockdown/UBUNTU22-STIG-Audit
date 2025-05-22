@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_411010 }}
+  {{ if .Vars.ubtu22stig_411010 }}
 command:
   root_acct_locked:
     title: UBTU-22-411010 | Ubuntu 22.04 LTS must prevent direct login into the root account.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_412015 }}
+  {{ if .Vars.ubtu22stig_412015 }}
 file:
   pam_login_lastlog:
     title: UBTU-22-412015 | Ubuntu 22.04 LTS must display the date and time of the last successful account logon upon logon.

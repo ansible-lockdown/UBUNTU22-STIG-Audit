@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_611030 }}
+  {{ if .Vars.ubtu22stig_611030 }}
 file:
   passwd_dictcheck:
     title: UBTU-22-611030 | Ubuntu 22.04 LTS must prevent the use of dictionary words for passwords.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_653020 }}
+  {{ if .Vars.ubtu22stig_653020 }}
 package:
   audispd_installed:
     title: UBTU-22-653020 | Ubuntu 22.04 LTS audit event multiplexor must be configured to offload audit logs onto a different system from the system being audited.

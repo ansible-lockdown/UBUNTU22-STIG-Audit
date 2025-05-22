@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654230 }}
+  {{ if .Vars.ubtu22stig_654230 }}
 command:
   execve_module_cnf:
     title: UBTU-22-654230 | Ubuntu 22.04 LTS must prevent all software from executing at higher privilege levels than users executing the software and the audit system must be configured to audit the execution of privileged functions. | Config

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_291010 }}
+  {{ if .Vars.ubtu22stig_291010 }}
 command:
   usb-storage_blacklist:
     title: UBTU-22-291010 | Ubuntu 22.04 LTS must disable automatic mounting of Universal Serial Bus (USB) mass storage driver.

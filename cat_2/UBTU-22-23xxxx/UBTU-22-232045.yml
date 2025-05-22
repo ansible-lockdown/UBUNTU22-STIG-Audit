@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232045 }}
+  {{ if .Vars.ubtu22stig_232045 }}
 command:
   system_cmd_dirs_group:
     title: UBTU-22-232045 | Ubuntu 22.04 LTS must have directories that contain system commands group-owned by "root".

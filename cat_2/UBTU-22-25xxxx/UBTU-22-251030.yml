@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_251030 }}
+  {{ if .Vars.ubtu22stig_251030 }}
 command:
   ufw_proto_svcs:
     title: UBTU-22-251030 | Ubuntu 22.04 LTS must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments. | Manual

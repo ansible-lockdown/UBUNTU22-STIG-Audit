@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_271025 }}
+  {{ if .Vars.ubtu22stig_271025 }}
 command:
   gsettings_lock_inactivity:
     title: UBTU-22-271025 | Ubuntu 22.04 LTS must initiate a graphical session lock after 15 minutes of inactivity.

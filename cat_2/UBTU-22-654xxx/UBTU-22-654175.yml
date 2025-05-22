@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654175 }}
+  {{ if .Vars.ubtu22stig_654175 }}
 command:
   init_module_cnf:
     title: UBTU-22-654175 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the init_module system call. | Config

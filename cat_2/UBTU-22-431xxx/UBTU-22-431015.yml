@@ -1,5 +1,5 @@
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_431015 }}
+  {{ if .Vars.ubtu22stig_431015 }}
 service:
   apparmor:
     title: UBTU-22-431015 | Ubuntu 22.04 LTS must be configured to use AppArmor.

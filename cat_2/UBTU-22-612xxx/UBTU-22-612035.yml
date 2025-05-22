@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_612035 }}
+  {{ if .Vars.ubtu22stig_612035 }}
 command:
   crl_pki_required:
     title: UBTU-22-612035 | Ubuntu 22.04 LTS for PKI-based authentication, must implement a local cache of revocation data in case of the inability to access revocation information via the network.

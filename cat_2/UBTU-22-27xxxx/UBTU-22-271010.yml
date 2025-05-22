@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_271010 }}
+  {{ if .Vars.ubtu22stig_271010 }}
 file:
   banner_enable_dconf_defaults
     title: UBTU-22-271010 | Ubuntu 22.04 LTS must enable the graphical user logon banner to display the Standard Mandatory DOD Notice and Consent Banner before granting local access to the system via a graphical user logon.

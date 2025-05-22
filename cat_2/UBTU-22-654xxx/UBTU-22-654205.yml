@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654205 }}
+  {{ if .Vars.ubtu22stig_654205 }}
 command:
   utmp_module_cnf:
     title: UBTU-22-654205 | Ubuntu 22.04 LTS must generate audit records for the /var/log/utmp file. | Config

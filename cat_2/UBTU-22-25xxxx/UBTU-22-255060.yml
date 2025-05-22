@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_255060 }}
+  {{ if .Vars.ubtu22stig_255060 }}
 file:
   sshd_kex_conf:
     title: UBTU-22-255060 | Ubuntu 22.04 LTS SSH server must be configured to use only FIPS-validated key exchange algorithms. | conf

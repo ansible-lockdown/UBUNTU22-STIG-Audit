@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_653010 }}
+  {{ if .Vars.ubtu22stig_653010 }}
 package:
   auditd_installed:
     title: UBTU-22-653010 | Ubuntu 22.04 LTS must have the "auditd" package installed.

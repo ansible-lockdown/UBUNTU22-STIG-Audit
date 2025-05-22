@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654055 }}
+  {{ if .Vars.ubtu22stig_654055 }}
 command:
   kmod_module_cnf:
     title: UBTU-22-654055 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the kmod command. | Config

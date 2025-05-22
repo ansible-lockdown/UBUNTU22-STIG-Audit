@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654225 }}
+  {{ if .Vars.ubtu22stig_654225 }}
 command:
   sudoers.d_module_cnf:
     title: UBTU-22-654225 | Ubuntu 22.04 LTS must generate audit records when successful/unsuccessful attempts to modify the /etc/sudoers.d.d directory occur. | Config

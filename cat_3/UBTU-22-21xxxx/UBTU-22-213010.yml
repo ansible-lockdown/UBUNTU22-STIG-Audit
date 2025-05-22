@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_213010 }}
+  {{ if .Vars.ubtu22stig_213010 }}
 kernel-param:
   kernel.dmesg_restrict:
     title: UBTU-22-213010 | Ubuntu 22.04 LTS must restrict access to the kernel message buffer.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_611045 }}
+  {{ if .Vars.ubtu22stig_611045 }}
 file:
   passwd_enforce:
     title: UBTU-22-611045 | Ubuntu 22.04 LTS must be configured so that when passwords are changed or new passwords are established, pwquality must be used.

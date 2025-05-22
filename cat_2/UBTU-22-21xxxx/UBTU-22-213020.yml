@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_213020 }}
+  {{ if .Vars.ubtu22stig_213020 }}
 kernel-param:
   kernel.randomize_va_space:
     title: UBTU-22-213020 | Ubuntu 22.04 LTS must implement address space layout randomization to protect its memory from unauthorized code execution.

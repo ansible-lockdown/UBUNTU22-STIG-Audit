@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654195 }}
+  {{ if .Vars.ubtu22stig_654195 }}
 command:
   btmp_module_cnf:
     title: UBTU-22-654195 | Ubuntu 22.04 LTS must generate audit records for the /var/log/btmp file. | Config

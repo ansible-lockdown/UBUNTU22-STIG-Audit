@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_631015 }}
+  {{ if .Vars.ubtu22stig_631015 }}
 command:
   sssd_offline_cred_cache:
     title: UBTU-22-631015 | Ubuntu 22.04 LTS must be configured such that Pluggable Authentication Module (PAM) prohibits the use of cached authentications after one day.

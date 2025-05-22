@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654210 }}
+  {{ if .Vars.ubtu22stig_654210 }}
 command:
   faillog_module_cnf:
     title: UBTU-22-654210 | Ubuntu 22.04 LTS must generate audit records for the use and modification of faillog file. | Config

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654125 }}
+  {{ if .Vars.ubtu22stig_654125 }}
 command:
   usermod_module_cnf:
     title: UBTU-22-654125 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the usermod command. | Config

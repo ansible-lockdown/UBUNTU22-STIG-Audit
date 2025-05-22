@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_412030 }}
+  {{ if .Vars.ubtu22stig_412030 }}
 command:
   TMOUT_setting:
     title: UBTU-22-412030 | Ubuntu 22.04 LTS must automatically exit interactive command shell user sessions after 15 minutes of inactivity.

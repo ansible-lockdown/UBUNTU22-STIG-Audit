@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_611055 }}
+  {{ if .Vars.ubtu22stig_611055 }}
 file:
   common-password-sha:
     title: UBTU-22-611045 | Ubuntu 22.04 LTS must store only encrypted representations of passwords.

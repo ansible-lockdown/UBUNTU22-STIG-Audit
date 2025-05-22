@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_215020 }}
+  {{ if .Vars.ubtu22stig_215020 }}
 package:
   timesyncd_not_installed:
     title: UBTU-22-215020 | Ubuntu 22.04 LTS must not have the "systemd-timesyncd" package installed.

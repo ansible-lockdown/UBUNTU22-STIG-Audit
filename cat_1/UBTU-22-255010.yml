@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.ubtu_22_255010 }}
+{{ if .Vars.ubtu22stig_255010 }}
 package:
   ssh_present:
     title: UBTU-22-255010 | Ubuntu 22.04 LTS must have SSH installed.

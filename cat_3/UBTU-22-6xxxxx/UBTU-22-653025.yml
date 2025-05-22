@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_653020 }}
+  {{ if .Vars.ubtu22stig_653020 }}
 file:
   audit_mail_acct:
     title: UBTU-22-653020 | Ubuntu 22.04 LTS must alert the information system security officer (ISSO) and system administrator (SA) in the event of an audit processing failure.

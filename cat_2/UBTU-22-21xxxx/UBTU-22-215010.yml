@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_215010 }}
+  {{ if .Vars.ubtu22stig_215010 }}
 package:
   pam_pwquality_pkg:
     title: UBTU-22-215010 | Ubuntu 22.04 LTS must have the "libpam-pwquality" package installed.

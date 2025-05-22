@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232015 }}
+  {{ if .Vars.ubtu22stig_232015 }}
 command:
   sys_cmd_file_perms:
     title: UBTU-22-232015 | Ubuntu 22.04 LTS must have system commands set to a mode of "755" or less permissive.

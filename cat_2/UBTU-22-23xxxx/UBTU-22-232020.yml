@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_232020 }}
+  {{ if .Vars.ubtu22stig_232020 }}
 command:
   library_file_perms:
     title: UBTU-22-232020 | Ubuntu 22.04 LTS library files must have mode "755" or less permissive.

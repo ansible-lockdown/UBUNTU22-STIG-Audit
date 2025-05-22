@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654010 }}
+  {{ if .Vars.ubtu22stig_654010 }}
 command:
   aa_parser_module_cnf:
     title: UBTU-22-654010 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the apparmor_parser command. | Config

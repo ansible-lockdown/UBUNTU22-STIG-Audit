@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.ubtu_22_212010 }}
+{{ if .Vars.ubtu22stig_212010 }}
 file:
   grub_superuser:
     title: UBTU-22-212010 | Ubuntu 22.04 LTS, when booted, must require authentication upon booting into single-user and maintenance modes.

@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_412020 }}
+  {{ if .Vars.ubtu22stig_412020 }}
 command:
   maxlogins_security:
     title: UBTU-22-412020 | Ubuntu 22.04 LTS must limit the number of concurrent sessions to ten for all accounts and/or account types.

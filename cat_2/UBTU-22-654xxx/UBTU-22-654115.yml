@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654115 }}
+  {{ if .Vars.ubtu22stig_654115 }}
 command:
   umount_module_cnf:
     title: UBTU-22-654115 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the umount command. | Config

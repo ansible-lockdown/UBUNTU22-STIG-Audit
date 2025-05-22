@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat3 }}
-  {{ if .Vars.ubtu_22_651035 }}
+  {{ if .Vars.ubtu22stig_651035 }}
 command:
   crontab_offload_audit_logs:
     title: UBTU-22-651035 | Ubuntu 22.04 LTS must have a crontab script running weekly to offload audit events of standalone systems.

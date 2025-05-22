@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654090 }}
+  {{ if .Vars.ubtu22stig_654090 }}
 command:
   ssh-agent_module_cnf:
     title: UBTU-22-654090 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the ssh-agent command. | Config

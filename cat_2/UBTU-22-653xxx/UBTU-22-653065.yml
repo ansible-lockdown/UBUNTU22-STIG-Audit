@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_653065 }}
+  {{ if .Vars.ubtu22stig_653065 }}
 command:
   auditd_conf_files_perms:
     title: UBTU-22-653065 | Ubuntu 22.04 LTS must be configured so that audit configuration files are not write-accessible by unauthorized users.

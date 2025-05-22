@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_654200 }}
+  {{ if .Vars.ubtu22stig_654200 }}
 command:
   wtmp_module_cnf:
     title: UBTU-22-654200 | Ubuntu 22.04 LTS must generate audit records for the /var/log/wtmp file. | Config

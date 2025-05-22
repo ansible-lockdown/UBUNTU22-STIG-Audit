@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_612030 }}
+  {{ if .Vars.ubtu22stig_612030 }}
 command:
   ca_pki_required:
     title: UBTU-22-612030 | Ubuntu 22.04 LTS, for PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor.

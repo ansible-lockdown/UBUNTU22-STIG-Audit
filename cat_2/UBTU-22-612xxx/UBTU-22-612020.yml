@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_612020 }}
+  {{ if .Vars.ubtu22stig_612020 }}
 command:
   ssh_pubkeyauth_live:
     title: UBTU-22-612020 | Ubuntu 22.04 LTS must implement smart card logins for multifactor authentication for local and network access to privileged and nonprivileged accounts.

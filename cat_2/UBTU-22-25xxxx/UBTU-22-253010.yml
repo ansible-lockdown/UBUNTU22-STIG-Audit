@@ -1,7 +1,7 @@
 ---
 
 {{ if .Vars.ubtu22stig_cat2 }}
-  {{ if .Vars.ubtu_22_253010 }}
+  {{ if .Vars.ubtu22stig_253010 }}
 kernel-param:
   net.ipv4.tcp_syncookies:
     title: UBTU-22-253010 | Ubuntu 22.04 LTS must be configured to use TCP syncookies.
