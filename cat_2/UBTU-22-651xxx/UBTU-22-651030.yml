@@ -18,12 +18,12 @@ command:
     meta:
       Cat: 2
       CCI:
-      - CCI-00496
+      - CCI-001496
       Group_Title:
       - SRG-OS-000278-GPOS-00108
       NIST800-53R4:
       - AU-9
-      Rule_ID: SV-260586r991567_rule
+      Rule_ID: SV-260586r1069107_rule
       STIG_ID: UBTU-22-651030
       Vul_ID: V-260586
   {{ end }}

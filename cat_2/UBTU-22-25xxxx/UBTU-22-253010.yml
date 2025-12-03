@@ -12,7 +12,7 @@ kernel-param:
       CCI: CCI-002824
       Group_Title: SRG-OS-000142-GPOS-00071
       NIST800-53R4: SC-5
-      Rule_ID: SV-260522r958528_rule
+      Rule_ID: SV-260522r1069097_rule
       STIG_ID: UBTU-22-253010
       Vul_ID: V-260522
 command:
@@ -28,7 +28,7 @@ command:
       CCI: CCI-002824
       Group_Title: SRG-OS-000142-GPOS-00071
       NIST800-53R4: SC-5
-      Rule_ID: SV-260522r958528_rule
+      Rule_ID: SV-260522r1069097_rule
       STIG_ID: UBTU-22-253010
       Vul_ID: V-260522
   {{ end }}

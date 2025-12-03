@@ -15,7 +15,7 @@ file:
       CCI: CCI-001464
       Group_Title: SRG-OS-000254-GPOS-00095
       NIST800-53R4: AU-14
-      Rule_ID: SV-260471r991555_rule
+      Rule_ID: SV-260471r1134800_rule
       STIG_ID: UBTU-22-212015
       Vul_ID: V-260471
   default_grub_audit:
@@ -30,7 +30,7 @@ file:
       CCI: CCI-001464
       Group_Title: SRG-OS-000254-GPOS-00095
       NIST800-53R4: AU-14
-      Rule_ID: SV-260471r991555_rule
+      Rule_ID: SV-260471r1134800_rule
       STIG_ID: UBTU-22-212015
       Vul_ID: V-260471
   {{ end }}

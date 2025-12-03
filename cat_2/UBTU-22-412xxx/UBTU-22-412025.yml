@@ -15,7 +15,7 @@ package:
       Group_Title:
       - SRG-OS-000030-GPOS-00011
       NIST800-53R4: AC-11
-      Rule_ID: SV-260553r986283_rule
+      Rule_ID: SV-260553r1015010_rule
       STIG_ID: UBTU-22-412025
       Vul_ID: V-260553
   {{ end }}

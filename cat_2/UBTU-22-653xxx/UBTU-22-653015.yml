@@ -57,7 +57,7 @@ service:
       - AU-6
       - AU-7
       - AU-12
-      Rule_ID: SV-260591r986297_rule
+      Rule_ID: SV-260591r1015023_rule
       STIG_ID: UBTU-22-653015
       Vul_ID: V-260591
   {{ end }}

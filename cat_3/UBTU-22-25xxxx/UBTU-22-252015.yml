@@ -14,10 +14,10 @@ command:
     - '/^makestep 1 1/'
     meta:
       Cat: 3
-      CCI: CCI-000000
+      CCI: CCI-002046
       Group_Title: SRG-OS-000356-GPOS-00144
-      NIST800-53R4: NA
-      Rule_ID: SV-260520r986274_rule
+      NIST800-53R4: Au-8
+      Rule_ID: SV-260520r1044776_rule
       STIG_ID: UBTU-22-252015
       Vul_ID: V-260520
   {{ end }}

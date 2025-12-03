@@ -11,11 +11,11 @@ file:
     - '/^dcredit\s*=\s*-1$/'
     meta:
       Cat: 2
-      CCI: NA
+      CCI: CCI-000194
       Group_Title:
       - SRG-OS-000071-GPOS-00039
-      NIST800-53R4: NA
-      Rule_ID: SV-260562r986287_rule
+      NIST800-53R4: IA-5
+      Rule_ID: SV-260562r1015014_rule
       STIG_ID: UBTU-22-611020
       Vul_ID: V-260562
   {{ end }}
