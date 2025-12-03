@@ -6,7 +6,7 @@ command:
   system_cmd_files_group:
     title: UBTU-22-232055 | Ubuntu 22.04 LTS must have system commands group-owned by "root" or a system account.
     exec: |
-      SYS_CMD_FILE_GROUP=$(find /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin ! \( -group "root" -o -group "shadow" -o -group "_ssh" \) -type f -printf '.' | wc -c); \
+      SYS_CMD_FILE_GROUP=$(find /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin ! \( -group "root" -o -group "shadow" -o -group "_ssh" -o -group "_crontab" -o -group "mail" -o -group "postdrop" \) -type f -printf '.' | wc -c); \
       if [ "$SYS_CMD_FILE_GROUP" -eq 0 ]; \
       then echo "OK - No files or Directories found"; \
       else echo "FAIL - Files found"; \

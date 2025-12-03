@@ -3,7 +3,7 @@
 {{ if .Vars.ubtu22stig_cat2 }}
   {{ if .Vars.ubtu22stig_432010 }}
 command:
-  sudo_nopasswd:
+  sudo_reauth:
     title: UBTU-22-432010 | Ubuntu 22.04 LTS must require users to reauthenticate for privilege escalation or when changing roles.
     exec: grep -Ei '!authenticate' /etc/sudoers /etc/sudoers.d/*
     exit-status:

@@ -8,7 +8,7 @@ file:
     path: /etc/login.defs
     exists: true
     contents:
-    - '/^ENCRYPT_METHOD {{ .Vars.ubtu22stig_passwd_hash_algo }}/'
+    - '/^ENCRYPT_METHOD {{ .Vars.ubtu22stig_passwd_hash_algo | upper }}/'
     meta:
       Cat: 2
       CCI: CCI-000803

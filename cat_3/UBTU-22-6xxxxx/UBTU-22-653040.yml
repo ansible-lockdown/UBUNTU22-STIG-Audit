@@ -8,7 +8,7 @@ file:
     path: /etc/audit/auditd.conf
     exists: true
     contents:
-    - '/^space_left\s*=\s*(2[5-9],[3-6][0-9])%/'
+    - '/^space_left\s*=\s*(2[5-9]|[3-6][0-9])%/'
     - '/(?i)^space_left_action\s*=\s*email/'
     meta:
       Cat: 3

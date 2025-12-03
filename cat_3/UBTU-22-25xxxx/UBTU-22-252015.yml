@@ -11,7 +11,7 @@ command:
       - 0
       - 1
     stdout:
-    - '/^makestep 1 1/'
+    - '/.*:makestep 1 -1/'
     meta:
       Cat: 3
       CCI: CCI-002046

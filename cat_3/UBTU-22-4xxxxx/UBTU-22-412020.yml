@@ -10,8 +10,9 @@ command:
       or:
       - 0
       - 1
+      - 2
     stdout:
-    - '/^\* hard maxlogins (10|[1-9])/'
+    - '/.*:\* hard maxlogins (10|[1-9])/'
     meta:
       Cat: 3
       CCI: CCI-000054
