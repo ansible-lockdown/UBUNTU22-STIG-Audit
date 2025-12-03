@@ -1,0 +1,25 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_654224 }}
+command:
+  sudoers_ALL_priv:
+    title: UBTU-22-654224 | The operating system must restrict privilege elevation to authorized personnel.
+    exec: grep -iwR 'ALL' /etc/sudoers /etc/sudoers.d/ | grep -v '#'
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/(.*:|)ALL ALL=(ALL) ALL/'
+    - '!/(.*:|)ALL ALL=(ALL:ALL) ALL/'
+    meta:
+      Cat: 2
+      CCI: CCI-002038
+      Group_Title: SRG-OS-000396-GPOS-00176
+      NIST800-53R4: IA-11
+      Rule_ID: SV-274861r1101704_rule
+      STIG_ID: UBTU-22-654224
+      Vul_ID: V-274861
+  {{ end }}
+{{ end }}

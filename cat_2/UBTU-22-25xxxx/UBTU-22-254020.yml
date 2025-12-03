@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_254020 }}
+file:
+  sssd_pam_conf:
+    title: UBTU-22-254020 | Ubuntu 22.04 LTS must ensure SSSD performs certificate path validation, including revocation checking, against a trusted anchor for PKI-based authentication.
+    path: /etc/sssd/sssd.conf
+    exists: true
+    contents:
+    - '/^[sssd]\nservices =.*pam/'
+    - '/^[pam]\npam_cert_auth = True/'
+    - '/^certificate_verification =.*ca_cert/'
+    meta:
+      Cat: 2
+      CCI: CCI-000185
+      Group_Title: SRG-OS-000396-GPOS-00176
+      NIST800-53R4: IA-5
+      Rule_ID: SV-274867r1107270_rule
+      STIG_ID: UBTU-22-254020
+      Vul_ID: V-274867
+  {{ end }}
+{{ end }}

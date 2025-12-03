@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.ubtu22stig_211000 }}
+file:
+  supported_OS:
+    title: UBTU-22-211000 | Ubuntu 22.04 LTS must be a vendor-supported release.
+    path: /etc/lsb-release
+    exists: true
+    contents:
+    - '/^DISTRIB_RELEASE=22.04/'
+    - '/^DISTRIB_DESCRIPTION="Ubuntu 22.04.\d LTS"/'
+    meta:
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      NIST800-53R4: CM-6
+      Rule_ID: SV-278951r1135403_rule
+      STIG_ID: UBTU-22-211010
+      Vul_ID: SV-278951
+{{ end }}
