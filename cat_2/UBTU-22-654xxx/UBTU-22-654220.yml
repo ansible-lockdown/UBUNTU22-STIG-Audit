@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654220 }}
 command:
   sudoers_module_cnf:
-    title: UBTU-22-654220 | Ubuntu 22.04 LTS must generate audit records when successful/unsuccessful attempts to modify the /etc/sudoers file occur. | Config
+    title: UBTU-22-654220 | Ubuntu 22.04 LTS must generate audit records when successful/unsuccessful attempts to modify the /etc/sudoers file occur.
     exec: grep sudoers /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -21,7 +21,7 @@ command:
       STIG_ID: UBTU-22-654220
       Vul_ID: V-260646
   sudoers_module_live:
-    title: UBTU-22-654220 | Ubuntu 22.04 LTS must generate audit records when successful/unsuccessful attempts to modify the /etc/sudoers file occur. | Live
+    title: UBTU-22-654220 | Ubuntu 22.04 LTS must generate audit records when successful/unsuccessful attempts to modify the /etc/sudoers file occur.
     exec: auditctl -l | grep sudoers
     exit-status: 0
     stdout:

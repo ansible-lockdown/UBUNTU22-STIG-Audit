@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654190 }}
 command:
   journal_module_cnf:
-    title: UBTU-22-654190 | Ubuntu 22.04 LTS must generate audit records for all events that affect the systemd journal files. | Config
+    title: UBTU-22-654190 | Ubuntu 22.04 LTS must generate audit records for all events that affect the systemd journal files.
     exec: grep journal /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -21,7 +21,7 @@ command:
       STIG_ID: UBTU-22-654190
       Vul_ID: V-260640
   journal_module_live:
-    title: UBTU-22-654190 | Ubuntu 22.04 LTS must generate audit records for all events that affect the systemd journal files. | Live
+    title: UBTU-22-654190 | Ubuntu 22.04 LTS must generate audit records for all events that affect the systemd journal files.
     exec: auditctl -l | grep journal
     exit-status: 0
     stdout:

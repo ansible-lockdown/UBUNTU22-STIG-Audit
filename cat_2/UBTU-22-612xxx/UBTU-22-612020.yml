@@ -27,7 +27,7 @@ command:
       Vul_ID: V-260575
 file:
   ssh_pubkeyauth:
-    title: UBTU-22-612020 | Ubuntu 22.04 LTS must be configured so that when passwords are changed or new passwords are established, pwquality must be used.
+    title: UBTU-22-612020 | Ubuntu 22.04 LTS must implement smart card logins for multifactor authentication for local and network access to privileged and nonprivileged accounts.
     path: /etc/ssh/sshd_config
     exists: true
     contents:

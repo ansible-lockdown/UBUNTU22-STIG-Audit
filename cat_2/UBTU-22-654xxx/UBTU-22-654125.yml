@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654125 }}
 command:
   usermod_module_cnf:
-    title: UBTU-22-654125 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the usermod command. | Config
+    title: UBTU-22-654125 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the usermod command.
     exec: grep usermod /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654125
       Vul_ID: V-260627
   usermod_module_live:
-    title: UBTU-22-654125 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the usermod command. | Live
+    title: UBTU-22-654125 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the usermod command.
     exec: auditctl -l | grep usermod
     exit-status: 0
     stdout:

@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654025 }}
 command:
   chcon_module_cnf:
-    title: UBTU-22-654025 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chcon command. | Config
+    title: UBTU-22-654025 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chcon command.
     exec: grep chcon /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654025
       Vul_ID: V-260607
   chcon_module_live:
-    title: UBTU-22-654025 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chcon command. | Live
+    title: UBTU-22-654025 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chcon command.
     exec: auditctl -l | grep chcon
     exit-status: 0
     stdout:

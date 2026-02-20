@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_255060 }}
 file:
   sshd_kex_conf:
-    title: UBTU-22-255060 | Ubuntu 22.04 LTS SSH server must be configured to use only FIPS-validated key exchange algorithms. | conf
+    title: UBTU-22-255060 | Ubuntu 22.04 LTS SSH server must be configured to use only FIPS-validated key exchange algorithms.
     path: /etc/ssh/sshd_config
     exists: true
     contents:
@@ -22,7 +22,7 @@ file:
       Vul_ID: V-260533
 command:
   sshd_kex_running:
-    title: UBTU-22-255060 | Ubuntu 22.04 LTS SSH server must be configured to use only FIPS-validated key exchange algorithms. | running
+    title: UBTU-22-255060 | Ubuntu 22.04 LTS SSH server must be configured to use only FIPS-validated key exchange algorithms.
     exec: sshd -T | grep -i KexAlgorithms
     exit-status: 0
     stdout:

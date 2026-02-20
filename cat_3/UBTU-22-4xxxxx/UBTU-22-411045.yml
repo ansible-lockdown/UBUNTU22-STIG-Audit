@@ -4,11 +4,11 @@
   {{ if .Vars.ubtu22stig_411045 }}
 file:
   pam_auth_faillock:
-    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made. |pam-common-auth
+    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made.
     path: /etc/pam.d/common-auth
     exists: true
     contents:
-    - '/^auth\s+[default=die]\s+pam_faillock.so\s+authfail/'
+    - '/^auth\s+\[default=die\]\s+pam_faillock.so\s+authfail/'
     - '/^auth\s+sufficient\s+pam_faillock.so\s+authsucc/'
     meta:
       Cat: 3
@@ -23,8 +23,8 @@ file:
       STIG_ID: UBTU-22-411045
       Vul_ID: V-260549
   pam_acct_faillock:
-    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made. | pam-common-acct
-    path: /etc/pam.d/common-acct
+    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made.
+    path: /etc/pam.d/common-account
     exists: true
     contents:
     - '/^account required\s+pam_faillock.so/'
@@ -41,7 +41,7 @@ file:
       STIG_ID: UBTU-22-411045
       Vul_ID: V-260549
   security_faillock:
-    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made. | faillock
+    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made.
     path: /etc/security/faillock.conf
     exists: true
     contents:

@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_432011 }}
 command:
   sudo_nopasswd:
-    title: UBTU-22-432011 | The operating system must require users to provide a password for privilege escalation.
+    title: UBTU-22-432011 | Ubuntu 22.04 LTS must require users to provide a password for privilege escalation.
     exec: grep -Ei 'nopasswd' /etc/sudoers /etc/sudoers.d/*
     exit-status:
       or:
@@ -17,7 +17,7 @@ command:
       CCI: CCI-002038
       Group_Title: SRG-OS-000396-GPOS-00176
       NIST800-53R4: IA-11
-      Rule_ID: SV-274860r1107272_rule
+      Rule_ID: SV-274860r1155210_rule
       STIG_ID: UBTU-22-432011
       Vul_ID: V-274860
   {{ end }}

@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654200 }}
 command:
   wtmp_module_cnf:
-    title: UBTU-22-654200 | Ubuntu 22.04 LTS must generate audit records for the /var/log/wtmp file. | Config
+    title: UBTU-22-654200 | Ubuntu 22.04 LTS must generate audit records for the /var/log/wtmp file.
     exec: grep wtmp /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -21,7 +21,7 @@ command:
       STIG_ID: UBTU-22-654200
       Vul_ID: V-260642
   wtmp_module_live:
-    title: UBTU-22-654200 | Ubuntu 22.04 LTS must generate audit records for the /var/log/wtmp file. | Live
+    title: UBTU-22-654200 | Ubuntu 22.04 LTS must generate audit records for the /var/log/wtmp file.
     exec: auditctl -l | grep wtmp
     exit-status: 0
     stdout:

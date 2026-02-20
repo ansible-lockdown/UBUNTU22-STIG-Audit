@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_651025 }}
 command:
   aide_cron_sha:
-    title: UBTU-22-651025 | Ubuntu 22.04 LTS must use a file integrity tool to verify correct operation of all security functions.
+    title: UBTU-22-651025 | Ubuntu 22.04 LTS must be configured so that the script that runs each 30 days or less to check file integrity is the default.
     exec: sha1sum /etc/cron.daily/aide /etc/cron.monthly/aide 2>/dev/null
     exit-status:
       or:

@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654135 }}
 command:
   gshadow_module_cnf:
-    title: UBTU-22-654135 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow. | Config
+    title: UBTU-22-654135 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow.
     exec: grep gshadow /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -34,7 +34,7 @@ command:
       STIG_ID: UBTU-22-654135
       Vul_ID: V-260629
   gshadow_module_live:
-    title: UBTU-22-654135 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow. | Live
+    title: UBTU-22-654135 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow.
     exec: auditctl -l | grep gshadow
     exit-status: 0
     stdout:

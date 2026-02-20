@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654195 }}
 command:
   btmp_module_cnf:
-    title: UBTU-22-654195 | Ubuntu 22.04 LTS must generate audit records for the /var/log/btmp file. | Config
+    title: UBTU-22-654195 | Ubuntu 22.04 LTS must generate audit records for the /var/log/btmp file.
     exec: grep btmp /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -21,7 +21,7 @@ command:
       STIG_ID: UBTU-22-654195
       Vul_ID: V-260641
   btmp_module_live:
-    title: UBTU-22-654195 | Ubuntu 22.04 LTS must generate audit records for the /var/log/btmp file. | Live
+    title: UBTU-22-654195 | Ubuntu 22.04 LTS must generate audit records for the /var/log/btmp file.
     exec: auditctl -l | grep btmp
     exit-status: 0
     stdout:

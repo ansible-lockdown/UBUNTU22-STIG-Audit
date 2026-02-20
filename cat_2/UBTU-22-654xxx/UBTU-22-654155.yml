@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654155 }}
 command:
   chmod_module_cnf:
-    title: UBTU-22-654155 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chmod, fchmod, and fchmodat system calls. | Config
+    title: UBTU-22-654155 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chmod, fchmod, and fchmodat system calls.
     exec: grep chmod /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -23,7 +23,7 @@ command:
       STIG_ID: UBTU-22-654155
       Vul_ID: V-260633
   chmod_module_live:
-    title: UBTU-22-654155 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chmod, fchmod, and fchmodat system calls. | Live
+    title: UBTU-22-654155 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chmod, fchmod, and fchmodat system calls.
     exec: auditctl -l | grep chmod
     exit-status: 0
     stdout:

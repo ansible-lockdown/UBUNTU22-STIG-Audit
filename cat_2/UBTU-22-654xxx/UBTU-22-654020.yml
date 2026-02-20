@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654020 }}
 command:
   chage_module_cnf:
-    title: UBTU-22-654020 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chage command. | Config
+    title: UBTU-22-654020 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chage command.
     exec: grep chage /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654020
       Vul_ID: V-260606
   chage_module_live:
-    title: UBTU-22-654020 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chage command. | Live
+    title: UBTU-22-654020 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chage command.
     exec: auditctl -l | grep chage
     exit-status: 0
     stdout:

@@ -15,7 +15,7 @@ file:
       Group_Title: SRG-OS-000396-GPOS-00176
       NIST800-53R4: IA-5
       Rule_ID: SV-274865r1101731_rule
-      STIG_ID: UBTU-22-254020
+      STIG_ID: UBTU-22-254030
       Vul_ID: V-274865
   {{ end }}
 {{ end }}

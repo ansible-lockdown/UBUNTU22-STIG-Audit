@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654130 }}
 command:
   group_module_cnf:
-    title: UBTU-22-654130 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/group. | Config
+    title: UBTU-22-654130 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/group.
     exec: grep group /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -34,7 +34,7 @@ command:
       STIG_ID: UBTU-22-654130
       Vul_ID: V-260628
   group_module_live:
-    title: UBTU-22-654130 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/group. | Live
+    title: UBTU-22-654130 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/group.
     exec: auditctl -l | grep group
     exit-status: 0
     stdout:

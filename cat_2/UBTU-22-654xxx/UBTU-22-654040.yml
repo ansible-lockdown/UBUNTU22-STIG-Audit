@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654040 }}
 command:
   crontab_module_cnf:
-    title: UBTU-22-654040 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the crontab command. | Config
+    title: UBTU-22-654040 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the crontab command.
     exec: grep crontab /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654040
       Vul_ID: V-260610
   crontab_module_live:
-    title: UBTU-22-654040 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the crontab command. | Live
+    title: UBTU-22-654040 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the crontab command.
     exec: auditctl -l | grep crontab
     exit-status: 0
     stdout:

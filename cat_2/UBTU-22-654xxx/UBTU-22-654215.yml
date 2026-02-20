@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654215 }}
 command:
   lastlog_module_cnf:
-    title: UBTU-22-654215 | Ubuntu 22.04 LTS must generate audit records for the use and modification of lastlog file. | Config
+    title: UBTU-22-654215 | Ubuntu 22.04 LTS must generate audit records for the use and modification of the lastlog file.
     exec: grep lastlog /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -23,7 +23,7 @@ command:
       STIG_ID: UBTU-22-654215
       Vul_ID: V-260645
   lastlog_module_live:
-    title: UBTU-22-654215 | Ubuntu 22.04 LTS must generate audit records for the use and modification of lastlog file. | Live
+    title: UBTU-22-654215 | Ubuntu 22.04 LTS must generate audit records for the use and modification of the lastlog file.
     exec: auditctl -l | grep lastlog
     exit-status: 0
     stdout:

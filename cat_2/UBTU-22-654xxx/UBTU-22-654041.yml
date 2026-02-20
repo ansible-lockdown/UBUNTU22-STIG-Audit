@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654041 }}
 command:
   cronjobs_module_cnf:
-    title: UBTU-22-654041 | Ubuntu 22.04 LTS must audit any script or executable called by cron as root or by any privileged user. | Config
+    title: UBTU-22-654041 | Ubuntu 22.04 LTS must audit any script or executable called by cron as root or by any privileged user.
     exec: grep cronjobs /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -16,11 +16,11 @@ command:
       - CCI-000172
       Group_Title: SRG-OS-000396-GPOS-00176
       NIST800-53R4: AU-12
-      Rule_ID: SV-260610r958446_rule
+      Rule_ID: SV-274862r1155211_rule
       STIG_ID: UBTU-22-654041
-      Vul_ID: V-260610
+      Vul_ID: V-274862
   cronjobs_module_live:
-    title: UBTU-22-654041 | Ubuntu 22.04 LTS must audit any script or executable called by cron as root or by any privileged user. | Live
+    title: UBTU-22-654041 | Ubuntu 22.04 LTS must audit any script or executable called by cron as root or by any privileged user.
     exec: auditctl -l | grep cronjobs
     exit-status: 0
     stdout:
@@ -32,8 +32,8 @@ command:
       - CCI-000172
       Group_Title: SRG-OS-000396-GPOS-00176
       NIST800-53R4: AU-12
-      Rule_ID: SV-260610r958446_rule
+      Rule_ID: SV-274862r1155211_rule
       STIG_ID: UBTU-22-654041
-      Vul_ID: V-260610
+      Vul_ID: V-274862
   {{ end }}
 {{ end }}

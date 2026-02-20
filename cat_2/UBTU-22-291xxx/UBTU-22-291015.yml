@@ -22,6 +22,6 @@ command:
       - SC-8
       Rule_ID: SV-260541r958358_rule
       STIG_ID: UBTU-22-291015
-      Vul_ID: V-258041
+      Vul_ID: V-260541
   {{ end }}
 {{ end }}

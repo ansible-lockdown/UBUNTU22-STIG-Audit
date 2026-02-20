@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654015 }}
 command:
   chacl_module_cnf:
-    title: UBTU-22-654015 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chacl command. | Config
+    title: UBTU-22-654015 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chacl command.
     exec: grep chacl /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654015
       Vul_ID: V-260605
   chacl_module_live:
-    title: UBTU-22-654015 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chacl command. | Live
+    title: UBTU-22-654015 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chacl command.
     exec: auditctl -l | grep chacl
     exit-status: 0
     stdout:
