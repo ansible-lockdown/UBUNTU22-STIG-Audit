@@ -20,9 +20,11 @@ file:
 command:
   pro_subscription:
     title: UBTU-22-211000 | Ubuntu 22.04 LTS must be a vendor-supported release. | Pro Subscription
-    command: ubuntu-advantage status --format yaml
+    exec: ubuntu-advantage status --format yaml
+    exit-status: [0, 1]
     stdout:
     - '/^attached: true/'
+    - '/^attached: false/'
     meta:
       Cat: 1
       CCI: CCI-000366
