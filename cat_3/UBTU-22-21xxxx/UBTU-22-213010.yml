@@ -12,12 +12,12 @@ kernel-param:
       CCI: CCI-001090
       Group_Title: SRG-OS-000138-GPOS-00069
       NIST800-53R4: SC-4
-      Rule_ID: SV-260472r1117267_rule
+      Rule_ID: SV-260472r1137695_rule
       STIG_ID: UBTU-22-213010
       Vul_ID: V-260472
 command:
   dmesg_restrict_1:
-    title: UBTU-22-213010 | Ubuntu 22.04 LTS must restrict access to the kernel message buffer. | conf
+    title: UBTU-22-213010 | Ubuntu 22.04 LTS must restrict access to the kernel message buffer.
     exec: 'grep "kernel\.dmesg_restrict" /etc/sysctl.conf /etc/sysctl.d/*'
     exit-status: 0
     stdout:
@@ -28,7 +28,7 @@ command:
       CCI: CCI-001090
       Group_Title: SRG-OS-000138-GPOS-00069
       NIST800-53R4: SC-4
-      Rule_ID: SV-260472r1117267_rule
+      Rule_ID: SV-260472r1137695_rule
       STIG_ID: UBTU-22-213010
       Vul_ID: V-260472
   {{ end }}

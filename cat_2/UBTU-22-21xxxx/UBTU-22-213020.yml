@@ -17,7 +17,7 @@ kernel-param:
       Vul_ID: V-260474
 command:
   aslr_enabled_2:
-    title: UBTU-22-213020 | Ubuntu 22.04 LTS must implement address space layout randomization to protect its memory from unauthorized code execution. | conf
+    title: UBTU-22-213020 | Ubuntu 22.04 LTS must implement address space layout randomization to protect its memory from unauthorized code execution.
     exit-status: 0
     exec: 'grep "kernel\.randomize_va_space" /etc/sysctl.conf /etc/sysctl.d/*'
     stdout:

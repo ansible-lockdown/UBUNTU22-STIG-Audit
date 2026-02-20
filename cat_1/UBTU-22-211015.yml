@@ -3,7 +3,7 @@
 {{ if .Vars.ubtu22stig_211015 }}
 service:
   ctrl-alt-del_disabled:
-    title: UBTU-22-211015 | Ubuntu 22.04 LTS must disable the x86 Ctrl-Alt-Delete key sequence. | service
+    title: UBTU-22-211015 | Ubuntu 22.04 LTS must disable the x86 Ctrl-Alt-Delete key sequence.
     name: ctrl-alt-del.target
     enabled: false
     meta:
@@ -16,7 +16,7 @@ service:
       Vul_ID: V-260469
 file:
   ctrl-alt-del_masked:
-    title: UBTU-22-211015 | Ubuntu 22.04 LTS must disable the x86 Ctrl-Alt-Delete key sequence.| masked
+    title: UBTU-22-211015 | Ubuntu 22.04 LTS must disable the x86 Ctrl-Alt-Delete key sequence.
     path: /etc/systemd/system/ctrl-alt-del.target
     exists: true
     linked-to: /dev/null

@@ -14,7 +14,7 @@ file:
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
       NIST800-53R4: CM-6
-      Rule_ID: SV-278951r1135403_rule
-      STIG_ID: UBTU-22-211010
-      Vul_ID: SV-278951
+      Rule_ID: SV-278951r1155215_rule
+      STIG_ID: UBTU-22-211000
+      Vul_ID: V-278951
 {{ end }}

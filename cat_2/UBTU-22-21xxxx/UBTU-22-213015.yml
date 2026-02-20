@@ -13,7 +13,7 @@ service:
       CCI: CCI-001190
       Group_Title: SRG-OS-000184-GPOS-00078
       NIST800-53R4: SC-24
-      Rule_ID: SV-260473r1044782_rule
+      Rule_ID: SV-260473r1155207_rule
       STIG_ID: UBTU-22-213015
       Vul_ID: V-260473
 file:
@@ -28,7 +28,7 @@ file:
       CCI: CCI-001190
       Group_Title: SRG-OS-000184-GPOS-00078
       NIST800-53R4: SC-24
-      Rule_ID: SV-260473r1044782_rule
+      Rule_ID: SV-260473r1155207_rule
       STIG_ID: UBTU-22-213015
       Vul_ID: V-260471
   {{ end }}

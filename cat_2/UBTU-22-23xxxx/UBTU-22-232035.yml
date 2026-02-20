@@ -14,7 +14,8 @@ command:
       CCI: CCI-001312
       Group_Title: SRG-OS-000205-GPOS-00083
       NIST800-53R4: SI-11
-      Rule_ID: SV-260489r958564_rule
+      Rule_ID: SV-260492r991557_rule
       STIG_ID: UBTU-22-232035
+      Vul_ID: V-260492
   {{ end }}
 {{ end }}
