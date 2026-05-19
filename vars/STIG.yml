@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: '2.6.0'
+benchmark_version: 'v2.7.0'
 benchmark: UBUNTU22-STIG
 
 # turn the categories on/off
@@ -226,7 +226,7 @@ ubtu22stig_653040: true
 # Variables
 
 # Bootloader Settings
-ubtu22stig_bootloader_password_hash: 'grub.pbkdf2.sha512.changethispassword' ## This needs to be changed
+ubtu22stig_bootloader_password_hash: 'grub.pbkdf2.sha512.changethispassword'  # pragma: allowlist secret  # This needs to be changed
 
 ## UID:
 MIN_UID: 1000

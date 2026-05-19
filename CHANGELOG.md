@@ -1,5 +1,17 @@
 # Changelog
 
+## benchmark_v2.7.0 QA (May 2026)
+
+QA cycle fixes (no rule additions or removals):
+
+- vars/STIG.yml: benchmark_version corrected from 2.6.0 to v2.7.0 (aligns with audit branch name and remediation defaults)
+- vars/STIG.yml: bootloader_password_hash comment marker cleaned up (## -> #)
+- README.md: removed RHEL9 template leakage ("STIG RHEL9 based servers" -> "STIG Ubuntu 22.04 based servers")
+- CONTRIBUTING.md: header "MindPoint Group Projects" -> "Ansible-Lockdown Projects" (and DCO body wording)
+- LICENSE: Mindpoint -> MindPoint casing; copyright year 2025 -> 2026
+- run_audit.sh: added Ubuntu detection branch and BENCHMARK_OS fallback for empty OS detection; dropped redundant `grep -w` from VERSION_ID grep (broke on non-GNU greps)
+- Renamed Changelog.md -> CHANGELOG.md (case standardisation)
+
 ## 20th Feb 2026 V2R7 (align to STIG V2R7)
 
 - UBTU-22-254025: Rule removed
