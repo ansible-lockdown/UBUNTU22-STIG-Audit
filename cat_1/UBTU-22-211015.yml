@@ -12,7 +12,7 @@ service:
       Group_Title: SRG-OS-000480-GPOS-00227
       NIST800-53R4: CM-6
       Rule_ID: SV-260469r991589_rule
-      STIG_ID: UBTU-22-211010
+      STIG_ID: UBTU-22-211015
       Vul_ID: V-260469
 file:
   ctrl-alt-del_masked:
@@ -27,6 +27,6 @@ file:
       Group_Title: SRG-OS-000480-GPOS-00227
       NIST800-53R4: CM-6
       Rule_ID: SV-260469r991589_rule
-      STIG_ID: UBTU-22-211010
+      STIG_ID: UBTU-22-211015
       Vul_ID: V-260469
 {{ end }}
