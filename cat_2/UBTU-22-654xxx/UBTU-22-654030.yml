@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654030 }}
 command:
   chfn_module_cnf:
-    title: UBTU-22-654030 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chfn command. | Config
+    title: UBTU-22-654030 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chfn command.
     exec: grep chfn /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654030
       Vul_ID: V-260608
   chfn_module_live:
-    title: UBTU-22-654030 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chfn command. | Live
+    title: UBTU-22-654030 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chfn command.
     exec: auditctl -l | grep chfn
     exit-status: 0
     stdout:

@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654170 }}
 command:
   delete_module_cnf:
-    title: UBTU-22-654170 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the delete_module system call. | Config
+    title: UBTU-22-654170 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the delete_module system call.
     exec: grep delete /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -23,7 +23,7 @@ command:
       STIG_ID: UBTU-22-654170
       Vul_ID: V-260636
   delete_module_live:
-    title: UBTU-22-654170 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the delete_module system call. | Live
+    title: UBTU-22-654170 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the delete_module system call.
     exec: auditctl -l | grep delete
     exit-status: 0
     stdout:

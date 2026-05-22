@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654185 }}
 command:
   unlink_module_cnf:
-    title: UBTU-22-654185 | Ubuntu 22.04 LTS must generate audit records for any successful/unsuccessful use of unlink, unlinkat, rename, renameat, and rmdir system calls. | Config
+    title: UBTU-22-654185 | Ubuntu 22.04 LTS must generate audit records for any successful/unsuccessful use of unlink, unlinkat, rename, renameat, and rmdir system calls.
     exec: grep unlink /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -22,7 +22,7 @@ command:
       STIG_ID: UBTU-22-654185
       Vul_ID: V-260639
   unlink_module_live:
-    title: UBTU-22-654185 | Ubuntu 22.04 LTS must generate audit records for any successful/unsuccessful use of unlink, unlinkat, rename, renameat, and rmdir system calls. | Live
+    title: UBTU-22-654185 | Ubuntu 22.04 LTS must generate audit records for any successful/unsuccessful use of unlink, unlinkat, rename, renameat, and rmdir system calls.
     exec: auditctl -l | grep unlink
     exit-status: 0
     stdout:

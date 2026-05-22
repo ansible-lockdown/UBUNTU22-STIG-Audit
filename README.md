@@ -2,7 +2,7 @@
 
 ## Overview
 
-### Based on STIG Ubuntu Linux 22.04 LTS Benchmark v2.2.0 [Release](https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_CAN_Ubuntu_22-04_LTS_V2R2_STIG.zip)
+### Based on STIG Ubuntu Linux 22.04 LTS Benchmark v2.7.0 [Release](https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_CAN_Ubuntu_22-04_LTS_V2R7_STIG.zip)
 
 Ability to audit a system using a lightweight binary to check the current state.
 
@@ -41,7 +41,7 @@ Which will:
 
 On our [Discord Server](https://www.lockdownenterprise.com/discord) to ask questions, discuss features, or just chat with other Ansible-Lockdown users
 
-Set of configuration files and directories to run the first stages of STIG RHEL9 based servers
+Set of configuration files and directories to run the first stages of STIG Ubuntu 22.04 based servers
 
 This is configured in a directory structure level.
 

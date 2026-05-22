@@ -19,7 +19,7 @@ package:
       - SRG-OS-000107-GPOS-00054
       - SRG-OS-000108-GPOS-00055
       NIST800-53R4: IA-2
-      Rule_ID: SV-260573r986292_rule
+      Rule_ID: SV-260573r1015019_rule
       STIG_ID: UBTU-22-612010
       Vul_ID: V-260573
   {{ end }}

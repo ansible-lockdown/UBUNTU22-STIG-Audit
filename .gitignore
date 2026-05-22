@@ -39,6 +39,10 @@ travis.env
 # Lockdown-specific
 benchparse/
 *xccdf.xml
+*history.md
+*plan.md
+prompt.md
+*.py
 *.retry
 
 # GitHub Action/Workflow files

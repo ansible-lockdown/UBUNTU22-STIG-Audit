@@ -4,15 +4,35 @@
   {{ if .Vars.ubtu22stig_411045 }}
 file:
   pam_auth_faillock:
-    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made. |pam-common-auth
+    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made.
     path: /etc/pam.d/common-auth
     exists: true
     contents:
-    - '/^auth\s+[default=die]\s+pam_faillock.so\s+authfail/'
+    - '/^auth\s+\[default=die\]\s+pam_faillock.so\s+authfail/'
     - '/^auth\s+sufficient\s+pam_faillock.so\s+authsucc/'
     meta:
       Cat: 3
-      CCI: CCI-000044
+      CCI:
+      - CCI-000044
+      - CCI-002238
+      Group_Title:
+      - SRG-OS-000021-GPOS-00005
+      - SRG-OS-000329-GPOS-00128
+      NIST800-53R4: AC-7
+      Rule_ID: SV-260549r958388_rule
+      STIG_ID: UBTU-22-411045
+      Vul_ID: V-260549
+  pam_acct_faillock:
+    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made.
+    path: /etc/pam.d/common-account
+    exists: true
+    contents:
+    - '/^account required\s+pam_faillock.so/'
+    meta:
+      Cat: 3
+      CCI:
+      - CCI-000044
+      - CCI-002238
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128
@@ -21,7 +41,7 @@ file:
       STIG_ID: UBTU-22-411045
       Vul_ID: V-260549
   security_faillock:
-    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made. | faillock
+    title: UBTU-22-411045 | Ubuntu 22.04 LTS must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts have been made.
     path: /etc/security/faillock.conf
     exists: true
     contents:
@@ -32,7 +52,9 @@ file:
     - '/^unlock_time\s*=\s*0/'
     meta:
       Cat: 3
-      CCI: CCI-000044
+      CCI:
+      - CCI-000044
+      - CCI-002238
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128

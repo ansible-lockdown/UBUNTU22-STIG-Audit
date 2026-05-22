@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654145 }}
 command:
   etc_passwd_module_cnf:
-    title: UBTU-22-654145 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. | Config
+    title: UBTU-22-654145 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd.
     exec: grep passwd /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -34,7 +34,7 @@ command:
       STIG_ID: UBTU-22-654145
       Vul_ID: V-260631
   etc_passwd_module_live:
-    title: UBTU-22-654145 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. | Live
+    title: UBTU-22-654145 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd.
     exec: auditctl -l | grep passwd
     exit-status: 0
     stdout:

@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654060 }}
 command:
   modprobe_module_cnf:
-    title: UBTU-22-654060 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the modprobe command. | Config
+    title: UBTU-22-654060 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful attempts to use modprobe command.
     exec: grep modprobe /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -16,11 +16,11 @@ command:
       Group_Title:
       - SRG-OS-000477-GPOS-00222
       NIST800-53R4: AU-12
-      Rule_ID: SV-260614r958446_rule
+      Rule_ID: SV-260614r991586_rule
       STIG_ID: UBTU-22-654060
       Vul_ID: V-260614
   modprobe_module_live:
-    title: UBTU-22-654060 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the modprobe command. | Live
+    title: UBTU-22-654060 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful attempts to use modprobe command.
     exec: auditctl -l | grep modprobe
     exit-status: 0
     stdout:
@@ -32,7 +32,7 @@ command:
       Group_Title:
       - SRG-OS-000477-GPOS-00222
       NIST800-53R4: AU-12
-      Rule_ID: SV-260614r958446_rule
+      Rule_ID: SV-260614r991586_rule
       STIG_ID: UBTU-22-654060
       Vul_ID: V-260614
   {{ end }}

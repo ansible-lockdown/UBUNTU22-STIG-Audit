@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654210 }}
 command:
   faillog_module_cnf:
-    title: UBTU-22-654210 | Ubuntu 22.04 LTS must generate audit records for the use and modification of faillog file. | Config
+    title: UBTU-22-654210 | Ubuntu 22.04 LTS must generate audit records for the use and modification of faillog file.
     exec: grep faillog /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -23,7 +23,7 @@ command:
       STIG_ID: UBTU-22-654210
       Vul_ID: V-260644
   faillog_module_live:
-    title: UBTU-22-654210 | Ubuntu 22.04 LTS must generate audit records for the use and modification of faillog file. | Live
+    title: UBTU-22-654210 | Ubuntu 22.04 LTS must generate audit records for the use and modification of faillog file.
     exec: auditctl -l | grep faillog
     exit-status: 0
     stdout:

@@ -11,11 +11,11 @@ file:
     - '/^password.*pam_unix.so.*{{ .Vars.ubtu22stig_passwd_hash_algo }}/'
     meta:
       Cat: 2
-      CCI: NA
+      CCI: CCI-000196
       Group_Title:
       - SRG-OS-000073-GPOS-00041
-      NIST800-53R4: NA
-      Rule_ID: SV-260569r986291_rule
+      NIST800-53R4: IA-5
+      Rule_ID: SV-260569r1101736_rule
       STIG_ID: UBTU-22-611055
       Vul_ID: V-260569
   {{ end }}

@@ -23,6 +23,6 @@ command:
       - IA-3
       Rule_ID: SV-260540r986276_rule
       STIG_ID: UBTU-22-291010
-      Vul_ID: V-258040
+      Vul_ID: V-260540
   {{ end }}
 {{ end }}

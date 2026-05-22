@@ -10,9 +10,11 @@ package:
     meta:
       Cat: 3
       CCI: CCI-001851
-      Group_Title: SRG-OS-000342-GPOS-00133
+      Group_Title:
+      - SRG-OS-000342-GPOS-00133
+      - SRG-OS-000479-GPOS-00224
       NIST800-53R4: AU-4
-      Rule_ID: SV-260592r958754_rule
+      Rule_ID: SV-260592r1101709_rule
       STIG_ID: UBTU-22-653020
       Vul_ID: V-260592
   {{ end }}

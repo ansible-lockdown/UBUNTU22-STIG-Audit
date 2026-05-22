@@ -11,12 +11,12 @@ command:
       - 0
       - 1
     stdout:
-    - '/^\s*Time zone: Etc\/UTC \(UTC, +0000\)/'
+    - '/^\s+Time zone: Etc\/UTC \(UTC, \+0000\)/'
     meta:
       Cat: 3
       CCI: CCI-001890
       Group_Title: SRG-OS-000359-GPOS-00146
-      NIST800-53R4: NA
+      NIST800-53R4: AU-8
       Rule_ID: SV-260521r958788_rule
       STIG_ID: UBTU-22-252020
       Vul_ID: V-260521

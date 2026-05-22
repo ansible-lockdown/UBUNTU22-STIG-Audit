@@ -11,11 +11,11 @@ file:
     - '/^minlen\s*=\s*(1[5-9]|[2-5][0-9])/'
     meta:
       Cat: 2
-      CCI: NA
+      CCI: CCI-000205
       Group_Title:
       - SRG-OS-000078-GPOS-00046
-      NIST800-53R4: NA
-      Rule_ID: SV-260565r986289_rule
+      NIST800-53R4: IA-5
+      Rule_ID: SV-260565r1015016_rule
       STIG_ID: UBTU-22-611035
       Vul_ID: V-260565
   {{ end }}

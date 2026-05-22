@@ -20,7 +20,7 @@ command:
       Group_Title:
       - SRG-OS-000377-GPOS-00162
       NIST800-53R4: IA-2
-      Rule_ID: SV-260576r958818_rule
+      Rule_ID: SV-260576r1069114_rule
       STIG_ID: UBTU-22-612025
       Vul_ID: V-260576
   {{ end }}

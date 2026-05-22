@@ -6,7 +6,7 @@ command:
   library_files_group:
     title: UBTU-22-232075 | Ubuntu 22.04 LTS library files must be group-owned by "root".
     exec: |
-      LIB_FILE_GROUP=$(find /lib /usr/lib /lib64 ! -group root -type f -printf '.' | wc -c); \
+      LIB_FILE_GROUP=$(find /lib /usr/lib /lib64 /usr/lib64 -name '*.so' ! -group root -type f -exec stat -c "%n" '{}' \; | wc -c); \
       if [ "$LIB_FILE_GROUP" -eq 0 ]; \
       then echo "OK - No files or Directories found"; \
       else echo "FAIL - Files found"; \
@@ -19,7 +19,7 @@ command:
       CCI: CCI-001499
       Group_Title: SRG-OS-000259-GPOS-00100
       NIST800-53R4: CM-5
-      Rule_ID: SV-260500r991560_rule
+      Rule_ID: SV-260500r1107266_rule
       STIG_ID: UBTU-22-232075
       Vul_ID: V-260500
   {{ end }}

@@ -17,10 +17,10 @@ command:
     {{ end }}
     meta:
       Cat: 3
-      CCI: CCI-000000
+      CCI: CCI-001891
       Group_Title: SRG-OS-000355-GPOS-00143
-      NIST800-53R4: NA
-      Rule_ID: SV-260519r986273_rule
+      NIST800-53R4: AU-8
+      Rule_ID: SV-260519r1038944_rule
       STIG_ID: UBTU-22-252010
       Vul_ID: V-260519
   {{ end }}

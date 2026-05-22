@@ -19,14 +19,14 @@
 # April 2024    Updating of OS discovery to work for all supported OSs
 # August 2024   Improve failure capture
 # January 2025  Added Suse OS discovery
-# May 2025        Added formation typos to help and fixed some typos
-
+# May 2025      Added formation typos to help and fixed some typos
+# Sept25        Added Additional max concurrent process option
 # Variables in upper case tend to be able to be adjusted
 # lower case variables are discovered or built from other variables
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG # Benchmark Name aligns to the audit
-BENCHMARK_VER=2.2.0
+BENCHMARK_VER=2.7.0
 BENCHMARK_OS=UBUNTU22
 
 # Goss host Variables
@@ -41,12 +41,13 @@ Help()
   # Display Help
   echo "Script to run the goss audit"
   echo
-  echo "Syntax: $0 [-f|-g|-o|-v|-w|-h]"
+  echo "Syntax: $0 [-f|-g|-m|-o|-v|-w|-h]"
   echo "options:"
   echo "-f     optional - change the format output (options json(default), documentation, rspecish)"
   echo "-g     optional - Add a group that the server should be grouped with (default value = ungrouped)"
+  echo "-m     optional - maximum concurrent processes (number, default 50)"
   echo "-o     optional - file to output audit data"
-  echo "-v     optional - relative path to the vars file to load (default e.g. $AUDIT_CONTENT_LOCATION/RHEL7-$BENCHMARK/vars/$BENCHMARK.yml)"
+  echo "-v     optional - relative path to the vars file to load (default e.g. $AUDIT_CONTENT_LOCATION/{OS}-$BENCHMARK/vars/$BENCHMARK.yml)"
   echo "-w     optional - Sets the system_type to workstation (Default - Server)"
   echo "-h     Print this Help."
   echo
@@ -56,10 +57,11 @@ Help()
 host_system_type=Server
 
 ## option statement
-while getopts f:g:o:v::wh option; do
+while getopts f:g:m:o:v::wh option; do
   case "${option}" in
     f ) FORMAT=${OPTARG} ;;
     g ) GROUP=${OPTARG} ;;
+    m ) MAX=${OPTARG} ;;
     o ) OUTFILE=${OPTARG} ;;
     v ) VARS_PATH=${OPTARG} ;;
     w ) host_system_type=Workstation ;;
@@ -89,6 +91,8 @@ if [ "$(uname -a | grep -c amzn)" -ge 1 ]; then
     os_vendor="AMAZON"
 elif [ "$(grep -Ec "rhel|oracle" /etc/os-release)" != 0 ]; then
   os_vendor="RHEL"
+elif [ "$(grep -Ec 'ubuntu|Ubuntu' /etc/os-release)" != 0 ]; then
+  os_vendor="UBUNTU"
 else
   os_vendor="$(hostnamectl | grep Oper | cut -d : -f2 | awk '{print toupper($1)}')"
   if [ "${os_vendor}" = "OPENSUSE" ]; then
@@ -96,16 +100,31 @@ else
   fi
 fi
 
-os_maj_ver="$(grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d '.' -f1)"
+os_maj_ver="$(grep "^VERSION_ID=" /etc/os-release | awk -F\" '{print $2}' | cut -d '.' -f1)"
+
+if [ -z "$os_vendor" ]; then
+  os_vendor="${BENCHMARK_OS//[0-9]/}"
+  echo "WARNING - OS vendor detection produced empty result; falling back to BENCHMARK_OS vendor=${os_vendor}"
+fi
+if [ -z "$os_maj_ver" ]; then
+  os_maj_ver="${BENCHMARK_OS//[A-Za-z]/}"
+  echo "WARNING - OS version detection produced empty result; falling back to BENCHMARK_OS version=${os_maj_ver}"
+fi
 audit_content_version=$os_vendor$os_maj_ver-$BENCHMARK-Audit
 audit_content_dir=$AUDIT_CONTENT_LOCATION/$audit_content_version
 audit_vars=vars/${BENCHMARK}.yml
 
 # Set variable for format output
-if [ -z "$FORMAT" ]; then
+if [[ -z "$FORMAT" ]]; then
   export format="json"
 else
   export format=$FORMAT
+fi
+
+if [ -z $MAX ]; then
+  export max=50
+else
+  export max="$MAX"
 fi
 
 # Set variable for auto group
@@ -205,7 +224,7 @@ echo "#############"
 echo "Audit Started"
 echo "#############"
 echo
-$AUDIT_BIN -g "$audit_content_dir/$AUDIT_FILE" --vars "$varfile_path"  --vars-inline "$audit_json_vars" v $format_output > "$audit_out"
+$AUDIT_BIN -g "$audit_content_dir/$AUDIT_FILE" --vars "$varfile_path"  --vars-inline "$audit_json_vars" v --max-concurrent "$max" $format_output > "$audit_out"
 
 # create screen output
 if [ "$(grep -c Count: "$audit_out")" -ge 1 ]  || [ "$format" = junit ] || [ "$format" = tap ]; then

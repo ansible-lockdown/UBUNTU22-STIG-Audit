@@ -14,18 +14,20 @@ command:
       CCI:
       - CCI-000765
       - CCI-000766
+      - CCI-000767
+      - CCI-000768
       Group_Title:
       - SRG-OS-000105-GPOS-00052
       - SRG-OS-000106-GPOS-00053
       - SRG-OS-000107-GPOS-00054
       - SRG-OS-000108-GPOS-00055
       NIST800-53R4: IA-2
-      Rule_ID: SV-260575r986293_rule
+      Rule_ID: SV-260575r1044770_rule
       STIG_ID: UBTU-22-612020
       Vul_ID: V-260575
 file:
   ssh_pubkeyauth:
-    title: UBTU-22-612020 | Ubuntu 22.04 LTS must be configured so that when passwords are changed or new passwords are established, pwquality must be used.
+    title: UBTU-22-612020 | Ubuntu 22.04 LTS must implement smart card logins for multifactor authentication for local and network access to privileged and nonprivileged accounts.
     path: /etc/ssh/sshd_config
     exists: true
     contents:
@@ -35,13 +37,15 @@ file:
       CCI:
       - CCI-000765
       - CCI-000766
+      - CCI-000767
+      - CCI-000768
       Group_Title:
       - SRG-OS-000105-GPOS-00052
       - SRG-OS-000106-GPOS-00053
       - SRG-OS-000107-GPOS-00054
       - SRG-OS-000108-GPOS-00055
       NIST800-53R4: IA-2
-      Rule_ID: SV-260575r986293_rule
+      Rule_ID: SV-260575r1044770_rule
       STIG_ID: UBTU-22-612020
       Vul_ID: V-260575
   common-password-pkcs:
@@ -61,7 +65,7 @@ file:
       - SRG-OS-000107-GPOS-00054
       - SRG-OS-000108-GPOS-00055
       NIST800-53R4: IA-2
-      Rule_ID: SV-260575r986293_rule
+      Rule_ID: SV-260575r1044770_rule
       STIG_ID: UBTU-22-611045
       Vul_ID: V-260575
   {{ end }}

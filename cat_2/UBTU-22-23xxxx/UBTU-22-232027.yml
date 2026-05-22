@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_232027 }}
 command:
   journal_file_perms:
-    title: UBTU-22-232027 | Ubuntu 22.04 LTS must generate error messages that provide information necessary for corrective actions without revealing information that could be exploited by adversaries.
+    title: UBTU-22-232027 | Ubuntu 22.04 LTS must generate system journal entries without revealing information that could be exploited by adversaries.
     exec: |
       JOURNAL_FILE_PERM=$(find /run/log/journal /var/log/journal -type d -perm /037 -printf '.' | wc -c); \
       if [ "$JOURNAL_FILE_PERM" -eq 0 ]; \
@@ -19,26 +19,26 @@ command:
       CCI: CCI-001312
       Group_Title: SRG-OS-000205-GPOS-00083
       NIST800-53R4: SI-11
-      Rule_ID: SV-260490r958564_rule
+      Rule_ID: SV-260490r1069105_rule
       STIG_ID: UBTU-22-232027
       Vul_ID: V-260490
 file:
   journal_file_perms_conf:
-    title: UBTU-22-232027 | Ubuntu 22.04 LTS must generate error messages that provide information necessary for corrective actions without revealing information that could be exploited by adversaries.
+    title: UBTU-22-232027 | Ubuntu 22.04 LTS must generate system journal entries without revealing information that could be exploited by adversaries.
     path: /usr/lib/tmpfiles.d/systemd.conf
     exists: true
     contents:
-    - 'z /run/log/journal 2750 root systemd-journal - -'
-    - 'Z /run/log/journal/%m ~2750 root systemd-journal - -'
-    - 'z /var/log/journal 2750 root systemd-journal - -'
-    - 'z /var/log/journal/%m 2750 root systemd-journal - -'
-    - 'z /var/log/journal/%m/system.journal 0750 root systemd-journal - -'
+    - 'z /run/log/journal 2640 root systemd-journal - -'
+    - 'Z /run/log/journal/%m ~2640 root systemd-journal - -'
+    - 'z /var/log/journal 2640 root systemd-journal - -'
+    - 'z /var/log/journal/%m 2640 root systemd-journal - -'
+    - 'z /var/log/journal/%m/system.journal 0640 root systemd-journal - -'
     meta:
       Cat: 2
       CCI: CCI-001312
       Group_Title: SRG-OS-000205-GPOS-00083
       NIST800-53R4: SI-11
-      Rule_ID: SV-260490r1014781_rule
+      Rule_ID: SV-260490r1069105_rule
       STIG_ID: UBTU-22-232027
       Vul_ID: V-260490
   {{ end }}

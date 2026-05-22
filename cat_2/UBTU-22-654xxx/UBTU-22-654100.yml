@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654100 }}
 command:
   su_module_cnf:
-    title: UBTU-22-654100 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the su command. | Config
+    title: UBTU-22-654100 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the su command.
     exec: grep su /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654100
       Vul_ID: V-260622
   su_module_live:
-    title: UBTU-22-654100 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the su command. | Live
+    title: UBTU-22-654100 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the su command.
     exec: auditctl -l | grep su
     exit-status: 0
     stdout:

@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654180 }}
 command:
   setxattr_module_cnf:
-    title: UBTU-22-654180 | Ubuntu 22.04 LTS must generate audit records for any use of the setxattr, fsetxattr, lsetxattr, removexattr, fremovexattr, and lremovexattr system calls. | Config
+    title: UBTU-22-654180 | Ubuntu 22.04 LTS must generate audit records for any use of the setxattr, fsetxattr, lsetxattr, removexattr, fremovexattr, and lremovexattr system calls.
     exec: grep setxattr /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -25,7 +25,7 @@ command:
       STIG_ID: UBTU-22-654180
       Vul_ID: V-260638
   setxattr_module_live:
-    title: UBTU-22-654180 | Ubuntu 22.04 LTS must generate audit records for any use of the setxattr, fsetxattr, lsetxattr, removexattr, fremovexattr, and lremovexattr system calls. | Live
+    title: UBTU-22-654180 | Ubuntu 22.04 LTS must generate audit records for any use of the setxattr, fsetxattr, lsetxattr, removexattr, fremovexattr, and lremovexattr system calls.
     exec: auditctl -l | grep setxattr
     exit-status: 0
     stdout:

@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654175 }}
 command:
   init_module_cnf:
-    title: UBTU-22-654175 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the init_module system call. | Config
+    title: UBTU-22-654175 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the init_module and finit_module system calls.
     exec: grep init /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -23,7 +23,7 @@ command:
       STIG_ID: UBTU-22-654175
       Vul_ID: V-260637
   init_module_live:
-    title: UBTU-22-654175 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the init_module system call. | Live
+    title: UBTU-22-654175 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the init_module and finit_module system calls.
     exec: auditctl -l | grep init
     exit-status: 0
     stdout:

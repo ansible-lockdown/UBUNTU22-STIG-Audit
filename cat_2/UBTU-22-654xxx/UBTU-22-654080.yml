@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654080 }}
 command:
   passwd_module_cnf:
-    title: UBTU-22-654080 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the passwd command. | Config
+    title: UBTU-22-654080 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the passwd command.
     exec: grep passwd /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654080
       Vul_ID: V-260618
   passwd_module_live:
-    title: UBTU-22-654080 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the passwd command. | Live
+    title: UBTU-22-654080 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the passwd command.
     exec: auditctl -l | grep passwd
     exit-status: 0
     stdout:

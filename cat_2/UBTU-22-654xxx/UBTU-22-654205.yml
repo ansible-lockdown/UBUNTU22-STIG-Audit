@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654205 }}
 command:
   utmp_module_cnf:
-    title: UBTU-22-654205 | Ubuntu 22.04 LTS must generate audit records for the /var/log/utmp file. | Config
+    title: UBTU-22-654205 | Ubuntu 22.04 LTS must generate audit records for the /var/run/utmp file.
     exec: grep utmp /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -21,7 +21,7 @@ command:
       STIG_ID: UBTU-22-654205
       Vul_ID: V-260643
   utmp_module_live:
-    title: UBTU-22-654205 | Ubuntu 22.04 LTS must generate audit records for the /var/log/utmp file. | Live
+    title: UBTU-22-654205 | Ubuntu 22.04 LTS must generate audit records for the /var/run/utmp file.
     exec: auditctl -l | grep utmp
     exit-status: 0
     stdout:

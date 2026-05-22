@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_213025 }}
 command:
   NX_setting:
-    title: UBTU-22-213025 | Ubuntu 22.04 LTS must implement nonexecutable data to protect its memory from unauthorized code execution. | check NX setting
+    title: UBTU-22-213025 | Ubuntu 22.04 LTS must implement nonexecutable data to protect its memory from unauthorized code execution.
     exec: dmesg | grep -i "execute disable"
     exit-status:
       or:
@@ -21,7 +21,7 @@ command:
       STIG_ID: UBTU-22-213025
       Vul_ID: V-260475
   NX_cpu_capable:
-    title: UBTU-22-213025 | Ubuntu 22.04 LTS must implement nonexecutable data to protect its memory from unauthorized code execution. | CPU capable
+    title: UBTU-22-213025 | Ubuntu 22.04 LTS must implement nonexecutable data to protect its memory from unauthorized code execution.
     exec: grep flags /proc/cpuinfo | grep -o nx | sort -u
     exit-status:
       or:

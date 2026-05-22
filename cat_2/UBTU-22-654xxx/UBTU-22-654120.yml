@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654120 }}
 command:
   unix_update_module_cnf:
-    title: UBTU-22-654120 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the unix_update command. | Config
+    title: UBTU-22-654120 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the unix_update command.
     exec: grep unix_update /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654120
       Vul_ID: V-260626
   unix_update_module_live:
-    title: UBTU-22-654120 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the unix_update command. | Live
+    title: UBTU-22-654120 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the unix_update command.
     exec: auditctl -l | grep unix_update
     exit-status: 0
     stdout:

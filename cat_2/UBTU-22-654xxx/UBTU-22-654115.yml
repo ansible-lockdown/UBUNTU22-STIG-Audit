@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654115 }}
 command:
   umount_module_cnf:
-    title: UBTU-22-654115 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the umount command. | Config
+    title: UBTU-22-654115 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the umount command.
     exec: grep umount /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654115
       Vul_ID: V-260625
   umount_module_live:
-    title: UBTU-22-654115 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the umount command. | Live
+    title: UBTU-22-654115 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the umount command.
     exec: auditctl -l | grep umount
     exit-status: 0
     stdout:

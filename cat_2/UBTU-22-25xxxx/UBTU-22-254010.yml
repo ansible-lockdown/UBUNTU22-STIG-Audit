@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_254010 }}
+package:
+  sssd_pkg:
+    title: UBTU-22-254010 | Ubuntu 22.04 LTS must have the "SSSD" package installed.
+    name: sssd
+    installed: true
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000765
+      - CCI-000766
+      Group_Title: SRG-OS-000396-GPOS-00176
+      NIST800-53R4: IA-2
+      Rule_ID: SV-274864r1155209_rule
+      STIG_ID: UBTU-22-254010
+      Vul_ID: V-274864
+  {{ end }}
+{{ end }}

@@ -3,9 +3,9 @@
 {{ if .Vars.ubtu22stig_cat2 }}
   {{ if .Vars.ubtu22stig_432010 }}
 command:
-  sudo_nopasswd:
+  sudo_reauth:
     title: UBTU-22-432010 | Ubuntu 22.04 LTS must require users to reauthenticate for privilege escalation or when changing roles.
-    exec: grep -Ei '(nopasswd|!authenticate)' /etc/sudoers /etc/sudoers.d/*
+    exec: grep -Ei '!authenticate' /etc/sudoers /etc/sudoers.d/*
     exit-status:
       or:
       - 0
@@ -14,11 +14,10 @@ command:
     - '!/^.*/'
     meta:
       Cat: 2
-      CCI: NA
-      Group_Title:
-      - SRG-OS-000373-GPOS-00156
-      NIST800-53R4: NA
-      Rule_ID: SV-260558r987879_rule
+      CCI: CCI-002038
+      Group_Title: SRG-OS-000373-GPOS-00156
+      NIST800-53R4: IA-11
+      Rule_ID: SV-260558r1155216_rule
       STIG_ID: UBTU-22-432010
       Vul_ID: V-260558
   {{ end }}

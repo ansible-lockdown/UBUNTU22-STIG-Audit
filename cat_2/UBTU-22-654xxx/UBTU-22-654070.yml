@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654070 }}
 command:
   newgrp_module_cnf:
-    title: UBTU-22-654070 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the newgrp command. | Config
+    title: UBTU-22-654070 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the newgrp command.
     exec: grep newgrp /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654070
       Vul_ID: V-260616
   newgrp_module_live:
-    title: UBTU-22-654070 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the newgrp command. | Live
+    title: UBTU-22-654070 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the newgrp command.
     exec: auditctl -l | grep newgrp
     exit-status: 0
     stdout:

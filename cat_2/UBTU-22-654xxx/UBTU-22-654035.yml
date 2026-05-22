@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654035 }}
 command:
   chsh_module_cnf:
-    title: UBTU-22-654035 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chsh command. | Config
+    title: UBTU-22-654035 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chsh command.
     exec: grep chsh /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -20,7 +20,7 @@ command:
       STIG_ID: UBTU-22-654035
       Vul_ID: V-260609
   chsh_module_live:
-    title: UBTU-22-654035 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chsh command. | Live
+    title: UBTU-22-654035 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the chsh command.
     exec: auditctl -l | grep chsh
     exit-status: 0
     stdout:

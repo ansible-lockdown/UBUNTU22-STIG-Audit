@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654140 }}
 command:
   opasswd_module_cnf:
-    title: UBTU-22-654140 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/opasswd. | Config
+    title: UBTU-22-654140 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/opasswd.
     exec: grep opasswd /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -34,7 +34,7 @@ command:
       STIG_ID: UBTU-22-654140
       Vul_ID: V-260630
   opasswd_module_live:
-    title: UBTU-22-654140 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/opasswd. | Live
+    title: UBTU-22-654140 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/opasswd.
     exec: auditctl -l | grep opasswd
     exit-status: 0
     stdout:

@@ -11,11 +11,11 @@ file:
     - '/^difok\s*=\s*([8-9]|[1-5][0-9])/'
     meta:
       Cat: 2
-      CCI: NA
+      CCI: CCI-000195
       Group_Title:
       - SRG-OS-000072-GPOS-00040
-      NIST800-53R4: NA
-      Rule_ID: SV-260566r986290_rule
+      NIST800-53R4: IA-5
+      Rule_ID: SV-260566r1015017_rule
       STIG_ID: UBTU-22-611040
       Vul_ID: V-260566
   {{ end }}

@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_654150 }}
 command:
   shadow_module_cnf:
-    title: UBTU-22-654150 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow. | Config
+    title: UBTU-22-654150 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow.
     exec: grep shadow /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -34,7 +34,7 @@ command:
       STIG_ID: UBTU-22-654150
       Vul_ID: V-260632
   shadow_module_live:
-    title: UBTU-22-654150 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow. | Live
+    title: UBTU-22-654150 | Ubuntu 22.04 LTS must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow.
     exec: auditctl -l | grep shadow
     exit-status: 0
     stdout:
