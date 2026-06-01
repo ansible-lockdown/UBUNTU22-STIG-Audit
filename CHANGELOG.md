@@ -9,6 +9,9 @@ V2R8 benchmark alignment:
 - run_audit.sh: BENCHMARK_VER 2.7.0 -> 2.8.0
 - README.md: v2.7.0 reference + V2R7 download URL -> v2.8.0
 
+Cleanups:
+- vars/STIG.yml: removed duplicate `ubtu22stig_215040` toggle (rule is HIGH/CAT1 per V2R8 XCCDF; was redundantly listed under both CAT1 and CAT2 in the audit vars file)
+
 Rule_ID metadata sync (7 SV-* revision-suffix drifts in V2R8):
 - cat_2/UBTU-22-23xxxx/UBTU-22-232080.yml: Rule_ID SV-260501r958566_rule -> SV-260501r1184052_rule
 - cat_2/UBTU-22-23xxxx/UBTU-22-232085.yml: Rule_ID SV-260502r958566_rule -> SV-260502r1184054_rule + title typo UBTU-22-232080 -> UBTU-22-232085 fixed
