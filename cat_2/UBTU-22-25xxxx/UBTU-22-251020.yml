@@ -12,7 +12,7 @@ service:
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00232
       NIST800-53R4: AC-17
-      Rule_ID: SV-260516r991593_rule
+      Rule_ID: SV-260516r1184061_rule
       STIG_ID: UBTU-22-251020
       Vul_ID: V-260516
   {{ end }}
