@@ -1,5 +1,23 @@
 # Changelog
 
+## benchmark_v2.8.0 (V2R8 alignment - STIG V2R8, 01 April 2026)
+
+V2R7 -> V2R8 is updates-only (188 rules unchanged; 0 added, 0 removed, 0 severity changes; 7 SV-* revision drifts).
+
+V2R8 benchmark alignment:
+- vars/STIG.yml: benchmark_version v2.7.0 -> v2.8.0
+- run_audit.sh: BENCHMARK_VER 2.7.0 -> 2.8.0
+- README.md: v2.7.0 reference + V2R7 download URL -> v2.8.0
+
+Rule_ID metadata sync (7 SV-* revision-suffix drifts in V2R8):
+- cat_2/UBTU-22-23xxxx/UBTU-22-232080.yml: Rule_ID SV-260501r958566_rule -> SV-260501r1184052_rule
+- cat_2/UBTU-22-23xxxx/UBTU-22-232085.yml: Rule_ID SV-260502r958566_rule -> SV-260502r1184054_rule + title typo UBTU-22-232080 -> UBTU-22-232085 fixed
+- cat_2/UBTU-22-23xxxx/UBTU-22-232090.yml: Rule_ID SV-260503r958566_rule -> SV-260503r1184056_rule
+- cat_2/UBTU-22-23xxxx/UBTU-22-232095.yml: Rule_ID SV-260504r958566_rule -> SV-260504r1184058_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-251020.yml: Rule_ID SV-260516r991593_rule -> SV-260516r1184061_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255020.yml: Rule_ID SV-260525r958390_rule -> SV-260525r1184064_rule (both check_login_banner and sshd_banner blocks)
+- cat_1/UBTU-22-271030.yml: Rule_ID SV-260539r1069103_rule -> SV-260539r1184066_rule
+
 ## benchmark_v2.7.0 QA (May 2026)
 
 QA cycle fixes (no rule additions or removals):
