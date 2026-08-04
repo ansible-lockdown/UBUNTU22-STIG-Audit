@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: 'v2.7.0'
+benchmark_version: 'v2.9.0'
 benchmark: UBUNTU22-STIG
 
 # turn the categories on/off
@@ -28,7 +28,6 @@ ubtu22stig_211015: true
 ubtu22stig_212010: true
 ubtu22stig_215030: true
 ubtu22stig_215035: true
-ubtu22stig_215040: true
 ubtu22stig_255010: true
 ubtu22stig_255015: true
 ubtu22stig_255025: true

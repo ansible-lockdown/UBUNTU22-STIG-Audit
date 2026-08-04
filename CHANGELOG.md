@@ -1,5 +1,55 @@
 # Changelog
 
+## benchmark_v2.9.0 (V2R9 alignment - STIG V2R9, 01 July 2026)
+
+V2R8 -> V2R9 is updates-only (188 rules unchanged; 0 added, 0 removed; 1 severity change; 11 SV-* revision drifts).
+
+V2R9 benchmark alignment:
+- vars/STIG.yml: benchmark_version v2.8.0 -> v2.9.0
+- run_audit.sh: BENCHMARK_VER 2.8.0 -> 2.9.0
+- README.md: v2.8.0 reference + V2R8 download URL -> v2.9.0
+
+Severity change:
+- UBTU-22-215040: HIGH (CAT1) -> MEDIUM (CAT2). Moved goss check cat_1/UBTU-22-215040.yml -> cat_2/UBTU-22-21xxxx/; removed the nfs-common check block (V2R9 finding covers nfs-kernel-server only); toggle moved to the CAT2 section in vars/STIG.yml.
+
+Content updates:
+- UBTU-22-271025: idle-delay check `uint32 900` -> `uint32 600` (V2R9 updates the GNOME idle delay to 10 minutes); title 15 -> 10 minutes.
+- UBTU-22-432010: check already aligned (tests `!authenticate` only; V2R9 removed NOPASSWD from the Check text).
+
+Rule_ID metadata sync (11 SV-* revision drifts in V2R9):
+- cat_2/UBTU-22-21xxxx/UBTU-22-215040.yml: SV-279937r1156364_rule -> SV-279937r1208676_rule
+- cat_1/UBTU-22-255025.yml: SV-260526r991591_rule -> SV-260526r1208678_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255030.yml: SV-260527r986275_rule -> SV-260527r1208681_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255035.yml: SV-260528r970703_rule -> SV-260528r1208803_rule
+- cat_1/UBTU-22-255040.yml: SV-260529r991589_rule -> SV-260529r1208685_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255045.yml: SV-260530r991589_rule -> SV-260530r1208687_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255050.yml: SV-260531r1155212_rule -> SV-260531r1208689_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255060.yml: SV-260533r958408_rule -> SV-260533r1208690_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255065.yml: SV-260534r958510_rule -> SV-260534r1208804_rule
+- cat_2/UBTU-22-27xxxx/UBTU-22-271025.yml: SV-260538r1069119_rule -> SV-260538r1208695_rule
+- cat_2/UBTU-22-432xxx/UBTU-22-432010.yml: SV-260558r1155216_rule -> SV-260558r1208696_rule
+
+## benchmark_v2.8.0 (V2R8 alignment - STIG V2R8, 01 April 2026)
+
+V2R7 -> V2R8 is updates-only (188 rules unchanged; 0 added, 0 removed, 0 severity changes; 7 SV-* revision drifts).
+
+V2R8 benchmark alignment:
+- vars/STIG.yml: benchmark_version v2.7.0 -> v2.8.0
+- run_audit.sh: BENCHMARK_VER 2.7.0 -> 2.8.0
+- README.md: v2.7.0 reference + V2R7 download URL -> v2.8.0
+
+Cleanups:
+- vars/STIG.yml: removed duplicate `ubtu22stig_215040` toggle (rule is HIGH/CAT1 per V2R8 XCCDF; was redundantly listed under both CAT1 and CAT2 in the audit vars file)
+
+Rule_ID metadata sync (7 SV-* revision-suffix drifts in V2R8):
+- cat_2/UBTU-22-23xxxx/UBTU-22-232080.yml: Rule_ID SV-260501r958566_rule -> SV-260501r1184052_rule
+- cat_2/UBTU-22-23xxxx/UBTU-22-232085.yml: Rule_ID SV-260502r958566_rule -> SV-260502r1184054_rule + title typo UBTU-22-232080 -> UBTU-22-232085 fixed
+- cat_2/UBTU-22-23xxxx/UBTU-22-232090.yml: Rule_ID SV-260503r958566_rule -> SV-260503r1184056_rule
+- cat_2/UBTU-22-23xxxx/UBTU-22-232095.yml: Rule_ID SV-260504r958566_rule -> SV-260504r1184058_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-251020.yml: Rule_ID SV-260516r991593_rule -> SV-260516r1184061_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255020.yml: Rule_ID SV-260525r958390_rule -> SV-260525r1184064_rule (both check_login_banner and sshd_banner blocks)
+- cat_1/UBTU-22-271030.yml: Rule_ID SV-260539r1069103_rule -> SV-260539r1184066_rule
+
 ## benchmark_v2.7.0 QA (May 2026)
 
 QA cycle fixes (no rule additions or removals):

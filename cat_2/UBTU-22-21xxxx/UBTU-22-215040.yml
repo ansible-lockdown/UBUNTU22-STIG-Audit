@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_215040 }}
+package:
+  nfs_kernel_server:
+    title: UBTU-22-215040 | Ubuntu 22.04 LTS must not have the nfs-kernel-server package installed. | nfs-kernel-server
+    name: nfs-kernel-server
+    installed: false
+    meta:
+      Cat: 2
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      NIST800-53R4: CM-7
+      Rule_ID: SV-279937r1208676_rule
+      STIG_ID: UBTU-22-215040
+      Vul_ID: V-279937
+  {{ end }}
+{{ end }}

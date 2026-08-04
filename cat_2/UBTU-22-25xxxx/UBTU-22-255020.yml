@@ -25,7 +25,7 @@ file:
       - SRG-OS-000228-GPOS-00088
       NIST800-53R4:
       - AC-8
-      Rule_ID: SV-260525r958390_rule
+      Rule_ID: SV-260525r1184064_rule
       STIG_ID: UBTU-22-255020
       Vul_ID: V-260525
   sshd_banner:
@@ -48,7 +48,7 @@ file:
       - SRG-OS-000228-GPOS-00088
       NIST800-53R4:
       - AC-8
-      Rule_ID: SV-260525r958390_rule
+      Rule_ID: SV-260525r1184064_rule
       STIG_ID: UBTU-22-255020
       Vul_ID: V-260525
   {{ end }}
