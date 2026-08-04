@@ -17,7 +17,7 @@ file:
       - SRG-OS-000125-GPOS-00065
       NIST800-53R4:
       - MA-4
-      Rule_ID: SV-260534r958510_rule
+      Rule_ID: SV-260534r1208804_rule
       STIG_ID: UBTU-22-255065
       Vul_ID: V-260534
 command:
@@ -35,7 +35,7 @@ command:
       - SRG-OS-000125-GPOS-00065
       NIST800-53R4:
       - MA-4
-      Rule_ID: SV-260534r958510_rule
+      Rule_ID: SV-260534r1208804_rule
       STIG_ID: UBTU-22-255065
       Vul_ID: V-260534
   {{ end }}

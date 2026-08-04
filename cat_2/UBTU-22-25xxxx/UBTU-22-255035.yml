@@ -17,7 +17,7 @@ file:
       - SRG-OS-000163-GPOS-00072
       NIST800-53R4:
       - SC-10
-      Rule_ID: SV-260528r970703_rule
+      Rule_ID: SV-260528r1208803_rule
       STIG_ID: UBTU-22-255035
       Vul_ID: V-260528
   {{ end }}
