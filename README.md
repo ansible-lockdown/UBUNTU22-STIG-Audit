@@ -18,7 +18,7 @@ feedback on any differences between OSs please raise an issue
 
 ## Requirements
 
-You must have [goss](https://github.com/goss-org/goss/) available to your host you would like to test.
+You must have [goss](https://github.com/krameff/goss/) available to your host you would like to test.
 
 You must have sudo/root access to the system as some commands require privilege information.
 
