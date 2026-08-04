@@ -1,5 +1,34 @@
 # Changelog
 
+## benchmark_v2.9.0 (V2R9 alignment - STIG V2R9, 01 July 2026)
+
+V2R8 -> V2R9 is updates-only (188 rules unchanged; 0 added, 0 removed; 1 severity change; 11 SV-* revision drifts).
+
+V2R9 benchmark alignment:
+- vars/STIG.yml: benchmark_version v2.8.0 -> v2.9.0
+- run_audit.sh: BENCHMARK_VER 2.8.0 -> 2.9.0
+- README.md: v2.8.0 reference + V2R8 download URL -> v2.9.0
+
+Severity change:
+- UBTU-22-215040: HIGH (CAT1) -> MEDIUM (CAT2). Moved goss check cat_1/UBTU-22-215040.yml -> cat_2/UBTU-22-21xxxx/; removed the nfs-common check block (V2R9 finding covers nfs-kernel-server only); toggle moved to the CAT2 section in vars/STIG.yml.
+
+Content updates:
+- UBTU-22-271025: idle-delay check `uint32 900` -> `uint32 600` (V2R9 updates the GNOME idle delay to 10 minutes); title 15 -> 10 minutes.
+- UBTU-22-432010: check already aligned (tests `!authenticate` only; V2R9 removed NOPASSWD from the Check text).
+
+Rule_ID metadata sync (11 SV-* revision drifts in V2R9):
+- cat_2/UBTU-22-21xxxx/UBTU-22-215040.yml: SV-279937r1156364_rule -> SV-279937r1208676_rule
+- cat_1/UBTU-22-255025.yml: SV-260526r991591_rule -> SV-260526r1208678_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255030.yml: SV-260527r986275_rule -> SV-260527r1208681_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255035.yml: SV-260528r970703_rule -> SV-260528r1208803_rule
+- cat_1/UBTU-22-255040.yml: SV-260529r991589_rule -> SV-260529r1208685_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255045.yml: SV-260530r991589_rule -> SV-260530r1208687_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255050.yml: SV-260531r1155212_rule -> SV-260531r1208689_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255060.yml: SV-260533r958408_rule -> SV-260533r1208690_rule
+- cat_2/UBTU-22-25xxxx/UBTU-22-255065.yml: SV-260534r958510_rule -> SV-260534r1208804_rule
+- cat_2/UBTU-22-27xxxx/UBTU-22-271025.yml: SV-260538r1069119_rule -> SV-260538r1208695_rule
+- cat_2/UBTU-22-432xxx/UBTU-22-432010.yml: SV-260558r1155216_rule -> SV-260558r1208696_rule
+
 ## benchmark_v2.8.0 (V2R8 alignment - STIG V2R8, 01 April 2026)
 
 V2R7 -> V2R8 is updates-only (188 rules unchanged; 0 added, 0 removed, 0 severity changes; 7 SV-* revision drifts).
