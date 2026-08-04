@@ -26,7 +26,7 @@
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG # Benchmark Name aligns to the audit
-BENCHMARK_VER=2.8.0
+BENCHMARK_VER=2.9.0
 BENCHMARK_OS=UBUNTU22
 
 # Goss host Variables
