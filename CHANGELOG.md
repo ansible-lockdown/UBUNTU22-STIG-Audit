@@ -1,5 +1,10 @@
 # Changelog
 
+## Code quality: krameff goss compatibility
+
+- run_audit.sh: parse only the first line of `goss -v` (the krameff fork ships a 2-line version banner) so the version gate reads the version correctly instead of the copyright line.
+- README.md: point the goss reference at the krameff fork.
+
 ## benchmark_v2.9.0 (V2R9 alignment - STIG V2R9, 01 July 2026)
 
 V2R8 -> V2R9 is updates-only (188 rules unchanged; 0 added, 0 removed; 1 severity change; 11 SV-* revision drifts).
