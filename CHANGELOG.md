@@ -1,5 +1,13 @@
 # Changelog
 
+## Goss documentation link
+
+- **the goss manual link still pointed at the pre-fork repository.** `README.md` referenced
+  `aelsabbahy/goss/blob/master/docs/manual.md#patterns`, left behind when the rest of this file
+  moved to the krameff fork. It now points at `github.com/krameff/goss/blob/devel/docs/index.md`.
+  The `#patterns` anchor is dropped rather than carried over: the fork's documentation is laid out
+  differently, and an anchor that cannot be confirmed is worse than a working link to the page
+
 ## Code quality: krameff goss compatibility
 
 - run_audit.sh: parse only the first line of `goss -v` (the krameff fork ships a 2-line version banner) so the version gate reads the version correctly instead of the copyright line.
