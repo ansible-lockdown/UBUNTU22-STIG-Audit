@@ -2,8 +2,8 @@
 
 {{ if .Vars.ubtu22stig_cat2 }}
   {{ if .Vars.ubtu22stig_651015 }}
-    {{ if .Vars.ubtu22stig_allow_aide_check }}
 command:
+    {{ if .Vars.ubtu22stig_allow_aide_check }}
   aide_check:
     title: UBTU-22-651015 | Ubuntu 22.04 LTS must configure Advanced Intrusion Detection Environment (AIDE) to perform file integrity checking on the file system.
     exec: aide -c /etc/aide/aide.conf --check
@@ -23,14 +23,14 @@ command:
       Rule_ID: SV-260583r1155208_rule
       STIG_ID: UBTU-22-651015
       Vul_ID: V-260583
-  {{ end }}
-  {{ if not .Vars.ubtu22stig_allow_aide_check }}
-  ubtu22stig_allow_aide_check:
-    title: UBTU-22-651015 | Ubuntu 22.04 LTS must configure Advanced Intrusion Detection Environment (AIDE) to perform file integrity checking on the file system.
-    exec: echo "Aide Check to be run manually due to system impact"
+    {{ end }}
+    {{ if not .Vars.ubtu22stig_allow_aide_check }}
+  aide_check_manual:
+    title: UBTU-22-651015 | Ubuntu 22.04 LTS must configure Advanced Intrusion Detection Environment (AIDE) to perform file integrity checking on the file system. | Manual
+    exec: echo "Manual - AIDE check to be run manually due to system impact"
     exit-status: 0
     stdout:
-    - '!/Aide Check to be run manually due to system impact!!/'
+    - '!Manual'
     meta:
       Cat: 2
       CCI:

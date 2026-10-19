@@ -12,7 +12,10 @@ package:
       - CCI-002418
       - CCI-002420
       - CCI-002422
-      Group_Title: SRG-OS-000423-GPOS-00187
+      Group_Title:
+      - SRG-OS-000423-GPOS-00187
+      - SRG-OS-000425-GPOS-00189
+      - SRG-OS-000426-GPOS-00190
       NIST800-53R4: SC-8
       Rule_ID: SV-260523r958908_rule
       STIG_ID: UBTU-22-255010
@@ -27,7 +30,10 @@ package:
       - CCI-002418
       - CCI-002420
       - CCI-002422
-      Group_Title: SRG-OS-000423-GPOS-00187
+      Group_Title:
+      - SRG-OS-000423-GPOS-00187
+      - SRG-OS-000425-GPOS-00189
+      - SRG-OS-000426-GPOS-00190
       NIST800-53R4: SC-8
       Rule_ID: SV-260523r958908_rule
       STIG_ID: UBTU-22-255010

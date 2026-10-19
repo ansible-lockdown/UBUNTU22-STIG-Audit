@@ -16,6 +16,7 @@ command:
       - CCI-001682
       Group_Title:
       - SRG-OS-000002-GPOS-00002
+      - SRG-OS-000123-GPOS-00064
       NIST800-53R4: AC-2
       Rule_ID: SV-260548r958364_rule
       STIG_ID: UBTU-22-411040

@@ -5,7 +5,7 @@
 command:
   auditd_conf_files_perms:
     title: UBTU-22-653065 | Ubuntu 22.04 LTS must be configured so that audit configuration files are not write-accessible by unauthorized users.
-    exec: find /etc/audit/ -type f -perm -640 ! -perm 640
+    exec: find /etc/audit/ -type f -perm /137
     exit-status: 0
     stdout:
     - '!/.*/'

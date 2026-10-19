@@ -6,7 +6,7 @@ command:
   journal_file_perms:
     title: UBTU-22-232027 | Ubuntu 22.04 LTS must generate system journal entries without revealing information that could be exploited by adversaries.
     exec: |
-      JOURNAL_FILE_PERM=$(find /run/log/journal /var/log/journal -type d -perm /037 -printf '.' | wc -c); \
+      JOURNAL_FILE_PERM=$({ find /run/log/journal /var/log/journal -type d -perm /5027 -printf '.'; find /run/log/journal /var/log/journal -type f -perm /137 -printf '.'; } 2>/dev/null | wc -c); \
       if [ "$JOURNAL_FILE_PERM" -eq 0 ]; \
       then echo "OK - No files or Directories found"; \
       else echo "FAIL - Files found"; \
