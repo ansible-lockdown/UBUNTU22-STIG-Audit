@@ -5,7 +5,7 @@
 command:
   audit_bin_crypto:
     title: UBTU-22-651030 | Ubuntu 22.04 LTS must use cryptographic mechanisms to protect the integrity of audit tools.
-    exec: grep -E '(\/sbin\/(audit|au))' /etc/aide/aide.conf
+    exec: grep -E '^\s*/sbin/(audit|au)' /etc/aide/aide.conf
     exit-status: 0
     stdout:
     - '/sbin/auditctl p+i+n+u+g+s+b+acl+xattrs+sha512'

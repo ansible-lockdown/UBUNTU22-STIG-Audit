@@ -16,6 +16,7 @@ command:
       - CCI-000766
       - CCI-000767
       - CCI-000768
+      - CCI-004047
       Group_Title:
       - SRG-OS-000105-GPOS-00052
       - SRG-OS-000106-GPOS-00053
@@ -39,6 +40,7 @@ file:
       - CCI-000766
       - CCI-000767
       - CCI-000768
+      - CCI-004047
       Group_Title:
       - SRG-OS-000105-GPOS-00052
       - SRG-OS-000106-GPOS-00053
@@ -48,17 +50,20 @@ file:
       Rule_ID: SV-260575r1044770_rule
       STIG_ID: UBTU-22-612020
       Vul_ID: V-260575
-  common-password-pkcs:
+  common-auth-pkcs:
     title: UBTU-22-612020 | Ubuntu 22.04 LTS must implement smart card logins for multifactor authentication for local and network access to privileged and nonprivileged accounts.
-    path: /etc/pam.d/common-password
+    path: /etc/pam.d/common-auth
     exists: true
     contents:
-    - '/^auth\s*[success=2 default=ignore]\s*pam_pkcs11.so/'
+    - '/^\s*auth\s+\S.*\spam_pkcs11\.so/'
     meta:
       Cat: 2
       CCI:
       - CCI-000765
       - CCI-000766
+      - CCI-000767
+      - CCI-000768
+      - CCI-004047
       Group_Title:
       - SRG-OS-000105-GPOS-00052
       - SRG-OS-000106-GPOS-00053
@@ -66,7 +71,7 @@ file:
       - SRG-OS-000108-GPOS-00055
       NIST800-53R4: IA-2
       Rule_ID: SV-260575r1044770_rule
-      STIG_ID: UBTU-22-611045
+      STIG_ID: UBTU-22-612020
       Vul_ID: V-260575
   {{ end }}
 {{ end }}

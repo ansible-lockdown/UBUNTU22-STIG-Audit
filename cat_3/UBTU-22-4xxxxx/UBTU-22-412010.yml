@@ -11,7 +11,7 @@ file:
     - '/^auth\s+required\s+pam_faildelay.so\s+delay=4000000/'
     meta:
       Cat: 3
-      CCI: CCI-000044
+      CCI: CCI-000366
       Group_Title:
       - SRG-OS-000480-GPOS-00226
       NIST800-53R4: CM-6

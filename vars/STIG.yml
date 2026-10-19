@@ -255,7 +255,7 @@ ubtu22stig_sshd_config_file: /etc/ssh/sshd_config
 ubtu22stig_ssh_required: true
 ubtu22stig_sshd_config:
 ubtu22stig_sshd_config_banner_file: /etc/issue
-ubtu22stig_sshd_config_ciphers: "aes256-ctr,aes256-gcm@openssh.com,aes192-ctr,aes128-ctr,aes128-gcm@openssh.com"
+ubtu22stig_sshd_config_ciphers: "aes256-ctr,aes256-gcm@openssh.com,aes128-ctr,aes128-gcm@openssh.com"
 ubtu22stig_sshd_config_macs: "hmac-sha2-512,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha2-256-etm@openssh.com"
 ubtu22stig_sshd_config_kex: "ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256"
 

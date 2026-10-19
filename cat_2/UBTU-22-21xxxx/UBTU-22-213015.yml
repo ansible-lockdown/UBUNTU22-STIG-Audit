@@ -5,7 +5,7 @@
 service:
   kdump_disable:
     title: UBTU-22-213015 | Ubuntu 22.04 LTS must disable kernel core dumps so that it can fail to a secure state if system initialization fails, shutdown fails or aborts fail.
-    name: kdump
+    name: kdump-tools
     running: false
     enabled: false
     meta:
@@ -16,13 +16,17 @@ service:
       Rule_ID: SV-260473r1155207_rule
       STIG_ID: UBTU-22-213015
       Vul_ID: V-260473
-file:
+command:
   kdump_masked:
     title: UBTU-22-213015 | Ubuntu 22.04 LTS must disable kernel core dumps so that it can fail to a secure state if system initialization fails, shutdown fails or aborts fail.
-    path: /etc/systemd/system/kdump.service
-    exists: true
-    linked-to: /dev/null
-    filetype: symlink
+    exec: |
+      if dpkg-query -W -f='${Status}' kdump-tools 2>/dev/null | grep -q 'ok installed'; \
+      then echo "kdump-tools.service -> $(readlink /etc/systemd/system/kdump-tools.service)"; \
+      else echo "kdump-tools not installed"; \
+      fi
+    exit-status: 0
+    stdout:
+    - '/^(kdump-tools\.service -> \/dev\/null|kdump-tools not installed)$/'
     meta:
       Cat: 2
       CCI: CCI-001190
@@ -30,6 +34,6 @@ file:
       NIST800-53R4: SC-24
       Rule_ID: SV-260473r1155207_rule
       STIG_ID: UBTU-22-213015
-      Vul_ID: V-260471
+      Vul_ID: V-260473
   {{ end }}
 {{ end }}
