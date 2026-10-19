@@ -56,8 +56,16 @@
   V2R9 note says is not a finding. UBTU-22-232027 (Ubuntu 22.04 LTS must generate system journal
   entries without revealing information that could be exploited by adversaries.) flagged every
   `2750` journal directory and never checked the journal files; it now flags directories more
-  permissive than `2750` and files more permissive than `0640`. Its `tmpfiles.d` patterns still expect
-  the `2640` the paired remediation writes, not the V2R9 `2750`. UBTU-22-232075 (Ubuntu 22.04 LTS
+  permissive than `2750` and files more permissive than `0640`. Its `tmpfiles.d` patterns now expect
+  the V2R9 `2750` instead of `2640`, as do those of UBTU-22-232080 (Ubuntu 22.04 LTS must configure
+  the directories used by the system journal to be owned by "root".), UBTU-22-232085 (Ubuntu 22.04
+  LTS must configure the directories used by the system journal to be group-owned by
+  "systemd-journal".), UBTU-22-232090 (Ubuntu 22.04 LTS must configure the files used by the system
+  journal to be owned by "root".) and UBTU-22-232095 (Ubuntu 22.04 LTS must configure the files used
+  by the system journal to be group-owned by "systemd-journal".). UBTU-22-411045 (Ubuntu 22.04 LTS
+  must automatically lock an account until the locked account is released by an administrator when
+  three unsuccessful logon attempts have been made.) now accepts the tab that `pam-auth-update`
+  writes between `account` and `required`. UBTU-22-232075 (Ubuntu 22.04 LTS
   library files must be group-owned by "root".) searched `*.so` where the check searches `*.so*`, so
   versioned libraries were never checked. UBTU-22-653065 (Ubuntu 22.04 LTS must be configured so that
   audit configuration files are not write-accessible by unauthorized users.) only flagged files with
