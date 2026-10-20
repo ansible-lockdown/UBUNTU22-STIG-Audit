@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: 'v2.9.0'
+benchmark_version: 'v2.10.0'
 benchmark: UBUNTU22-STIG
 
 # turn the categories on/off
@@ -28,6 +28,7 @@ ubtu22stig_211015: true
 ubtu22stig_212010: true
 ubtu22stig_215030: true
 ubtu22stig_215035: true
+ubtu22stig_231010: true
 ubtu22stig_255010: true
 ubtu22stig_255015: true
 ubtu22stig_255025: true
@@ -48,7 +49,6 @@ ubtu22stig_213025: true
 ubtu22stig_214015: true
 ubtu22stig_215010: true
 ubtu22stig_215040: true
-ubtu22stig_231010: true
 ubtu22stig_232010: true
 ubtu22stig_232015: true
 ubtu22stig_232020: true
@@ -112,6 +112,7 @@ ubtu22stig_411040: true
 ubtu22stig_412025: true
 ubtu22stig_412030: true
 ubtu22stig_412035: true
+ubtu22stig_412040: true
 ubtu22stig_431010: true
 ubtu22stig_431015: true
 ubtu22stig_432010: true
@@ -176,6 +177,7 @@ ubtu22stig_654110: true
 ubtu22stig_654115: true
 ubtu22stig_654120: true
 ubtu22stig_654125: true
+ubtu22stig_654126: true
 ubtu22stig_654130: true
 ubtu22stig_654135: true
 ubtu22stig_654140: true
@@ -199,6 +201,7 @@ ubtu22stig_654224: true
 ubtu22stig_654225: true
 ubtu22stig_654230: true
 ubtu22stig_654235: true
+ubtu22stig_654240: true
 
 #### CAT 3
 ubtu22stig_213010: true
@@ -268,7 +271,7 @@ ubtu22stig_dconf_db: local.d
 ### ACCOUNTS and AUTH ###
 ## PAM and password settings
 ubtu22stig_pass:
-  max_days: 60
+  max_days: 180
 
 # Path to set for users initialization files e.g. echo $PATH expected results
 ubtu22stig_env_path: '$PATH:$HOME/.local/bin:$HOME/bin'

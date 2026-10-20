@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_271015 }}
 file:
   banner_dconf_defaults:
-    title: UBTU-22-271015 | Ubuntu 22.04 LTS must display the Standard Mandatory DOD Notice and Consent Banner before granting local access to the system via a graphical user logon.
+    title: UBTU-22-271015 | Ubuntu 22.04 LTS must display the Standard Mandatory DoW Notice and Consent Banner before granting local access to the system via a graphical user logon.
     path: /etc/gdm3/greeter.dconf-defaults
     exists: true
     contents:
@@ -17,7 +17,7 @@ file:
       - SRG-OS-000023-GPOS-00006
       NIST800-53R4:
       - AC-8
-      Rule_ID: SV-260536r958390_rule
+      Rule_ID: SV-260536r1268215_rule
       STIG_ID: UBTU-22-271015
       Vul_ID: V-260536
   {{ end }}
