@@ -23,7 +23,7 @@ command:
       - SRG-OS-000107-GPOS-00054
       - SRG-OS-000108-GPOS-00055
       NIST800-53R4: IA-2
-      Rule_ID: SV-260575r1044770_rule
+      Rule_ID: SV-260575r1268228_rule
       STIG_ID: UBTU-22-612020
       Vul_ID: V-260575
 file:
@@ -47,7 +47,7 @@ file:
       - SRG-OS-000107-GPOS-00054
       - SRG-OS-000108-GPOS-00055
       NIST800-53R4: IA-2
-      Rule_ID: SV-260575r1044770_rule
+      Rule_ID: SV-260575r1268228_rule
       STIG_ID: UBTU-22-612020
       Vul_ID: V-260575
   common-auth-pkcs:
@@ -70,7 +70,7 @@ file:
       - SRG-OS-000107-GPOS-00054
       - SRG-OS-000108-GPOS-00055
       NIST800-53R4: IA-2
-      Rule_ID: SV-260575r1044770_rule
+      Rule_ID: SV-260575r1268228_rule
       STIG_ID: UBTU-22-612020
       Vul_ID: V-260575
   {{ end }}

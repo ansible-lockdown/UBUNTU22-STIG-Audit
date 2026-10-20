@@ -17,7 +17,7 @@ command:
       - CCI-003992
       Group_Title: SRG-OS-000366-GPOS-00153
       NIST800-53R4: CM-5
-      Rule_ID: SV-260476r1015003_rule
+      Rule_ID: SV-260476r1268241_rule
       STIG_ID: UBTU-22-214010
       Vul_ID: V-260476
   {{ end }}

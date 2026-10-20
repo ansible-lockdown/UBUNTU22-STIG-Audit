@@ -4,7 +4,7 @@
   {{ if .Vars.ubtu22stig_653015 }}
 service:
   auditd_running:
-    title: UBTU-22-653015 | Ubuntu 22.04 LTS must produce audit records and reports containing information to establish when, where, what type, the source, and the outcome for all DOD-defined auditable events and actions in near real time.
+    title: UBTU-22-653015 | Ubuntu 22.04 LTS must produce audit records and reports containing information to establish when, where, what type, the source, and the outcome for all DoW-defined auditable events and actions in near real time.
     name: auditd
     running: true
     enabled: true
@@ -59,7 +59,7 @@ service:
       - AU-6
       - AU-7
       - AU-12
-      Rule_ID: SV-260591r1015023_rule
+      Rule_ID: SV-260591r1261472_rule
       STIG_ID: UBTU-22-653015
       Vul_ID: V-260591
   {{ end }}

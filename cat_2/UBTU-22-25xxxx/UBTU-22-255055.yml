@@ -23,7 +23,7 @@ file:
       - AC-17
       - SC-8
       - MA-4
-      Rule_ID: SV-260532r991554_rule
+      Rule_ID: SV-260532r1268237_rule
       STIG_ID: UBTU-22-255055
       Vul_ID: V-260532
 command:
@@ -47,7 +47,7 @@ command:
       - AC-17
       - SC-8
       - MA-4
-      Rule_ID: SV-260532r991554_rule
+      Rule_ID: SV-260532r1268237_rule
       STIG_ID: UBTU-22-255055
       Vul_ID: V-260532
   {{ end }}
