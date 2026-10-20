@@ -11,8 +11,12 @@ command:
       - '/OK - No files or Directories found/'
     meta:
       Cat: 2
-      CCI: CCI-001312
-      Group_Title: SRG-OS-000205-GPOS-00083
+      CCI:
+      - CCI-001493
+      - CCI-001494
+      Group_Title:
+      - SRG-OS-000256-GPOS-00097
+      - SRG-OS-000257-GPOS-00098
       NIST800-53R4: SI-11
       Rule_ID: SV-260507r1101725_rule
       STIG_ID: UBTU-22-232110

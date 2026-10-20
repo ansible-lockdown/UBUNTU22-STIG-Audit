@@ -14,7 +14,9 @@ command:
     - '/.*:makestep 1 -1/'
     meta:
       Cat: 3
-      CCI: CCI-002046
+      CCI:
+      - CCI-002046
+      - CCI-004926
       Group_Title: SRG-OS-000356-GPOS-00144
       NIST800-53R4: Au-8
       Rule_ID: SV-260520r1044776_rule

@@ -21,6 +21,7 @@ service:
       - CCI-000158
       - CCI-000169
       - CCI-000172
+      - CCI-001814
       - CCI-001875
       - CCI-001876
       - CCI-001877
@@ -30,6 +31,7 @@ service:
       - CCI-001881
       - CCI-001882
       - CCI-001914
+      - CCI-003938
       Group_Title:
       - SRG-OS-000037-GPOS-00015
       - SRG-OS-000038-GPOS-00016

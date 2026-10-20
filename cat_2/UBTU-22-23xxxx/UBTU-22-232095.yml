@@ -8,8 +8,8 @@ file:
     path: /usr/lib/tmpfiles.d/systemd.conf
     exists: true
     contents:
-      - '/Z \/run\/log\/journal\/%m ~2640\s(.*)\ssystemd-journal - -/'
-      - '/z \/var\/log\/journal\/%m 2640\s(.*)\ssystemd-journal - -/'
+      - '/Z \/run\/log\/journal\/%m ~2750\s(.*)\ssystemd-journal - -/'
+      - '/z \/var\/log\/journal\/%m 2750\s(.*)\ssystemd-journal - -/'
       - '/z \/var\/log\/journal\/%m\/system.journal\s0640\s(.*)\ssystemd-journal - -/'
     meta:
       Cat: 2

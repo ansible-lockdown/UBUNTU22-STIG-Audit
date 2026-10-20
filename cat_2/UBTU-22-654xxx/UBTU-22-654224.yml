@@ -15,7 +15,9 @@ command:
     - '!/(.*:|)ALL ALL=(ALL:ALL) ALL/'
     meta:
       Cat: 2
-      CCI: CCI-002038
+      CCI:
+      - CCI-002038
+      - CCI-004895
       Group_Title: SRG-OS-000396-GPOS-00176
       NIST800-53R4: IA-11
       Rule_ID: SV-274861r1101704_rule

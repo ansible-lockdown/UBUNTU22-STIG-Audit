@@ -33,7 +33,7 @@ command:
       - SRG-OS-000477-GPOS-00222
       NIST800-53R4: AU-12
       Rule_ID: SV-260611r991586_rule
-      STIG_ID: UBTU-22-654055
+      STIG_ID: UBTU-22-654045
       Vul_ID: V-260611
   {{ end }}
 {{ end }}

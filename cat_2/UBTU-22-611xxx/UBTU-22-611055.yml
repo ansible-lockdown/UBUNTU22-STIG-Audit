@@ -4,14 +4,16 @@
   {{ if .Vars.ubtu22stig_611055 }}
 file:
   common-password-sha:
-    title: UBTU-22-611045 | Ubuntu 22.04 LTS must store only encrypted representations of passwords.
+    title: UBTU-22-611055 | Ubuntu 22.04 LTS must store only encrypted representations of passwords.
     path: /etc/pam.d/common-password
     exists: true
     contents:
     - '/^password.*pam_unix.so.*{{ .Vars.ubtu22stig_passwd_hash_algo }}/'
     meta:
       Cat: 2
-      CCI: CCI-000196
+      CCI:
+      - CCI-000196
+      - CCI-004062
       Group_Title:
       - SRG-OS-000073-GPOS-00041
       NIST800-53R4: IA-5

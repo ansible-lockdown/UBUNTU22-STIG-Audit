@@ -8,7 +8,7 @@ file:
     path: /etc/ssh/sshd_config
     exists: true
     contents:
-    - '/^Ciphers {{ .Vars.ubtu22stig_sshd_config_ciphers }}/'
+    - '/^Ciphers {{ .Vars.ubtu22stig_sshd_config_ciphers }}\s*$/'
     meta:
       Cat: 2
       CCI:
@@ -32,7 +32,7 @@ command:
     exec: sshd -T | grep -i ciphers
     exit-status: 0
     stdout:
-    - '/^ciphers {{ .Vars.ubtu22stig_sshd_config_ciphers }}/'
+    - '/^ciphers {{ .Vars.ubtu22stig_sshd_config_ciphers }}\s*$/'
     meta:
       Cat: 2
       CCI:

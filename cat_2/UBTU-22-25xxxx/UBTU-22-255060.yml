@@ -8,7 +8,7 @@ file:
     path: /etc/ssh/sshd_config
     exists: true
     contents:
-    - '/^KexAlgorithms {{ .Vars.ubtu22stig_sshd_config_kex }}/'
+    - '/^KexAlgorithms {{ .Vars.ubtu22stig_sshd_config_kex }}\s*$/'
     meta:
       Cat: 2
       CCI:
@@ -26,7 +26,7 @@ command:
     exec: sshd -T | grep -i KexAlgorithms
     exit-status: 0
     stdout:
-    - '/^kexalgorithms {{ .Vars.ubtu22stig_sshd_config_kex }}/'
+    - '/^kexalgorithms {{ .Vars.ubtu22stig_sshd_config_kex }}\s*$/'
     meta:
       Cat: 2
       CCI:

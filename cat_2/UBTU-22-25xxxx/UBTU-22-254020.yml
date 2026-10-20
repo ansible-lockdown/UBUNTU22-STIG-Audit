@@ -13,7 +13,9 @@ file:
     - '/^certificate_verification =.*ca_cert/'
     meta:
       Cat: 2
-      CCI: CCI-000185
+      CCI:
+      - CCI-000185
+      - CCI-004909
       Group_Title: SRG-OS-000396-GPOS-00176
       NIST800-53R4: IA-5
       Rule_ID: SV-274867r1107270_rule

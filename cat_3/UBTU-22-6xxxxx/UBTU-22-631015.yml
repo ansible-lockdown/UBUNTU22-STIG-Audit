@@ -5,14 +5,15 @@
 command:
   sssd_offline_cred_cache:
     title: UBTU-22-631015 | Ubuntu 22.04 LTS must be configured such that Pluggable Authentication Module (PAM) prohibits the use of cached authentications after one day.
-    exec: grep -i '^\s*offline_credentials_expiration' /etc/sssd/sssd.conf /etc/sssd/conf.d/*.conf
+    exec: grep -ih '^\s*offline_credentials_expiration' /etc/sssd/sssd.conf /etc/sssd/conf.d/*.conf 2>/dev/null
     exit-status:
       or:
       - 0
       - 1
+      - 2
     stdout:
-    - '/^offline_credentials_expiration\s*=\s*1/'
-    - '!/^offline_credentials_expiration\s*=\s*[^1]/'
+    - '/^\s*offline_credentials_expiration\s*=\s*1\s*$/'
+    - '!/^\s*offline_credentials_expiration\s*=\s*([02-9]|1[0-9])/'
     meta:
       Cat: 3
       CCI: CCI-002007

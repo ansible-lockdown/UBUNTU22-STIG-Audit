@@ -12,6 +12,8 @@ package:
       CCI:
       - CCI-000765
       - CCI-000766
+      - CCI-004046
+      - CCI-004047
       Group_Title: SRG-OS-000396-GPOS-00176
       NIST800-53R4: IA-2
       Rule_ID: SV-274864r1155209_rule

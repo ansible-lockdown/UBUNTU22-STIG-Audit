@@ -8,7 +8,7 @@ file:
     path: /etc/ssh/sshd_config
     exists: true
     contents:
-    - '/^MACs {{ .Vars.ubtu22stig_sshd_config_macs }}/'
+    - '/^MACs {{ .Vars.ubtu22stig_sshd_config_macs }}\s*$/'
     meta:
       Cat: 2
       CCI:
@@ -32,7 +32,7 @@ command:
     exec: sshd -T | grep -i macs
     exit-status: 0
     stdout:
-    - '/^macs {{ .Vars.ubtu22stig_sshd_config_macs }}/'
+    - '/^macs {{ .Vars.ubtu22stig_sshd_config_macs }}\s*$/'
     meta:
       Cat: 2
       CCI:

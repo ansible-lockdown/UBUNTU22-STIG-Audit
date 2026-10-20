@@ -1,5 +1,106 @@
 # Changelog
 
+## 2.9.0 - Based on STIG V2R9 - 2026 October Updates - check fixes, V2R9 metadata, syver, goss documentation link
+
+- **`run_audit.sh` now runs [syver](https://github.com/krameff/syver), replacing goss.** Syver is the
+  signed continuation of the krameff goss fork and reads this content unchanged. `AUDIT_BIN` defaults
+  to `/usr/local/bin/syver` and `AUDIT_BIN_MIN_VER` moves from `0.4.4` to `0.13.0`, so a goss binary
+  now fails the version pre-check, and the pre-check messages name the audit binary rather than goss.
+  The paired remediation role installs syver v0.13.0 and passes it as `AUDIT_BIN`; it must carry that
+  change before this one is used. The README requirements and links describe syver
+- **Nine checks failed compliant hosts.** UBTU-22-211000 (Ubuntu 22.04 LTS must be a
+  vendor-supported release.) wrote its exit status as a list, which syver rejects as a matcher error,
+  and required both `attached: true` and `attached: false`; it now runs `pro status` as the check text
+  does and expects an exit status of 0 and an `attached:` line, without requiring attachment.
+  UBTU-22-271025 (Ubuntu 22.04 LTS must initiate a graphical session lock after 10 minutes of
+  inactivity.) lacked the closing `/` on its `idle-delay` pattern, so it was matched as literal text
+  and never passed; it now labels each `gsettings` value and accepts an `idle-delay` of 1 to 600.
+  UBTU-22-412030 (Ubuntu 22.04 LTS must automatically exit interactive command shell user sessions
+  after 15 minutes of inactivity.) failed a `TMOUT` below 900 and passed `TMOUT=9000`; it now accepts
+  1 to 900 and rejects 0 or anything above 900. UBTU-22-412035 (Ubuntu 22.04 LTS default filesystem
+  permissions must be defined in such a way that all authenticated users can read and modify only
+  their own files.) required a single space in `UMASK 077`, failing the stock tab-separated
+  `login.defs`. UBTU-22-612025 (Ubuntu 22.04 LTS must electronically verify personal identity
+  verification (PIV) credentials.), UBTU-22-612030 (Ubuntu 22.04 LTS, for PKI-based authentication,
+  must validate certificates by constructing a certification path (which includes status information)
+  to an accepted trust anchor.) and UBTU-22-612035 (Ubuntu 22.04 LTS for PKI-based authentication,
+  must implement a local cache of revocation data in case of the inability to access revocation
+  information via the network.) anchored `cert_policy` at the start of the line, which the indented
+  `pkcs11_module` block never is, and the first two also required their token to be the last one on
+  the line; UBTU-22-612035 also carried a `(?!` lookahead, which RE2 rejects, so it errored on every
+  host. Each now matches its token anywhere in the `cert_policy` list. UBTU-22-631010 (Ubuntu 22.04
+  LTS must use DOD PKI-established certificate authorities for verification of the establishment of
+  protected sessions.) expected the literal text `^DOD_PKE_CA_chain.pem`; it now passes when a file
+  name contains `dod`, case-insensitively. UBTU-22-631015 (Ubuntu 22.04 LTS must be configured such
+  that Pluggable Authentication Module (PAM) prohibits the use of cached authentications after one
+  day.) anchored on a line start that `grep` prefixes with the file name, and an empty `conf.d` made
+  `grep` exit 2; it now uses `grep -h` and accepts exit 2
+- **Four negated patterns rejected nothing.** Those in UBTU-22-412035, UBTU-22-411035 (Ubuntu 22.04
+  LTS must disable account identifiers (individuals, groups, roles, and devices) after 35 days of
+  inactivity.), UBTU-22-612025 and UBTU-22-612030 were malformed (`{2;}` with no closing `/`, no
+  slashes at all, and a trailing `;` in the last two), so they were literal text. UBTU-22-412035 now rejects any
+  `UMASK` whose group or other digit is not `7`, UBTU-22-411035 rejects `INACTIVE=-1`, and
+  UBTU-22-612025 fails when any `cert_policy` line in the `opensc` block lacks `ocsp_on`, as the check
+  text requires of every line
+- **Ten checks tested the wrong thing or less than the check text covers.** UBTU-22-213015 (Ubuntu
+  22.04 LTS must disable kernel core dumps so that it can fail to a secure state if system
+  initialization fails, shutdown fails or aborts fail.) tested `kdump.service`, which does not exist;
+  it now tests `kdump-tools.service`, which the check text names, and passes a host without
+  `kdump-tools` installed, which the check text says is not a finding. UBTU-22-612020 (Ubuntu 22.04 LTS
+  must implement smart card logins for multifactor authentication for local and network access to
+  privileged and nonprivileged accounts.) looked for `pam_pkcs11.so` in `common-password`, with
+  `[success=2 default=ignore]` read as a one-character class; it now reads `common-auth`, as the
+  check does. UBTU-22-232026 (Ubuntu 22.04 LTS must generate error messages that provide information
+  necessary for corrective actions without revealing information that could be exploited by
+  adversaries.) excluded `*syslog`, which the check does not, and flagged `eipp.log.xz`, which the
+  V2R9 note says is not a finding. UBTU-22-232027 (Ubuntu 22.04 LTS must generate system journal
+  entries without revealing information that could be exploited by adversaries.) flagged every
+  `2750` journal directory and never checked the journal files; it now flags directories more
+  permissive than `2750` and files more permissive than `0640`. Its `tmpfiles.d` patterns now expect
+  the V2R9 `2750` instead of `2640`, as do those of UBTU-22-232080 (Ubuntu 22.04 LTS must configure
+  the directories used by the system journal to be owned by "root".), UBTU-22-232085 (Ubuntu 22.04
+  LTS must configure the directories used by the system journal to be group-owned by
+  "systemd-journal".), UBTU-22-232090 (Ubuntu 22.04 LTS must configure the files used by the system
+  journal to be owned by "root".) and UBTU-22-232095 (Ubuntu 22.04 LTS must configure the files used
+  by the system journal to be group-owned by "systemd-journal".). UBTU-22-411045 (Ubuntu 22.04 LTS
+  must automatically lock an account until the locked account is released by an administrator when
+  three unsuccessful logon attempts have been made.) now accepts the tab that `pam-auth-update`
+  writes between `account` and `required`. UBTU-22-232075 (Ubuntu 22.04 LTS
+  library files must be group-owned by "root".) searched `*.so` where the check searches `*.so*`, so
+  versioned libraries were never checked. UBTU-22-653065 (Ubuntu 22.04 LTS must be configured so that
+  audit configuration files are not write-accessible by unauthorized users.) only flagged files with
+  group read, so a world-writable `0606` file passed. UBTU-22-651030 (Ubuntu 22.04 LTS must use
+  cryptographic mechanisms to protect the integrity of audit tools.) passed commented-out `aide.conf`
+  lines. UBTU-22-255050 (Ubuntu 22.04 LTS must configure the SSH daemon to use FIPS 140-3-approved
+  ciphers to prevent the unauthorized disclosure of information and/or detect changes to information
+  during transmission.) still listed `aes192-ctr`, which the V2R9 list does not include, in the
+  standalone `vars/STIG.yml` value. It, UBTU-22-255055 (Ubuntu 22.04 LTS must configure the SSH daemon to use
+  Message Authentication Codes (MACs) employing FIPS 140-3-approved cryptographic hashes to prevent
+  the unauthorized disclosure of information and/or detect changes to information during
+  transmission.) and UBTU-22-255060 (Ubuntu 22.04 LTS SSH server must be configured to use only
+  FIPS-validated key exchange algorithms.) now anchor the end of the line, so an extra algorithm fails
+- **UBTU-22-651015 (Ubuntu 22.04 LTS must configure Advanced Intrusion Detection Environment (AIDE) to
+  perform file integrity checking on the file system.) produced no result by default.** Its
+  `command:` key sat inside the `ubtu22stig_allow_aide_check` branch, so with the default `false` the
+  manual test became an unknown top-level key and was dropped. With the check disabled it now reports
+  a manual result that fails, as the other manual checks in this content do
+- **Metadata now matches the V2R9 XCCDF.** 38 `CCI` entries across 34 controls were wrong, malformed
+  (`CCI-00795`) or missing an XCCDF CCI, and 11 `Group_Title` entries across 10 controls did not match
+  the group SRG plus the rule's `Satisfies:` list. 11 blocks carried the `STIG_ID` of another control, among them the
+  `pam_pkcs11.so` block of UBTU-22-612020, which reported under UBTU-22-611045 (Ubuntu 22.04 LTS must
+  be configured so that when passwords are changed or new passwords are established, pwquality must
+  be used.). UBTU-22-213015 carried another rule's `Vul_ID`, UBTU-22-653035 (Ubuntu 22.04 LTS must
+  allocate audit record storage capacity to store at least one weeks' worth of audit records, when
+  audit records are not immediately sent to a central audit record storage facility.) carried `Cat:
+  2` for a low-severity rule, and the UBTU-22-611055 (Ubuntu 22.04 LTS must store only encrypted
+  representations of passwords.) title began with UBTU-22-611045
+
+- **the goss manual link still pointed at the pre-fork repository.** `README.md` referenced
+  `aelsabbahy/goss/blob/master/docs/manual.md#patterns`, left behind when the rest of this file
+  moved to the krameff fork. It now points at `github.com/krameff/goss/blob/devel/docs/index.md`.
+  The `#patterns` anchor is dropped rather than carried over: the fork's documentation is laid out
+  differently, and an anchor that cannot be confirmed is worse than a working link to the page
+
 ## Code quality: krameff goss compatibility
 
 - run_audit.sh: parse only the first line of `goss -v` (the krameff fork ships a 2-line version banner) so the version gate reads the version correctly instead of the copyright line.

@@ -27,7 +27,7 @@ file:
     path: /etc/pam.d/common-account
     exists: true
     contents:
-    - '/^account required\s+pam_faillock.so/'
+    - '/^account\s+required\s+pam_faillock.so/'
     meta:
       Cat: 3
       CCI:

@@ -13,7 +13,9 @@ file:
     meta:
       Cat: 1
       CCI: CCI-002450
-      Group_Title: SRG-OS-000396-GPOS-00176
+      Group_Title:
+      - SRG-OS-000396-GPOS-00176
+      - SRG-OS-000478-GPOS-00223
       NIST800-53R4: SC-13
       Rule_ID: SV-260650r987791_rule
       STIG_ID: UBTU-22-671010

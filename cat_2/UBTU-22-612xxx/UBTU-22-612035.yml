@@ -11,12 +11,12 @@ command:
       - 0
       - 1
     stdout:
-    - '/^cert_policy = .*crl_(auto|offline);/'
-    - '!/^cert_policy\s*=\s*((?!crl_(auto|offline)).)*$/'
+    - '/^\s*cert_policy\s*=\s*([^;#]*,)?crl_(auto|offline)(,[^;]*)?;/'
     meta:
       Cat: 2
       CCI:
       - CCI-001991
+      - CCI-004068
       Group_Title:
       - SRG-OS-000384-GPOS-00167
       NIST800-53R4: IA-5
