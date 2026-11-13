@@ -1,0 +1,39 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_654126 }}
+command:
+  useradd_module_cnf:
+    title: UBTU-22-654126 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the useradd command. | Config
+    exec: grep -H -w useradd /etc/audit/rules.d/*.rules
+    exit-status: 0
+    stdout:
+    - '/^/etc/audit/rules\.d/[^:]+\.rules:-a always,exit -F path=/usr/sbin/useradd -F perm=x -F auid>=1000 -F auid!=(unset|-1|4294967295) (-k |-F key=)\S+\s*$/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      NIST800-53R4: AU-12
+      Rule_ID: SV-288815r1261433_rule
+      STIG_ID: UBTU-22-654126
+      Vul_ID: V-288815
+  useradd_module_live:
+    title: UBTU-22-654126 | Ubuntu 22.04 LTS must generate audit records for successful/unsuccessful uses of the useradd command. | Live
+    exec: auditctl -l | grep -w useradd
+    exit-status: 0
+    stdout:
+    - '/^-a always,exit -S all -F path=/usr/sbin/useradd -F perm=x -F auid>=1000 -F auid!=-1 -F key=\S+\s*$/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000172
+      Group_Title:
+      - SRG-OS-000064-GPOS-00033
+      NIST800-53R4: AU-12
+      Rule_ID: SV-288815r1261433_rule
+      STIG_ID: UBTU-22-654126
+      Vul_ID: V-288815
+  {{ end }}
+{{ end }}

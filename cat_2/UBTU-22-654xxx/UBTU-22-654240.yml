@@ -1,0 +1,43 @@
+---
+
+{{ if .Vars.ubtu22stig_cat2 }}
+  {{ if .Vars.ubtu22stig_654240 }}
+command:
+  protect_rules_module_cnf:
+    title: UBTU-22-654240 | Ubuntu 24.04 LTS audit system must protect auditing rules from unauthorized change. | Config
+    exec: grep -HE '^-e 2' /etc/audit/rules.d/*.rules
+    exit-status:
+      or:
+      - 0
+      - 1
+      - 2
+    stdout:
+    - '/^/etc/audit/rules\.d/[^:]+\.rules:-e 2\s*$/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000163
+      Group_Title:
+      - SRG-OS-000058-GPOS-00028
+      NIST800-53R4: AU-9
+      Rule_ID: SV-288816r1261438_rule
+      STIG_ID: UBTU-22-654240
+      Vul_ID: V-288816
+  protect_rules_module_live:
+    title: UBTU-22-654240 | Ubuntu 24.04 LTS audit system must protect auditing rules from unauthorized change. | Live
+    exec: auditctl -s
+    exit-status: 0
+    stdout:
+    - '/^enabled 2$/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-000163
+      Group_Title:
+      - SRG-OS-000058-GPOS-00028
+      NIST800-53R4: AU-9
+      Rule_ID: SV-288816r1261438_rule
+      STIG_ID: UBTU-22-654240
+      Vul_ID: V-288816
+  {{ end }}
+{{ end }}

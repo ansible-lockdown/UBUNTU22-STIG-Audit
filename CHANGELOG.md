@@ -1,5 +1,46 @@
 # Changelog
 
+## 2.10.0 - Based on DISA STIG Ubuntu 22.04 LTS V2R10 (30 September 2026) - benchmark_v2.10.0
+
+- **Benchmark bump V2R9 -> V2R10 (188 -> 191 rules: 3 added, none removed, 1 severity change, 40
+  Rule_ID revisions).** `vars/STIG.yml` `benchmark_version` is `v2.10.0`, `run_audit.sh`
+  `BENCHMARK_VER` is `2.10.0`, and the README banner links the V2R10 release
+- **UBTU-22-412040 (V-288817) is new: Ubuntu 22.04 LTS must not assign an interactive login shell
+  for system accounts.** `cat_2/UBTU-22-412xxx/UBTU-22-412040.yml` runs the check-content `awk` over
+  `/etc/passwd` (UID 1 to 999, excluding `halt`, `sync` and `shutdown`, shell not ending in `nologin`
+  or `false`) and fails on any output. Toggle `ubtu22stig_412040`
+- **UBTU-22-654126 (V-288815) is new: Ubuntu 22.04 LTS must generate audit records for
+  successful/unsuccessful uses of the useradd command.** `cat_2/UBTU-22-654xxx/UBTU-22-654126.yml`
+  requires the `-a always,exit -F path=/usr/sbin/useradd -F perm=x -F auid>=1000 -F auid!=unset`
+  rule in a file under `/etc/audit/rules.d/` and the loaded rule in `auditctl -l`. The key is not
+  fixed, as the check-content allows. Toggle `ubtu22stig_654126`
+- **UBTU-22-654240 (V-288816) is new: Ubuntu 24.04 LTS audit system must protect auditing rules
+  from unauthorized change.** The title names 24.04 in the V2R10 benchmark and is kept as published.
+  `cat_2/UBTU-22-654xxx/UBTU-22-654240.yml` requires `-e 2` at the start of a line in a file under
+  `/etc/audit/rules.d/`, such as the `99-finalize.rules` file the check-content shows, and `enabled 2`
+  as a whole line in `auditctl -s`. Toggle `ubtu22stig_654240`
+- **UBTU-22-231010 (Ubuntu 22.04 LTS must implement cryptographic mechanisms to prevent
+  unauthorized disclosure and modification of all information that requires protection at rest.) is
+  now CAT I.** The check moves to `cat_1/`, is gated by `ubtu22stig_cat1`, carries `Cat: 1`, and its
+  toggle moves to the CAT 1 list. The check logic is unchanged
+- **UBTU-22-411030 is "Ubuntu 22.04 LTS must be able to enforce a 180-day maximum password lifetime
+  restriction."** The check accepts `PASS_MAX_DAYS` of 1 to 180 with any whitespace separator; it
+  previously accepted 10 to 60, and only after a single space, so the tab-separated line Ubuntu
+  ships never passed. `ubtu22stig_pass.max_days` moves from 60 to 180. V2R10 drops `CCI-000199`
+  from the rule; the revision history does not list this change. The check-content calls a value
+  "less than 180" a finding, which reverses its own title; this check treats a value above 180 as
+  the finding
+- **UBTU-22-631010 (Ubuntu 22.04 LTS must use DoW PKI-established certificate authorities for
+  verification of the establishment of protected sessions.) accepts a DoD or a DoW CA file.** V2R10
+  greps for `DoW` and shows `DoW_PKE_CA_chain.pem`; the check passes on a file name containing
+  `dod`, as before, or `dow` as a separate word, so `Windows` or `Shadow` do not match. The revision
+  history does not list this change
+- **UBTU-22-654041 (Ubuntu 22.04 LTS must audit any script or executable called by cron as root or
+  by any privileged user.) is unchanged.** V2R10 moves the fix to `/etc/audit/rules.d/stig.rules`,
+  which the check already reads
+- **Titles carry the V2R10 rule titles.** The DOD -> DoW renames in UBTU-22-252010, UBTU-22-255020,
+  UBTU-22-271010, UBTU-22-271015, UBTU-22-631010 and UBTU-22-653015, and the UBTU-22-411030 retitle
+
 ## 2.9.0 - Based on STIG V2R9 - 2026 October Updates - check fixes, V2R9 metadata, syver, goss documentation link
 
 - **`run_audit.sh` now runs [syver](https://github.com/krameff/syver), replacing goss.** Syver is the

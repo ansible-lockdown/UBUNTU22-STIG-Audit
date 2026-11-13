@@ -16,7 +16,7 @@ command:
       - CCI-000172
       Group_Title: SRG-OS-000396-GPOS-00176
       NIST800-53R4: AU-12
-      Rule_ID: SV-274862r1155211_rule
+      Rule_ID: SV-274862r1261435_rule
       STIG_ID: UBTU-22-654041
       Vul_ID: V-274862
   cronjobs_module_live:
@@ -32,7 +32,7 @@ command:
       - CCI-000172
       Group_Title: SRG-OS-000396-GPOS-00176
       NIST800-53R4: AU-12
-      Rule_ID: SV-274862r1155211_rule
+      Rule_ID: SV-274862r1261435_rule
       STIG_ID: UBTU-22-654041
       Vul_ID: V-274862
   {{ end }}

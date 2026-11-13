@@ -15,7 +15,7 @@ file:
       Group_Title:
       - SRG-OS-000120-GPOS-00061
       NIST800-53R4: IA-7
-      Rule_ID: SV-260572r971535_rule
+      Rule_ID: SV-260572r1268232_rule
       STIG_ID: UBTU-22-611070
       Vul_ID: V-260572
   {{ end }}

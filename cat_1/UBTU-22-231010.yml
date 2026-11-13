@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.ubtu22stig_cat2 }}
+{{ if .Vars.ubtu22stig_cat1 }}
   {{ if .Vars.ubtu22stig_231010 }}
 command:
   disks_encrypted:
@@ -14,7 +14,7 @@ command:
     stdout:
       - "Partitions are Encrypted"
     meta:
-      Cat: 2
+      Cat: 1
       CCI:
       - CCI-001199
       - CCI-002475
@@ -24,7 +24,7 @@ command:
       - SRG-OS-000404-GPOS-00183
       - SRG-OS-000405-GPOS-00184
       NIST800-53R4: SC-28
-      Rule_ID: SV-260484r958552_rule
+      Rule_ID: SV-260484r1261427_rule
       STIG_ID: UBTU-22-231010
       Vul_ID: V-260484
   {{ end }}

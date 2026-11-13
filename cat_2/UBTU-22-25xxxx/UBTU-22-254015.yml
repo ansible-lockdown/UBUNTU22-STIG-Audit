@@ -17,7 +17,7 @@ service:
       - CCI-004047
       Group_Title: SRG-OS-000396-GPOS-00176
       NIST800-53R4: IA-2
-      Rule_ID: SV-274866r1101739_rule
+      Rule_ID: SV-274866r1261450_rule
       STIG_ID: UBTU-22-254015
       Vul_ID: V-274866
   {{ end }}
